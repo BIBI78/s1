@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
-from datetime import timedelta
-
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
@@ -22,12 +20,11 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
-
+    
       # Additional fields for runners app
-    kilometers_ran = models.FloatField(default=0.0)
-    location = models.CharField(max_length=100, default='')
-    duration = models.DurationField(default=timedelta(minutes= 0))  
-
+    kilometers_ran = models.DecimalField(max_digits=5, decimal_places=2)
+    location = models.CharField(max_length=100)
+    duration = models.DurationField()
 
     class Meta:
         ordering = ["-created_on"]
