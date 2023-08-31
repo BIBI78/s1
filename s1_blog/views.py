@@ -89,3 +89,4 @@ class CreatePost(CreateView):
     form_class = CreatePostForm  # Replace this with your actual form class
     template_name = 'create_post.html'  # Replace with your desired template name
     success_url = reverse_lazy('home')  # Redirect to the home page after successful post creation
+

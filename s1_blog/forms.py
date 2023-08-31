@@ -14,6 +14,7 @@ class CommentForm(forms.ModelForm):
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
+        #fields = ['title', 'content', 'kilometers_ran', 'location', 'duration', 'featured_image']
         fields = ['title', 'content']  # Adjust this based on your model fields
 
     # Add any additional fields or custom validation methods here
