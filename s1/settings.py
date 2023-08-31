@@ -1,7 +1,8 @@
-from pathlib import Path
 import os
+from pathlib import Path
+from django.contrib.messages import constants as messages
 import dj_database_url
-if os.path.isfile('env.py'):
+if os.path.isfile("env.py"):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -16,13 +17,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #PROBLEM WITH ALLOWED HOSTS , WHAT SHOULD I USE WHEN ITS DEPLOYED ????
 
 ALLOWED_HOSTS = ['8000-bibi78-s1-kadh07czc2c.ws-eu104.gitpod.io']
 #ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com']
 #ALLOWED_HOSTS = ["s1-blog.herokuapp.com", "localhost"]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
