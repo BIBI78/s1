@@ -62,7 +62,7 @@ body {
 }
 
 .masthead-text {
-    /* background-color: #445261; */
+    background-color: #445261;
     color: white;
     position: relative;
 }
@@ -79,7 +79,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: wheat;
+    background: #445261;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -93,7 +93,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: gold;
+    color: #E84610;
 }
 
 .post-title {
@@ -129,7 +129,7 @@ body {
 }
 
 .btn-like {
-    color: red;
+    color: #E84610;
     border: none;
     background: transparent;
 }
