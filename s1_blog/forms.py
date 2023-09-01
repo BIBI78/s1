@@ -14,7 +14,7 @@ class CommentForm(forms.ModelForm):
 class CreatePostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ['title', 'content']  
+        fields = ['title', 'content', 'kilometers_ran','location', 'duration', 'featured_image']  
 
   
     kilometers_ran = forms.DecimalField(label='Kilometers Ran', required=True)
