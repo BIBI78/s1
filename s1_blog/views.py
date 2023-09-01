@@ -84,9 +84,37 @@ from django.views.generic.edit import CreateView
 from .models import Post
 
  
-class CreatePost(CreateView):
-    model = Post
-    form_class = CreatePostForm  # Replace this with your actual form class
-    template_name = 'create_post.html'  # Replace with your desired template name
-    success_url = reverse_lazy('home')  # Redirect to the home page after successful post creation
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.views.generic.edit import CreateView
+from .models import Post
+from .forms import CreatePostForm
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
+
+from django.utils.text import slugify
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        form = CreatePostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            
+            # Generate a unique slug based on the post title
+            base_slug = slugify(post.title)
+            unique_slug = base_slug
+            num = 1
+            while Post.objects.filter(slug=unique_slug).exists():
+                unique_slug = f"{base_slug}-{num}"
+                num += 1
+            
+            post.slug = unique_slug
+            post.save()
+            return redirect('home')
+    else:
+        form = CreatePostForm()
+    
+    return render(request, 'create_post.html', {'form': form})

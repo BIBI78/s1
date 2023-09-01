@@ -22,3 +22,5 @@ class CreatePostForm(forms.ModelForm):
     kilometers_ran = forms.DecimalField(label='Kilometers Ran', required=True)
     location = forms.CharField(max_length=100, label='Location', required=True)
     duration = forms.DurationField(label='Duration', required=True)
+    featured_image = forms.ImageField(label='Featured Image', required=False)
+    

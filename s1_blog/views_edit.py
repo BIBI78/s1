@@ -3,7 +3,9 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import CommentForm
-
+from django.shortcuts import render, redirect
+from .forms import CreatePostForm
+from django.urls import reverse_lazy
 
 class PostList(generic.ListView):
     model = Post
@@ -76,3 +78,14 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+from django.views.generic.edit import CreateView
+from .models import Post
+
+ 
+class CreatePost(CreateView):
+    model = Post
+    form_class = CreatePostForm  
+    template_name = 'create_post.html'  
+    success_url = reverse_lazy('home')  
