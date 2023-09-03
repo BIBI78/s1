@@ -3,14 +3,25 @@ body {
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Times New Roman', Times, serif , sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
 }
 
-.green-o {
+/* .runner-logo{
     color: #06ff1b;
+} */
+
+
+.tricolor {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-image: linear-gradient(#ff14bc, #fff70c, #084eff);
+    -webkit-background-clip: text;
+    background-size: 100%;
+
 }
 
 .thin {
@@ -38,16 +49,16 @@ body {
     position: relative;
 }
 
-.image-flash {
+/* .image-flash {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
     background-color: #23BBBB;
-}
+} */
 
 .author {
-    color: white;
+    color: black;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -93,7 +104,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: gold;
+    color:greenyellow ;
 }
 
 .post-title {
@@ -139,4 +150,14 @@ body {
     color: gold;
     background: transparent;
     border: none;
+}
+
+
+.gold-border {
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
+
+
 }

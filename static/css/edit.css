@@ -9,8 +9,8 @@ body {
     color: #4A4A4F;
 }
 
-.red-o {
-    color: #E84610;
+.green-o {
+    color: #06ff1b;
 }
 
 .thin {
@@ -62,7 +62,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    /* background-color: #445261; */
     color: white;
     position: relative;
 }
@@ -79,7 +79,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: wheat;
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -93,7 +93,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: gold;
 }
 
 .post-title {
@@ -129,7 +129,7 @@ body {
 }
 
 .btn-like {
-    color: #E84610;
+    color: red;
     border: none;
     background: transparent;
 }

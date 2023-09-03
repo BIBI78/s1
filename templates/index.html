@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -14,7 +15,9 @@
                         <div class="card-body">
 
                         <div class="image-container">
+                            <img src="{% static 'images/gb.png' %}" class="gold-border">
                             <img class="card-img-top" src="{{ post.featured_image.url }}">
+                            <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                             <div class="image-flash">
                                 <p class="author">Author: {{ post.author }}</p>
                             </div>
@@ -25,19 +28,15 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
+                            
+                           
+                           
+
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
                             <p class="card-text text-muted h6"> location: {{ post.location}}
                                 km: {{ post.kilometers_ran }}
                                 duration: {{ post.duration }} </p>
-                             <!-- <p> -->
-
-                            <!-- <h1>Posts</h1>   -->
-                            <!-- Loop through and display posts here -->
-
-                             <!-- <a href="{% url 'create_post' %}" class="btn btn-primary">Create Post</a> -->
-
-                            <!-- </p>   -->
 
                         </div>
                     </div>
