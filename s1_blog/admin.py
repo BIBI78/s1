@@ -22,3 +22,9 @@ class CommentAdmin(admin.ModelAdmin):
 
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+from django.contrib import admin
+from .models import UserProfile
+
+admin.site.register(UserProfile)

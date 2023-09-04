@@ -139,3 +139,44 @@ class PostDeleteView(DeleteView):
     model = Post
     template_name = 'delete_post.html'  # Create this template
     success_url = reverse_lazy('home')  # Redirect to the home page after a successful delete
+
+
+# user profile blah blah blah 
+
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.models import User
+from .models import UserProfile
+
+def user_profile(request, username):
+    # Retrieve the user by username
+    user = get_object_or_404(User, username=username)
+
+    # Retrieve the user's profile
+    user_profile = user.userprofile
+
+    return render(
+        request,
+        'user_profile.html',
+        {'user': user, 'user_profile': user_profile}
+    )
+
+
+# registerrrr
+
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
+from .models import UserProfile  # Import the UserProfile model
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Create a UserProfile instance for the user
+            UserProfile.objects.create(user=user)
+            # Log the user in
+            login(request, user)
+            return redirect('profile', username=user.username)
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
