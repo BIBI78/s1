@@ -118,3 +118,24 @@ def create_post(request):
         form = CreatePostForm()
     
     return render(request, 'create_post.html', {'form': form})
+
+
+
+from django.views.generic.edit import UpdateView
+from .models import Post
+from .forms import CreatePostForm
+
+class PostUpdateView(UpdateView):
+    model = Post
+    form_class = CreatePostForm
+    template_name = 'update_post.html'  # Create this template
+    success_url = reverse_lazy('home')  # Redirect to the home page after a successful update
+
+from django.views.generic.edit import DeleteView
+from .models import Post
+from django.urls import reverse_lazy
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'delete_post.html'  # Create this template
+    success_url = reverse_lazy('home')  # Redirect to the home page after a successful delete

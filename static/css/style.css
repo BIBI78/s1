@@ -152,7 +152,17 @@ body {
     border: none;
 }
 
+.delete-btn{
+    color: red;
+    background: transparent;
+    border: none;
+}
 
+.update-btn {
+    color: blue;
+    background: transparent;
+    border: none;
+}
 .gold-border {
     width: 40%;
     height: 40%;
