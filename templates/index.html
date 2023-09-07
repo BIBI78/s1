@@ -19,7 +19,11 @@
                             <img class="card-img-top" src="{{ post.featured_image.url }}">
                             <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                             <div class="image-flash">
-                                <p class="author">Author: {{ post.author }}</p>
+                                <!-- <p class="author">Author: {{ post.author }}</p> -->
+                                <p>
+                                    <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">psoted by: {{ post.author }}</a>
+
+                                </p>
                             </div>
                         </div>
                         
