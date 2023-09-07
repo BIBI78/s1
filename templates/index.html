@@ -29,8 +29,16 @@
                             </a>
 
                             <div class="mt-3">
-                                <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
-                                <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+                                
+                            
+                            {% if user.is_authenticated and post.author == user %}
+                            <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
+                            <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+                    
+                            {% endif %}
+                          
+
+                                
                             </div>
 
                             <hr />

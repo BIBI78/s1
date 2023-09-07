@@ -1,3 +1,4 @@
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -121,25 +122,63 @@ def create_post(request):
 
 
 
-from django.views.generic.edit import UpdateView
-from .models import Post
-from .forms import CreatePostForm
+# from django.views.generic.edit import UpdateView
+# from .models import Post
+# from .forms import CreatePostForm
 
-class PostUpdateView(UpdateView):
-    model = Post
-    form_class = CreatePostForm
-    template_name = 'update_post.html'  # Create this template
-    success_url = reverse_lazy('home')  # Redirect to the home page after a successful update
+# class PostUpdateView(UpdateView):
+#     model = Post
+#     form_class = CreatePostForm
+#     template_name = 'update_post.html' 
+#     success_url = reverse_lazy('home')  
 
-from django.views.generic.edit import DeleteView
+# #Delete post
+
+# from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.views.generic.edit import DeleteView
+# from .models import Post
+# from django.urls import reverse_lazy
+
+# class PostDeleteView(LoginRequiredMixin,DeleteView):
+#     model = Post
+#     template_name = 'delete_post.html'  
+#     success_url = reverse_lazy('home')  
+######
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import DeleteView, UpdateView
 from .models import Post
 from django.urls import reverse_lazy
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
-    template_name = 'delete_post.html'  # Create this template
-    success_url = reverse_lazy('home')  # Redirect to the home page after a successful delete
+    template_name = 'delete_post.html'
+    success_url = reverse_lazy('home')
 
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        if post.author == self.request.user:
+            return super().get(request, *args, **kwargs)
+        else:
+            # Redirect to a page or show a message indicating that the user can't delete this post.
+            # You can customize this part as per your requirements.
+            return HttpResponseForbidden("You don't have permission to delete this post.")
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Post
+    template_name = 'update_post.html'
+    fields = ['title', 'content']  # Fields that can be edited by the user.
+    
+    def get(self, request, *args, **kwargs):
+        post = self.get_object()
+        if post.author == self.request.user:
+            return super().get(request, *args, **kwargs)
+        else:
+            # Redirect to a page or show a message indicating that the user can't edit this post.
+            # You can customize this part as per your requirements.
+            return HttpResponseForbidden("You don't have permission to edit this post.")
+
+
+#####
 
 # user profile blah blah blah 
 
