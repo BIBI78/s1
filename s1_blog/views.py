@@ -207,6 +207,25 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import UserProfile
 from .forms import UserProfileForm
 
+# @login_required
+# def update_profile(request):
+#     user_profile = get_object_or_404(UserProfile, user=request.user)
+
+#     if request.method == 'POST':
+#         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('user_profile')
+#     else:
+#         form = UserProfileForm(instance=user_profile)
+
+#     return render(request, 'update_profile.html', {'form': form})
+from django.urls import reverse
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+from .forms import UserProfileForm
+
 @login_required
 def update_profile(request):
     user_profile = get_object_or_404(UserProfile, user=request.user)
@@ -215,11 +234,14 @@ def update_profile(request):
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
-            return redirect('user_profile')
+
+            # Redirect to the updated user profile page
+            return redirect(reverse('user_profile', kwargs={'username': request.user.username}))
     else:
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'update_profile.html', {'form': form})
+
 
 @login_required
 def delete_profile(request):
