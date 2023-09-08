@@ -21,4 +21,13 @@ class CreatePostForm(forms.ModelForm):
     location = forms.CharField(max_length=100, label='Location', required=True)
     duration = forms.DurationField(label='Duration', required=True)
     featured_image = forms.ImageField(label='Featured Image', required=False)
-    
+
+
+# attempts update and delete user profile 
+from django import forms
+from .models import UserProfile
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['name', 'city', 'bio', 'profile_picture']

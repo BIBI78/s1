@@ -182,23 +182,57 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 # user profile blah blah blah 
 
-from django.shortcuts import render, get_object_or_404
-from django.contrib.auth.models import User
+# from django.shortcuts import render, get_object_or_404
+# from django.contrib.auth.models import User
+# from .models import UserProfile
+
+# def user_profile(request, username):
+#     # Retrieve the user by username
+#     user = get_object_or_404(User, username=username)
+
+#     # Retrieve the user's profile
+#     user_profile = user.userprofile
+
+#     return render(
+#         request,
+#         'user_profile.html',
+#         {'user': user, 'user_profile': user_profile}
+#     )
+
+
+#test user profile update and delete 
+# 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import UserProfile
+from .forms import UserProfileForm
 
-def user_profile(request, username):
-    # Retrieve the user by username
-    user = get_object_or_404(User, username=username)
+@login_required
+def update_profile(request):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
 
-    # Retrieve the user's profile
-    user_profile = user.userprofile
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            form.save()
+            return redirect('user_profile')
+    else:
+        form = UserProfileForm(instance=user_profile)
 
-    return render(
-        request,
-        'user_profile.html',
-        {'user': user, 'user_profile': user_profile}
-    )
+    return render(request, 'update_profile.html', {'form': form})
 
+@login_required
+def delete_profile(request):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+
+    if request.method == 'POST':
+        user_profile.delete()
+        return redirect('home')  # Redirect to the home page or another suitable URL
+
+    return render(request, 'delete_profile.html', {'user_profile': user_profile})
+
+
+#test
 
 # registerrrr
 

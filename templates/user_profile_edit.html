@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{ user.userprofile.profile_picture.url }}" class="card-img-top" alt="{{ user.username }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ user.username }}</h5>
+                    <p class="card-text">{{ user.userprofile.bio }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- Add more user profile information here -->
+
+        <!-- test display images  -->
+        <ul>
+            {% for post in user_posts %}
+            <li>
+                <a href="{% url 'post_detail' post.slug %}">
+                    {{ post.title }}
+                </a> - {{ post.created_on }}
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" width="100">
+            </li>
+            {% endfor %}
+        </ul>
+        <!-- TEST  -->
+
+    </div>
+</div>
+{% endblock %}
