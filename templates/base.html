@@ -36,13 +36,16 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+
                     <!-- test -->
                     {% if user.is_authenticated %}
-                    <li class="nav-item"></li>
-                    <a href="{% url 'user_profile' user.username %}">Profile</a>
+                    <li class="nav-item">
+
+                    <a class="nav-link active" aria-current="page" href="{% url 'user_profile' user.username %}">Profile</a>
                     </li>
                     {% endif %}
                     <!--  -->
+
                     <li class="nav-item">
                         <a href="{% url 'create_post' %}" class="nav-link active">Create Post</a>
                     </li>
