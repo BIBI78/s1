@@ -21,17 +21,20 @@
                     <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
                 </div>
             </div>
-        <!--   -->
+        <!--  USER POSTS  -->
 <ul>
     {% for post in user_posts %}
     <li>
-        <a href="{% url 'post_detail' post.slug %}">
-            {{ post.title }}
-        </a> - {{ post.created_on }}
-        <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" width="100">
+        <div class="user-posts">
+            <a href="{% url 'post_detail' post.slug %}">
+                {{ post.title }}
+            </a> - {{ post.created_on }}
+            <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+        </div>
     </li>
     {% endfor %}
 </ul>
+
         <!-- TEST  -->
 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>

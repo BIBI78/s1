@@ -156,6 +156,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # EMAIL BS SMTP CONFIGURATION
 
-# settings.py
+# settings.py // temporary fix
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
