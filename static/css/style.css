@@ -212,25 +212,25 @@ body {
 
 
 /* gold border css */
-/* Style for the gold border image in the media query */
+
 @media (min-width: 769px) {
     .user-posts img {
-        max-width: 50%;
+        max-width: 42%;
+        margin-left: 30%;
+        
     }
 
     .gold-border {
         width: 40%;
         height: 40%;
+        margin-left: 30%;
         padding: 2%;
     }
 }
 
 /* Style for the gold border image outside the media query */
 .gold-border {
-    width: 40%;
-    height: 40%;
-    margin-left: 29%;
-    padding: 2%;
+    /* Your default styles for smaller screens here */
 }
 
 
