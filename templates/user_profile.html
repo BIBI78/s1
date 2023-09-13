@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-4">
@@ -29,7 +30,13 @@
             <a href="{% url 'post_detail' post.slug %}">
                 {{ post.title }}
             </a> - {{ post.created_on }}
+
+            
+            <img src="{% static 'images/gb.png' %}" class="gold-border">
             <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+            <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+            
+           
         </div>
     </li>
     {% endfor %}

@@ -3,14 +3,30 @@ body {
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
 }
 
-.green-o {
+/* .runner-logo{
     color: #06ff1b;
+} */
+
+
+.runner-logo {
+    font-family: 'Times New Roman', Times, serif;
+    color: goldenrod;
+}
+
+.tricolor {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-image: linear-gradient(#ff14bc, #fff70c, #084eff);
+    -webkit-background-clip: text;
+    background-size: 100%;
+
 }
 
 .thin {
@@ -38,16 +54,16 @@ body {
     position: relative;
 }
 
-.image-flash {
+/* .image-flash {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
     background-color: #23BBBB;
-}
+} */
 
 .author {
-    color: white;
+    color: black;
     margin: 4px;
     text-transform: uppercase;
 }
@@ -93,7 +109,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: gold;
+    color: goldenrod;
 }
 
 .post-title {
@@ -139,4 +155,65 @@ body {
     color: gold;
     background: transparent;
     border: none;
+}
+
+.delete-btn {
+    color: red;
+    background: transparent;
+    border: none;
+}
+
+.update-btn {
+    color: blue;
+    background: transparent;
+    border: none;
+}
+
+.gold-border {
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
+
+}
+
+
+/* USER PROFILE POSTS IMAGES */
+/* Adjust the size and hide the container for user posts */
+
+/* Default styling for user posts */
+.user-posts {
+    max-width: 100%;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+/* Control the maximum width of images within user posts */
+.user-posts img {
+    max-width: 100%;
+    /* Limit image width to the width of their container */
+    height: auto;
+    /* Maintain the aspect ratio of images */
+    display: block;
+}
+
+/* Media query for screens smaller than 768px (e.g., iPhones) */
+@media (max-width: 768px) {
+    .user-posts img {
+        max-width: 100%;
+        /* Allow images to take full width on smaller screens */
+    }
+}
+
+/* Media query for screens larger than 768px (e.g., laptops) */
+@media (min-width: 769px) {
+    .user-posts img {
+        max-width: 80%;
+        /* Adjust the maximum width of images on larger screens */
+    }
 }

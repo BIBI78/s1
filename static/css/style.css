@@ -9,9 +9,6 @@ body {
     color: #4A4A4F;
 }
 
-/* .runner-logo{
-    color: #06ff1b;
-} */
 
 
 .runner-logo{
@@ -173,14 +170,13 @@ body {
     height: 40%;
     margin-left: 29%;
     padding: 2%;
-
 }
 
 
 /* USER PROFILE POSTS IMAGES */
-/* Adjust the size and hide the container for user posts */
 
-/* Default styling for user posts */
+
+/* default styling for user posts */
 .user-posts {
     max-width: 100%;
     width: auto;
@@ -195,27 +191,50 @@ body {
 /* Control the maximum width of images within user posts */
 .user-posts img {
     max-width: 100%;
-    /* Limit image width to the width of their container */
     height: auto;
-    /* Maintain the aspect ratio of images */
     display: block;
 }
 
-/* Media query for screens smaller than 768px (e.g., iPhones) */
+/* Media query for screens smaller than 768px (iphones etc) */
 @media (max-width: 768px) {
     .user-posts img {
         max-width: 100%;
-        /* Allow images to take full width on smaller screens */
     }
 }
 
-/* Media query for screens larger than 768px (e.g., laptops) */
+/* media query for screens larger than 768px (laptops) */
 @media (min-width: 769px) {
     .user-posts img {
-        max-width: 80%;
-        /* Adjust the maximum width of images on larger screens */
+        max-width: 50%;
+        
     }
 }
+
+
+/* gold border css */
+/* Style for the gold border image in the media query */
+@media (min-width: 769px) {
+    .user-posts img {
+        max-width: 50%;
+    }
+
+    .gold-border {
+        width: 40%;
+        height: 40%;
+        padding: 2%;
+    }
+}
+
+/* Style for the gold border image outside the media query */
+.gold-border {
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
+}
+
+
+
 
 
 
