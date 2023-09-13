@@ -76,7 +76,7 @@ body {
 
 .masthead-text {
     /* background-color: #445261; */
-    color: white;
+    color: goldenrod;
     position: relative;
 }
 
@@ -116,7 +116,7 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: goldenrod;
 }
 
 .btn-signup {
@@ -231,9 +231,23 @@ body {
 /* Style for the gold border image outside the media query */
 .gold-border {
     /* Your default styles for smaller screens here */
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
 }
 
 
+/* USER POSTS DETAILS */
+.post_detail_image{
+        max-width: 100%;
+        width: auto;
+        padding: 0;
+        margin: 0 auto;
+        background-color: transparent;
+        
+
+}
 
 
 
