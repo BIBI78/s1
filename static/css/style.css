@@ -8,7 +8,7 @@ body {
     font-weight: 700;
     color: #4A4A4F;
 }
-
+/* MAIN COLORS */
 
 
 .runner-logo{
@@ -35,7 +35,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: goldenrod;
 }
 
 .main-bg {
@@ -120,14 +120,14 @@ body {
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: goldenrod;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: wheat;
 }
 
 .link {
@@ -252,5 +252,29 @@ body {
 
 
 
+.post_title{
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
 
+.post_subtitle{
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
 
+.comment-date{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: goldenrod;
+
+}
+
+.commenter{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color:black;
+}
+
+.footer{
+    color: goldenrod;
+}

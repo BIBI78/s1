@@ -6,45 +6,54 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.author }} | {{ post.created_on }}</p>
+            <h1 class= "post_title">{{ post.title }}</h1>
+            <p class ="post_subtitle">{{ post.author }} | {{ post.created_on }}</p>
             <div class="post-image">
                 {% if "placeholder" in post.featured_image.url %}
+                <img src="{% static 'images/gb.png' %}" class="gold-border">
                 <img src="{% static 'images/golden_gate.jpeg' %}" width="100%" >
+                <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                 {% else %}
+                <img src="{% static 'images/gb.png' %}" class="gold-border">
                 <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" width="100%">
+                <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                 {% endif %}
             </div>
         </div>
         <div class="col-md-6">
-            <div class="post-content">
-                {{ post.content | safe }}
-            </div>
-            <div class="post-interactions">
-                <div class="likes">
-                    {% if user.is_authenticated %}
-                    <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                        {% csrf_token %}
-                        {% if liked %}
-                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                            <i class="fas fa-heart"></i>
-                        </button>
-                        {% else %}
-                        <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                            <i class="far fa-heart"></i>
-                        </button>
-                        {% endif %}
-                    </form>
-                    {% else %}
-                    <span class="text-secondary"><i class="far fa-heart"></i></span>
-                    {% endif %}
-                    <span class="text-secondary">{{ post.number_of_likes }}</span>
-                </div>
-                <div class="comments">
-                    <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
-                </div>
+          
+                        
+               
             </div>
         </div>
+    </div>
+<!-- comments likes  -->
+    <div class="post-content">
+        {{ post.content | safe }}
+    </div>
+<div class="post-interactions">
+    <div class="likes">
+        {% if user.is_authenticated %}
+        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+            {% csrf_token %}
+            {% if liked %}
+            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                <i class="fas fa-heart"></i>
+            </button>
+            {% else %}
+            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                <i class="far fa-heart"></i>
+            </button>
+            {% endif %}
+        </form>
+        {% else %}
+        <span class="text-secondary"><i class="far fa-heart"></i></span>
+        {% endif %}
+        <span class="text-secondary">{{ post.number_of_likes }}</span>
+    </div>
+    
+    <div class="comments">
+        <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
     </div>
     <div class="row">
         <div class="col">
@@ -59,7 +68,7 @@
                 <div class="comment">
                     <p class="commenter">
                         {{ comment.name }}
-                        <span class="comment-date">{{ comment.created_on }}</span> wrote:
+                        <span class="comment-date">{{ comment.created_on }}</span> 
                     </p>
                     <p class="comment-body">{{ comment.body | linebreaks }}</p>
                 </div>
@@ -67,20 +76,14 @@
             </div>
         </div>
         <div class="col-md-4">
-            {% if commented %}
-            <div class="alert alert-success" role="alert">
-                Your comment is awaiting approval
-            </div>
-            {% else %}
             {% if user.is_authenticated %}
-            <h3>Leave a comment:</h3>
+            <h3>Write something:</h3>
             <p>Posting as: {{ user.username }}</p>
             <form method="post">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup btn-lg">Submit</button>
             </form>
-            {% endif %}
             {% endif %}
         </div>
     </div>
