@@ -121,28 +121,6 @@ def create_post(request):
 
 
 
-# from django.views.generic.edit import UpdateView
-# from .models import Post
-# from .forms import CreatePostForm
-
-# class PostUpdateView(UpdateView):
-#     model = Post
-#     form_class = CreatePostForm
-#     template_name = 'update_post.html' 
-#     success_url = reverse_lazy('home')  
-
-# #Delete post
-
-# from django.contrib.auth.mixins import LoginRequiredMixin
-# from django.views.generic.edit import DeleteView
-# from .models import Post
-# from django.urls import reverse_lazy
-
-# class PostDeleteView(LoginRequiredMixin,DeleteView):
-#     model = Post
-#     template_name = 'delete_post.html'  
-#     success_url = reverse_lazy('home')  
-######
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.edit import DeleteView, UpdateView
 from .models import Post
@@ -177,48 +155,13 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
             return HttpResponseForbidden("You don't have permission to edit this post.")
 
 
-#####
 
-# user profile blah blah blah 
-
-# from django.shortcuts import render, get_object_or_404
-# from django.contrib.auth.models import User
-# from .models import UserProfile
-
-# def user_profile(request, username):
-#     # Retrieve the user by username
-#     user = get_object_or_404(User, username=username)
-
-#     # Retrieve the user's profile
-#     user_profile = user.userprofile
-
-#     return render(
-#         request,
-#         'user_profile.html',
-#         {'user': user, 'user_profile': user_profile}
-#     )
-
-
-#test user profile update and delete 
-# 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import UserProfile
 from .forms import UserProfileForm
 
-# @login_required
-# def update_profile(request):
-#     user_profile = get_object_or_404(UserProfile, user=request.user)
 
-#     if request.method == 'POST':
-#         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('user_profile')
-#     else:
-#         form = UserProfileForm(instance=user_profile)
-
-#     return render(request, 'update_profile.html', {'form': form})
 from django.urls import reverse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -295,3 +238,19 @@ def user_profile(request, username):
         'user_profile.html',
         {'user': user, 'user_posts': user_posts}
     )
+
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    # Check if the user is the author of the comment
+    if comment.post.author == request.user:
+        comment.delete()
+        # Redirect to a success page or the comment list
+    else:
+        # Handle unauthorized deletion (e.g., show an error message)
+        pass

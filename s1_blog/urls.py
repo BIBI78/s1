@@ -13,6 +13,7 @@ urlpatterns = [
     path('update/<slug:slug>/', views.PostUpdateView.as_view(), name='update_post'),
     path('delete/<slug:slug>/', views.PostDeleteView.as_view(), name='delete_post'),
     path('profile/<str:username>/', views.user_profile, name='user_profile'),
+    path('comment/delete/<int:comment_id>/', views.delete_comment, name='delete_comment'),
 
    
 

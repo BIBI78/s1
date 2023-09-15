@@ -71,11 +71,6 @@
                         {{ comment.name }}
 
                         <span class="comment-date">{{ comment.created_on }}</span>
-
-{% if comment.post.author == user %}
-<a href="{% url 'delete_comment' comment.id %}">Delete</a>
-{% endif %}
-            
                     </p>
                     <p class="comment-body">{{ comment.body | linebreaks }}</p>
                 </div>
