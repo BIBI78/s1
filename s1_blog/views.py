@@ -181,11 +181,28 @@ def user_profile(request, username):
     )
 
 
+# @login_required
+# def delete_comment(request, comment_id):
+#     comment = get_object_or_404(Comment, id=comment_id)
+#     if comment.user == request.user:
+#         comment.delete()
+#         return redirect("comment_list")
+#     else:
+#         return redirect("unauthorized")
+
 @login_required
 def delete_comment(request, comment_id):
     comment = get_object_or_404(Comment, id=comment_id)
-    if comment.user == request.user:
+    
+    # Check if the user who is currently logged in is the author of the comment
+    if comment.name == request.user.username:
         comment.delete()
-        return redirect("comment_list")
+        
+        # Redirect back to the previous page or a default page
+        referer = request.META.get('HTTP_REFERER')
+        return redirect(referer or 'home')  # Replace 'home' with your desired default URL pattern
+    
     else:
         return redirect("unauthorized")
+
+
