@@ -72,13 +72,14 @@
 
                         <span class="comment-date">{{ comment.created_on }}</span>
 
-                        <!-- {% if comment.user == user %}
-                        <a href="{% url 'delete_comment' comment.id %}" class="delete-btn">Delete</a>
-                        {% endif %} -->
+                    {% if comment.name == user.username %}
+                    <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                    {% endif %}
 
-                        {% if comment.post.author == user %}
+
+                        <!-- {% if comment.post.author == user %}
                         <a href="{% url 'delete_comment' comment.id %}">Delete</a>
-                        {% endif %}
+                        {% endif %} -->
 
 
             
