@@ -4,23 +4,17 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
+   
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-
-
-            <div class="row">
-
 
                 <div id="post-container">
                     {% for post in post_list %}
                     <div class="col-md-4 mx-auto">
                         <div class="card mb-4 mx-auto">
 
-                        <!-- <div class="card mb-4"> -->
-                            <!-- <div class="card-body"> -->
-
+                      
                                 <div class="image-container">
                                     <img src="{% static 'images/gb.png' %}" class="gold-border">
                                     <img class="card-img-top" src="{{ post.featured_image.url }}">
@@ -40,22 +34,16 @@
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
 
-                                <!-- post info -->
-                                <!-- <p class="card-text text-muted h6">{{ post.created_on}} 
-                                    <p> <i class="far fa-heart"> </i> 
-                                    {{ post.number_of_likes }} </p>
-                                <p class="card-text text-muted h6"> location: {{ post.location}} </p>
-                                   <p> km: {{ post.kilometers_ran }} </p>
-                                   <p> duration: {{ post.duration }} </p> -->
-
+                             
+<!-- post info -->
                                     <ul class="list-unstyled info-list">
                                         <li>{{ post.created_on }}</li>
                                         <li><i class="far fa-heart"></i> {{ post.number_of_likes }}</li>
-                                        <li>Location: {{ post.location }}</li>
-                                        <li>KM: {{ post.kilometers_ran }}</li>
-                                        <li>Duration: {{ post.duration }}</li>
+                                        <li>location: {{ post.location }}</li>
+                                        <li>km: {{ post.kilometers_ran }}</li>
+                                        <li>duration: {{ post.duration }}</li>
                                     </ul>
-                                    <!--  -->
+                                 
 
 
 
@@ -77,14 +65,7 @@
 
 
 
-                                <!-- <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                    {{ post.number_of_likes }}</p>
-                                <p class="card-text text-muted h6"> location: {{ post.location}}
-                                    km: {{ post.kilometers_ran }}
-                                    duration: {{ post.duration }} </p> -->
-
-                            <!-- </div> -->
-                        <!-- </div> -->
+                               
                         </div>
                     </div>
                     {% if forloop.counter|divisibleby:3 %}
@@ -136,16 +117,15 @@
 
                 <!--  -->
 
-                <div class="row">
+                <!-- no idea what this does-->
                     {% endif %}
                     {% endfor %}
+                    <!-- no idea what this does-->
 
-                </div>
-
-            </div>
+               
         </div>
 <div id="loading-indicator" style="display: none;" class = "tricolor">
     Loading...
-</div>
+
     </div>
     {%endblock%}
