@@ -206,3 +206,21 @@ def delete_comment(request, comment_id):
         return redirect("unauthorized")
 
 
+# attempt at infinite scroll
+
+from django.http import JsonResponse
+from .models import Post
+
+def get_paginated_posts(request, page_number):
+    # Calculate the starting and ending index for the posts based on the page number.
+    per_page = 6
+    start_index = (page_number - 1) * per_page
+    end_index = page_number * per_page
+
+    # Retrieve the posts from the database.
+    posts = Post.objects.filter(status=1).order_by("-created_on")[start_index:end_index]
+
+    # Serialize the posts to JSON.
+    serialized_posts = [{'title': post.title, 'content': post.content} for post in posts]
+
+    return JsonResponse({'posts': serialized_posts})

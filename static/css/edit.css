@@ -9,9 +9,7 @@ body {
     color: #4A4A4F;
 }
 
-/* .runner-logo{
-    color: #06ff1b;
-} */
+/* MAIN COLORS */
 
 
 .runner-logo {
@@ -38,7 +36,7 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: goldenrod;
 }
 
 .main-bg {
@@ -79,7 +77,7 @@ body {
 
 .masthead-text {
     /* background-color: #445261; */
-    color: white;
+    color: goldenrod;
     position: relative;
 }
 
@@ -119,18 +117,18 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: goldenrod;
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: goldenrod;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: wheat;
 }
 
 .link {
@@ -174,14 +172,13 @@ body {
     height: 40%;
     margin-left: 29%;
     padding: 2%;
-
 }
 
 
 /* USER PROFILE POSTS IMAGES */
-/* Adjust the size and hide the container for user posts */
 
-/* Default styling for user posts */
+
+/* default styling for user posts */
 .user-posts {
     max-width: 100%;
     width: auto;
@@ -196,24 +193,92 @@ body {
 /* Control the maximum width of images within user posts */
 .user-posts img {
     max-width: 100%;
-    /* Limit image width to the width of their container */
     height: auto;
-    /* Maintain the aspect ratio of images */
     display: block;
 }
 
-/* Media query for screens smaller than 768px (e.g., iPhones) */
+/* Media query for screens smaller than 768px (iphones etc) */
 @media (max-width: 768px) {
     .user-posts img {
         max-width: 100%;
-        /* Allow images to take full width on smaller screens */
     }
 }
 
-/* Media query for screens larger than 768px (e.g., laptops) */
+/* media query for screens larger than 768px (laptops) */
 @media (min-width: 769px) {
     .user-posts img {
-        max-width: 80%;
-        /* Adjust the maximum width of images on larger screens */
+        max-width: 50%;
+
     }
 }
+
+
+/* gold border css */
+
+@media (min-width: 769px) {
+    .user-posts img {
+        max-width: 42%;
+        margin-left: 30%;
+
+    }
+
+    .gold-border {
+        width: 40%;
+        height: 40%;
+        margin-left: 30%;
+        padding: 2%;
+    }
+}
+
+/* Style for the gold border image outside the media query */
+.gold-border {
+    /* Your default styles for smaller screens here */
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
+}
+
+
+/* USER POSTS DETAILS */
+.post_detail_image {
+    max-width: 100%;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+    background-color: transparent;
+
+
+}
+
+
+
+
+.post_title {
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.post_subtitle {
+    color: goldenrod;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.comment-date {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: goldenrod;
+
+}
+
+.commenter {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+    color: black;
+}
+
+.footer {
+    color: goldenrod;
+}
+
+.comment-row {}

@@ -41,7 +41,8 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item">
 
-                    <a class="nav-link active" aria-current="page" href="{% url 'user_profile' user.username %}">Profile</a>
+                        <a class="nav-link active" aria-current="page"
+                            href="{% url 'user_profile' user.username %}">Profile</a>
                     </li>
                     {% endif %}
                     <!--  -->
@@ -63,7 +64,7 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                   VIENNA
+                    VIENNA
                 </span>
             </div>
         </div>
@@ -99,13 +100,13 @@
     <!-- {% if user.is_authenticated %}
     <a href="{% url 'user_profile' user.username %}">Profile</a>
     {% endif %} -->
-        <script>
-            setTimeout(function () {
-                let messages = document.getElementById('msg');
-                let alert = new bootstrap.Alert(messages);
-                alert.close();
-            }, 2500);
-        </script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2500);
+    </script>
 </body>
 
 </html>

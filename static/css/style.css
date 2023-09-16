@@ -230,7 +230,7 @@ body {
 
 /* Style for the gold border image outside the media query */
 .gold-border {
-    /* Your default styles for smaller screens here */
+    /* default styles for smaller screens */
     width: 40%;
     height: 40%;
     margin-left: 29%;
@@ -282,3 +282,5 @@ body {
 .comment-row{
     
 }
+
+/* base */

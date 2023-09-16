@@ -8,47 +8,52 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
+
+
             <div class="row">
+
+<div id="post-container">
                 {% for post in post_list %}
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
 
-                        <div class="image-container">
-                            <img src="{% static 'images/gb.png' %}" class="gold-border">
-                            <img class="card-img-top" src="{{ post.featured_image.url }}">
-                            <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
-                            <div class="image-flash">
-                               
-                                <p>
-                                    <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">posted by: {{ post.author }}</a>
+                            <div class="image-container">
+                                <img src="{% static 'images/gb.png' %}" class="gold-border">
+                                <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                                <div class="image-flash">
 
-                                </p>
+                                    <p>
+                                        <a href="{% url 'user_profile' post.author.username %}"
+                                            class=" author author-link">posted by: {{ post.author }}</a>
+
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        
+
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
                                 <h2 class="card-title">{{ post.title }}</h2>
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
 
                             <div class="mt-3">
-                                
-                            
-                            {% if user.is_authenticated and post.author == user %}
-                            <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
-                            <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
-                    
-                            {% endif %}
-                          
 
-                                
+
+                                {% if user.is_authenticated and post.author == user %}
+                                <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
+                                <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+
+                                {% endif %}
+
+
+
                             </div>
 
                             <hr />
-                            
-                           
-                           
+
+
+
 
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>
@@ -60,26 +65,64 @@
                     </div>
                 </div>
                 {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
+</div>
+<div id="loading-indicator" style="display: none;">
+    Loading...
+</div>
 
-            </div>
-        </div>
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+<!-- javascript  -->
+<script>
+    var page = 1; // Initialize the page number
+    var loading = false; // Track if a loading request is in progress
 
-            {% endif %}
-        </ul>
-    </nav>
+    function loadMorePosts() {
+        var windowHeight = window.innerHeight;
+        var documentHeight = document.body.scrollHeight;
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (windowHeight + scrollTop >= documentHeight - 100 && !loading) {
+            // User has scrolled to the bottom, load more posts
+            loading = true;
+            page++;
+            var url = `/get_paginated_posts/${page}/`;
+
+            // Show loading indicator
+            document.getElementById('loading-indicator').style.display = 'block';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    loading = false; // Reset loading status
+                    // Hide loading indicator
+                    document.getElementById('loading-indicator').style.display = 'none';
+
+                    // Append the new posts to the post container
+                    data.posts.forEach(function (post) {
+                        var postElement = document.createElement('div');
+                        postElement.innerHTML = `
+                            <h2>${post.title}</h2>
+                            <p>${post.content}</p>
+                        `;
+                        document.getElementById('post-container').appendChild(postElement);
+                    });
+                });
+        }
+    }
+
+    // Attach the loadMorePosts function to the window's scroll event
+    window.addEventListener('scroll', loadMorePosts);
+</script>
+
+<!--  -->
+
+<div class="row">
     {% endif %}
+    {% endfor %}
+
+</div>
+
+</div>
+</div>
+
 </div>
 {%endblock%}
