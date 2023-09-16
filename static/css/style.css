@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: white;
 }
 
 .brand {
@@ -279,8 +279,12 @@ body {
     color: goldenrod;
 }
 
-.comment-row{
-    
-}
+/* INDEX HMTL */
 
-/* base */
+
+
+   /* #post-container {
+       margin: auto;
+       width: 80%;
+       
+   } */
