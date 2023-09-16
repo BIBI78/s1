@@ -281,10 +281,17 @@ body {
 
 /* INDEX HMTL */
 
+.info-list{
+    font-family: 'Times New Roman', Times, serif;
 
+}
 
    /* #post-container {
        margin: auto;
        width: 80%;
        
    } */
+
+   .loading{
+    font-weight: 400;
+   }
