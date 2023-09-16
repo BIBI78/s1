@@ -73,47 +73,47 @@
 
            
                 <!-- javascript  -->
-                <script>
-                    var page = 1; // Initialize the page number
-                    var loading = false; // Track if a loading request is in progress
+             <script>
+                var page = 1; // Initialize the page number
+                var loading = false; // Track if a loading request is in progress
 
-                    function loadMorePosts() {
-                        var windowHeight = window.innerHeight;
-                        var documentHeight = document.body.scrollHeight;
-                        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                function loadMorePosts() {
+                    var windowHeight = window.innerHeight;
+                    var documentHeight = document.body.scrollHeight;
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-                        if (windowHeight + scrollTop >= documentHeight - 100 && !loading) {
-                            // User has scrolled to the bottom, load more posts
-                            loading = true;
-                            page++;
-                            var url = `/get_paginated_posts/${page}/`;
+                    if (windowHeight + scrollTop >= documentHeight - 100 && !loading) {
+                        // User has scrolled to the bottom, load more posts
+                        loading = true;
+                        page++;
+                        var url = `/get_paginated_posts/${page}/`;
 
-                            // Show loading indicator
-                            document.getElementById('loading-indicator').style.display = 'block';
+                        // Show loading indicator
+                        document.getElementById('loading-indicator').style.display = 'block';
 
-                            fetch(url)
-                                .then(response => response.json())
-                                .then(data => {
-                                    loading = false; // Reset loading status
-                                    // Hide loading indicator
-                                    document.getElementById('loading-indicator').style.display = 'none';
+                        fetch(url)
+                            .then(response => response.json())
+                            .then(data => {
+                                loading = false; // Reset loading status
+                                // Hide loading indicator
+                                document.getElementById('loading-indicator').style.display = 'none';
 
-                                    // Append the new posts to the post container
-                                    data.posts.forEach(function (post) {
-                                        var postElement = document.createElement('div');
-                                        postElement.innerHTML = `
-                            <h2>${post.title}</h2>
-                            <p>${post.content}</p>
-                        `;
-                                        document.getElementById('post-container').appendChild(postElement);
-                                    });
+                                // Append the new posts to the post container
+                                data.posts.forEach(function (post) {
+                                    var postElement = document.createElement('div');
+                                    postElement.innerHTML = `
+                                        <h2>${post.title}</h2>
+                                        <p>${post.content}</p>
+                                    `;
+                                    document.getElementById('post-container').appendChild(postElement);
                                 });
-                        }
+                            });
                     }
+                }
 
-                    // Attach the loadMorePosts function to the window's scroll event
-                    window.addEventListener('scroll', loadMorePosts);
-                </script>
+                // Attach the loadMorePosts function to the window's scroll event
+                window.addEventListener('scroll', loadMorePosts);
+            </script>
 
                 <!--  -->
 

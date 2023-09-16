@@ -14,11 +14,11 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class PostList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
-    paginate_by = 6
+# class PostList(generic.ListView):
+#     model = Post
+#     queryset = Post.objects.filter(status=1).order_by("-created_on")
+#     template_name = "index.html"
+#     paginate_by = 6
 
 
 class PostDetail(View):
@@ -208,12 +208,18 @@ def delete_comment(request, comment_id):
 
 # attempt at infinite scroll
 
+class PostList(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "index.html"
+    paginate_by = 100
+
 from django.http import JsonResponse
 from .models import Post
 
 def get_paginated_posts(request, page_number):
     # Calculate the starting and ending index for the posts based on the page number.
-    per_page = 6
+    per_page = 100
     start_index = (page_number - 1) * per_page
     end_index = page_number * per_page
 
