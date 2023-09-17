@@ -120,6 +120,8 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
             return HttpResponseForbidden("You don't have permission to delete this post.")
 
 
+
+
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = "update_post.html"
@@ -131,6 +133,10 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
             return super().get(request, *args, **kwargs)
         else:
             return HttpResponseForbidden("You don't have permission to edit this post.")
+
+    def get_success_url(self):
+        # Redirect to the detail page of the updated post using its slug
+        return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
 
 @login_required
