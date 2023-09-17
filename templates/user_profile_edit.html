@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-4">
@@ -21,18 +23,35 @@
                 <p><strong>Bio:</strong> {{ user_profile.bio }}</p>
             </div>
         </div>
-        <!--   -->
+        <!--  USER POSTS  -->
         <ul>
             {% for post in user_posts %}
             <li>
-               
-                <a href="{% url 'post_detail' post.slug %}">
-                    {{ post.title }}
-                </a> - {{ post.created_on }}
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" width="100">
+                <div class="user-posts">
+                    <a href="{% url 'post_detail' post.slug %}">
+                        {{ post.title }}
+                    </a> - {{ post.created_on }}
+
+
+                    <img src="{% static 'images/gb.png' %}" class="gold-border">
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+
+                    <!-- post info -->
+
+                    <!-- info  -->
+
+                    {% if user.is_authenticated and post.author == user %}
+                    <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
+                    <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+
+                    {% endif %}
+
+                </div>
             </li>
             {% endfor %}
         </ul>
+
         <!-- TEST  -->
         <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
         <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
