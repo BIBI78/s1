@@ -26,6 +26,7 @@
 
         </div>
     </div>
+
 </div>
 <!-- comments likes  -->
 <div class="post-content">
@@ -71,6 +72,14 @@
                         {{ comment.name }}
 
                         <span class="comment-date">{{ comment.created_on }}</span>
+
+                        {% if comment.name == user.username %}
+                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                        {% endif %}
+
+
+
+
                     </p>
                     <p class="comment-body">{{ comment.body | linebreaks }}</p>
                 </div>

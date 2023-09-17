@@ -211,6 +211,14 @@ body {
 }
 
 
+
+
+
+
+
+
+
+
 /* gold border css */
 
 @media (min-width: 769px) {
@@ -297,3 +305,13 @@ body {
    .loading{
     font-weight: 400;
    }
+
+   /* USER PROFILE PAGE */
+   /* user profile remove bullets */
+ ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+         }
+
+

@@ -4,11 +4,25 @@
 
 {% block content %}
 <div class="container">
+    
     <div class="row">
+        
         <div class="col-md-6">
+            <!-- <div class="col-md-4 mx-auto"> -->
+                
             <h1 class="post_title">{{ post.title }}</h1>
-            <p class="post_subtitle">{{ post.author }} | {{ post.created_on }}</p>
-            <div class="post-image">
+
+            <p>
+                <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">{{ post.author }}</a>
+            
+            </p>
+
+            <p class="post_subtitle"> {{ post.created_on }} </p>
+
+
+
+            <!-- <div class="post-image"> -->
+             <div class="image-container">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="{% static 'images/gb.png' %}" class="gold-border">
                 <img src="{% static 'images/golden_gate.jpeg' %}" width="100%">
@@ -19,13 +33,15 @@
                 <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                 {% endif %}
             </div>
+
+            </div>
         </div>
         <div class="col-md-6">
 
 
 
         </div>
-    </div>
+    
     
 </div>
 <!-- comments likes  -->
@@ -77,10 +93,6 @@
                     <a href="{% url 'delete_comment' comment.id %}">Delete</a>
                     {% endif %}
 
-
-                        <!-- {% if comment.post.author == user %}
-                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
-                        {% endif %} -->
 
 
             

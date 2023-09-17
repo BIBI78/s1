@@ -26,10 +26,13 @@
                 </div>
             </div>
         <!--  USER POSTS  -->
+
+
 <ul>
     {% for post in user_posts %}
     <li>
-                            <div class="card mb-4 mx-auto">
+    <div class="col-md-4 mx-auto">
+        <!-- <div class="card mb-4 mx-auto"> -->
                             
                             
                                 <div class="image-container">
@@ -69,14 +72,14 @@
                             
                             
                             
-                                </div>
+            <!-- </div> -->
+        </div>
+    </div>
     </li>
     {% endfor %}
 </ul>
 
-        <!-- TEST  -->
-<!-- <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-<a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a> -->
+     
 
     </div>
 </div>

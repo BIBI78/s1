@@ -1,5 +1,5 @@
 body {
-    background-color: #F9FAFC;
+    background-color: white;
 }
 
 .brand {
@@ -213,6 +213,29 @@ body {
 }
 
 
+/* bigger than 769px */
+/* Media query for screens smaller than 768px (iphones etc) */
+@media (max-width: 799px) {
+    .user-posts img {
+        max-width: 100%;
+    }
+}
+
+/* media query for screens larger than 768px (laptops) */
+@media (min-width: 800px) {
+    .user-posts img {
+        max-width: 50%;
+
+    }
+}
+
+
+
+
+
+
+
+
 /* gold border css */
 
 @media (min-width: 769px) {
@@ -232,7 +255,7 @@ body {
 
 /* Style for the gold border image outside the media query */
 .gold-border {
-    /* Your default styles for smaller screens here */
+    /* default styles for smaller screens */
     width: 40%;
     height: 40%;
     margin-left: 29%;
@@ -281,4 +304,29 @@ body {
     color: goldenrod;
 }
 
-.comment-row {}
+/* INDEX HMTL */
+
+.info-list {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+
+
+}
+
+/* #post-container {
+       margin: auto;
+       width: 80%;
+       
+   } */
+
+.loading {
+    font-weight: 400;
+}
+
+/* USER PROFILE PAGE */
+/* user profile remove bullets */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
