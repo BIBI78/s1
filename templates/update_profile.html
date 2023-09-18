@@ -9,22 +9,22 @@
     
         <div class="form-group">
             <label for="{{ user_profile_form.name.id_for_label }}">Name:</label>
-            {{ user_profile_form.name }}
+            {{ form.name }}
         </div>
     
         <div class="form-group">
             <label for="{{ user_profile_form.city.id_for_label }}">City:</label>
-            {{ user_profile_form.city }}
+            {{ form.city }}
         </div>
     
         <div class="form-group">
             <label for="{{ user_profile_form.bio.id_for_label }}">Bio:</label>
-            {{ user_profile_form.bio }}
+            {{ form.bio }}
         </div>
     
         <div class="form-group">
             <label for="{{ user_profile_form.profile_picture.id_for_label }}">Profile Picture:</label>
-            {{ user_profile_form.profile_picture }}
+            {{ form.profile_picture }}
         </div>
     
         <button type="submit" class="btn btn-primary">Update Profile</button>
