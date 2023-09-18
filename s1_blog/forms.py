@@ -1,6 +1,8 @@
 from .models import Comment
 from django import forms
 from .models import Post
+from django import forms
+from .models import UserProfile
 
 
 
@@ -24,10 +26,11 @@ class CreatePostForm(forms.ModelForm):
 
 
 # attempts update and delete user profile 
-from django import forms
-from .models import UserProfile
+
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['name', 'city', 'bio', 'profile_picture']
+
+

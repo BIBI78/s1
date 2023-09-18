@@ -135,21 +135,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 
 @login_required
-def update_profile(request):
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-
-    if request.method == "POST":
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse("user_profile", kwargs={"username": request.user.username}))
-    else:
-        form = UserProfileForm(instance=user_profile)
-
-    return render(request, "update_profile.html", {"form": form})
-
-
-@login_required
 def delete_profile(request):
     user_profile = get_object_or_404(UserProfile, user=request.user)
 
@@ -182,14 +167,6 @@ def user_profile(request, username):
     )
 
 
-# @login_required
-# def delete_comment(request, comment_id):
-#     comment = get_object_or_404(Comment, id=comment_id)
-#     if comment.user == request.user:
-#         comment.delete()
-#         return redirect("comment_list")
-#     else:
-#         return redirect("unauthorized")
 
 @login_required
 def delete_comment(request, comment_id):
@@ -231,3 +208,52 @@ def get_paginated_posts(request, page_number):
     serialized_posts = [{'title': post.title, 'content': post.content} for post in posts]
 
     return JsonResponse({'posts': serialized_posts})
+
+
+# UPDATE USER PROFILE 
+
+
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    user_posts = Post.objects.filter(author=user)
+
+    return render(
+        request, "user_profile.html", {"user": user, "user_posts": user_posts}
+    )
+
+
+from django.urls import reverse_lazy
+from django.shortcuts import redirect
+
+@login_required
+def update_profile(request):
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        user_profile = None
+
+    if request.method == "POST":
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            if user_profile is None:
+                # Create a new UserProfile object if it doesn't exist
+                user_profile = form.save(commit=False)
+                user_profile.user = request.user
+                user_profile.save()
+            else:
+                form.save()
+            # Redirect to the user's profile page
+            return redirect('user_profile', username=request.user.username)
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(request, "update_profile.html", {"form": form})
+
+
+
+
+
+
+
+
+
