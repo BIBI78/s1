@@ -1,5 +1,6 @@
 body {
     background-color: white;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .brand {
@@ -37,6 +38,11 @@ body {
 .dark-bg {
     background-color: goldenrod;
 }
+
+.dark-bg-footer {
+    background-color:#daa5207d ;
+}
+
 
 .main-bg {
     background-color: #F9FAFC;
@@ -315,3 +321,8 @@ body {
          }
 
 
+/* FOOTER */
+.footer-text{
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}

@@ -89,17 +89,52 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
+    <!-- <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">made by YSL </p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i>
         </p>
-    </footer>
-    <!-- {% if user.is_authenticated %}
-    <a href="{% url 'user_profile' user.username %}">Profile</a>
-    {% endif %} -->
+    </footer> -->
+<footer class="dark-bg-footer mt-auto">
+    <div class="container py-5">
+        <div class="row justify-content-center py-3">
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h6 class="text-muted footer-text font-weight-bold mb-2">RUNNER</h6>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-lg-0">
+                <h6 class="text-muted font-weight-bold mb-2 footer-text">Location</h6>
+                <p class="text-muted">
+                    RUNNER<br>
+                    Seilerstätte 30<br>
+                    1010 Wien<br>
+                    Austria
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-lg-0">
+                <h6 class="text-muted font-weight-bold mb-2 footer-text">Contact</h6>
+                <p class="text-muted">
+                    <i class="fa-solid fa-phonefooter-text "></i>: +12 34 567 8899<br>
+                    <i class="fa-solid fa-at footer-text"></i>: runner(a)runner.de<br>
+                </p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-lg-0">
+                <h6 class="text-muted font-weight-bold mb-2 footer-text">Follow us!</h6>
+                <p class="text-muted mb-4"> Please follow us on social media!</p>
+                <ul class="list-inline mt-4">
+                    <li class="list-inline-item"><a href="https://twitter.com" target="_blank" title="twitter"><i
+                                class="fa-brands fa-2x fa-square-twitter text-muted"></i></a></li>
+                    <li class="list-inline-item"><a href="https://facebook.com" target="_blank" title="facebook"><i
+                                class="fa-brands fa-2x fa-square-facebook text-muted"></i></a></li>
+                    <li class="list-inline-item"><a href="https://instagram.com" target="_blank" title="instagram"><i
+                                class="fa-brands fa-2x fa-square-instagram text-muted"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
     <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
