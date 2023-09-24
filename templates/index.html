@@ -11,8 +11,8 @@
 
                 <div id="post-container">
                     {% for post in post_list %}
-                    <div class="col-md-4 mx-auto">
-                        <div class="card mb-4 mx-auto">
+                    <!-- <div class="col-md-4 mx-auto"> -->
+                        <!-- <div class="card mb-4 mx-auto"> -->
 
                       
                                 
@@ -25,27 +25,32 @@
 
                                         <p>
                                             <a href="{% url 'user_profile' post.author.username %}"
-                                                class=" author author-link">posted by: {{ post.author }}</a>
+                                                class=" author author-link">{{ post.author }}</a>
 
                                         </p>
                                     </div>
                                 </div>
 
                                 <a href="{% url 'post_detail' post.slug  %}" class="post-link">
+                                    <p class ="text-muted"> {{ post.location }}</p>
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
 
                              
 <!-- post info -->
-                                    <ul class="list-unstyled info-list">
-                                        <li>{{ post.created_on }}</li>
-                                        <li><i class="far fa-heart"></i> {{ post.number_of_likes }}</li>
-                                        <li>location: {{ post.location }}</li>
+                                    <ul class="list-unstyled info-list text-muted">
+                                        <!-- <li>location: {{ post.location }} </li> -->
+                                        <li class="like-icon"><i class="far fa-heart"></i> {{ post.number_of_likes }}</li>
+
+                                        <!-- <li><i class="far fa-heart"></i> {{ post.number_of_likes }}</li> -->
+                                        <!-- <li><i class="far fa-heart"></i> {{ post.number_of_likes }}</li> -->
+                                        
                                         <li>km: {{ post.kilometers_ran }}</li>
                                         <li>duration: {{ post.duration }}</li>
+                                        <li class= " ">{{ post.created_on }}</li>
                                     </ul>
-                                 
+                                 <!--  -->
 
 
 
@@ -62,7 +67,7 @@
 
                                 </div>
 
-                                <hr />
+                                <!-- <hr /> -->
 
 
 

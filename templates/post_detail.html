@@ -94,14 +94,13 @@
                     {% endif %}
 
 
-
-            
                     </p>
                     <p class="comment-body">{{ comment.body | linebreaks }}</p>
                 </div>
                 {% endfor %}
             </div>
         </div>
+        <!-- comment here  -->
         <div class="col-md-4">
             {% if user.is_authenticated %}
             <h3>Write something:</h3>

@@ -1,9 +1,9 @@
 body {
     background-color: white;
+    font-family: "Avenir Next LT W02 Regular";
 }
 
 .brand {
-    font-family: 'Times New Roman', Times, serif, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -13,8 +13,8 @@ body {
 
 
 .runner-logo {
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
+    font-weight: bolder;
+    color: black;
 }
 
 .tricolor {
@@ -39,6 +39,11 @@ body {
     background-color: goldenrod;
 }
 
+.dark-bg-footer {
+    background-color: #daa5207d;
+}
+
+
 .main-bg {
     background-color: #F9FAFC;
 }
@@ -46,6 +51,10 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-title {
+    font-weight: 600;
 }
 
 .image-container {
@@ -213,21 +222,6 @@ body {
 }
 
 
-/* bigger than 769px */
-/* Media query for screens smaller than 768px (iphones etc) */
-@media (max-width: 799px) {
-    .user-posts img {
-        max-width: 100%;
-    }
-}
-
-/* media query for screens larger than 768px (laptops) */
-@media (min-width: 800px) {
-    .user-posts img {
-        max-width: 50%;
-
-    }
-}
 
 
 
@@ -279,23 +273,23 @@ body {
 
 .post_title {
     color: goldenrod;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .post_subtitle {
     color: goldenrod;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .comment-date {
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     font-weight: 600;
     color: goldenrod;
 
 }
 
 .commenter {
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     font-weight: 600;
     color: black;
 }
@@ -307,7 +301,7 @@ body {
 /* INDEX HMTL */
 
 .info-list {
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
     font-weight: 700;
 
 
@@ -329,4 +323,17 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+
+/* FOOTER */
+.footer-text {
+    /* font-family: 'Times New Roman', Times, serif; */
+    color: black;
+}
+
+/* HEADER */
+.navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, .55);
+    border-color: rgba(0, 0, 0, 0);
 }

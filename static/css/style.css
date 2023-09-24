@@ -1,10 +1,9 @@
 body {
     background-color: white;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Avenir Next LT W02 Regular";
 }
 
 .brand {
-    font-family: 'Times New Roman', Times, serif , sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
@@ -13,8 +12,8 @@ body {
 
 
 .runner-logo{
-    font-family: 'Times New Roman', Times, serif;
-    color: goldenrod;
+    font-weight: bolder;
+    color: black;
 }
 
 .tricolor {
@@ -36,7 +35,7 @@ body {
 }
 
 .dark-bg {
-    background-color: goldenrod;
+    background-color: black;
 }
 
 .dark-bg-footer {
@@ -51,6 +50,9 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+.card-title{
+    font-weight: 600;
 }
 
 .image-container {
@@ -82,7 +84,7 @@ body {
 
 .masthead-text {
     /* background-color: #445261; */
-    color: goldenrod;
+    color: black;
     position: relative;
 }
 
@@ -112,7 +114,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color:goldenrod ;
+    color:blue ;
 }
 
 .post-title {
@@ -122,11 +124,11 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: goldenrod;
+    color: black;
 }
 
 .btn-signup {
-    background-color: goldenrod;
+    background-color: wheat;
     color: #fff;
 }
 
@@ -181,7 +183,6 @@ body {
 
 /* USER PROFILE POSTS IMAGES */
 
-
 /* default styling for user posts */
 .user-posts {
     max-width: 100%;
@@ -212,12 +213,13 @@ body {
 @media (min-width: 769px) {
     .user-posts img {
         max-width: 50%;
-        
+        max-height:30%;
+
     }
 }
 
 
-
+/* _________________ */
 
 
 
@@ -259,32 +261,31 @@ body {
         padding: 0;
         margin: 0 auto;
         background-color: transparent;
-        
-
+    
 }
 
 
 
 
 .post_title{
-    color: goldenrod;
-    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    /* font-family: 'Times New Roman', Times, serif; */
 }
 
 .post_subtitle{
-    color: goldenrod;
-    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    
 }
 
 .comment-date{
-    font-family: 'Times New Roman', Times, serif;
+   
     font-weight: 600;
     color: goldenrod;
 
 }
 
 .commenter{
-    font-family: 'Times New Roman', Times, serif;
+   
     font-weight: 600;
     color:black;
 }
@@ -296,17 +297,11 @@ body {
 /* INDEX HMTL */
 
 .info-list{
-    font-family: 'Times New Roman', Times, serif;
     font-weight: 700;
-    
 
 }
 
-   /* #post-container {
-       margin: auto;
-       width: 80%;
-       
-   } */
+ 
 
    .loading{
     font-weight: 400;
@@ -323,6 +318,34 @@ body {
 
 /* FOOTER */
 .footer-text{
-    font-family: 'Times New Roman', Times, serif;
+    
     color: black;
+}
+
+/* HEADER */
+.navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, .55);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.author-link{
+    
+    text-decoration: none;
+    font-weight: 900;
+    
+
+}
+
+.like-icon {
+    /* Set the initial color */
+    color: black;
+    /* You can set your preferred initial color here */
+    transition: color 0.3s;
+    /* Add a smooth transition effect */
+
+    /* Change color on hover */
+    &:hover {
+        color: red;
+        /* Change the color to red on hover */
+    }
 }
