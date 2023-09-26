@@ -6,10 +6,21 @@ from .models import UserProfile
 
 
 
+# class CommentForm(forms.ModelForm):
+#     body = forms.CharField(label='')
+
+#     class Meta:
+#         model = Comment
+#         fields = ('body',)
 class CommentForm(forms.ModelForm):
+    body = forms.CharField(
+        label='',  # Set an empty label
+        widget=forms.Textarea(attrs={'rows': 4, 'cols': 40})  # Adjust rows and cols as needed
+    )
+
     class Meta:
         model = Comment
-        fields = ('body',)
+        fields = ['body']
 
 
 
@@ -25,7 +36,7 @@ class CreatePostForm(forms.ModelForm):
     featured_image = forms.ImageField(label='Featured Image', required=False)
 
 
-# attempts update and delete user profile 
+
 
 
 class UserProfileForm(forms.ModelForm):

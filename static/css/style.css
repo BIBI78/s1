@@ -13,7 +13,7 @@ body {
 
 .runner-logo{
     font-weight: bolder;
-    color: black;
+    color: goldenrod;
 }
 
 .tricolor {
@@ -39,7 +39,8 @@ body {
 }
 
 .dark-bg-footer {
-    background-color:#daa5207d ;
+    /* background-color:#daa5207d ; */
+    
 }
 
 
@@ -130,6 +131,7 @@ body {
 .btn-signup {
     background-color: wheat;
     color: #fff;
+    margin-top: 20px;
 }
 
 .btn-signup:hover,
@@ -150,14 +152,14 @@ body {
 }
 
 .btn-like {
-    color: red;
+    color: black;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: gold;
+    color: red;
     background: transparent;
     border: none;
 }
@@ -219,10 +221,17 @@ body {
 }
 
 
+
+
 /* _________________ */
 
 
+/* CARD IMAGE */
 
+
+
+
+/*  */
 
 
 
@@ -252,6 +261,8 @@ body {
     margin-left: 29%;
     padding: 2%;
 }
+
+
 
 
 /* USER POSTS DETAILS */
@@ -292,6 +303,7 @@ body {
 
 .footer{
     color: goldenrod;
+    
 }
 
 /* INDEX HMTL */
@@ -348,4 +360,8 @@ body {
         color: red;
         /* Change the color to red on hover */
     }
+}
+
+label {
+    cursor: default;
 }
