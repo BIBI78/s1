@@ -301,6 +301,7 @@ body {
     color:black;
 }
 
+
 .footer{
     color: goldenrod;
     
@@ -362,6 +363,28 @@ body {
     }
 }
 
-label {
-    cursor: default;
+.delete-comment{
+    color: red;
+}
+
+.col{
+    flex: none;
+}
+.btn-comment:hover{
+    color:blue ;
+}
+
+.comment-row {
+    margin-left: 10px;
+    /* Add margin to the left side */
+    margin-right: 10px;
+    /* Add margin to the right side */
+}
+
+.post-content{
+    margin-left: 10px;
+        /* Add margin to the left side */
+    margin-right: 10px;
+        /* Add margin to the right side */
+
 }

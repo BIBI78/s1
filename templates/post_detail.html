@@ -48,6 +48,7 @@
 <div class="post-content">
     {{ post.content | safe }}
 </div>
+
 <div class="post-interactions">
     <div class="likes">
         {% if user.is_authenticated %}
@@ -69,7 +70,7 @@
         <span class="text-secondary">{{ post.number_of_likes }}</span>
     </div>
 
-    <div class="comments">
+    <div class="comments btn-comment">
         <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
     </div>
     <div class="row">
@@ -77,10 +78,10 @@
             <hr>
         </div>
     </div>
-
+<!-- NEEDS TO BE CENTERED  -->
     <div class="row comment-row">
         <div class="col-md-8">
-            <h3>Comments:</h3>
+            <h3>comments:</h3>
             <div class="comments-list">
                 {% for comment in comments %}
                 <div class="comment">
@@ -90,7 +91,7 @@
                         <span class="comment-date">{{ comment.created_on }}</span>
 
                     {% if comment.name == user.username %}
-                    <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                    <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
                     {% endif %}
                     </p>
                     

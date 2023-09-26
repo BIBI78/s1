@@ -49,6 +49,7 @@
 <div class="post-content">
     {{ post.content | safe }}
 </div>
+
 <div class="post-interactions">
     <div class="likes">
         {% if user.is_authenticated %}
@@ -70,7 +71,7 @@
         <span class="text-secondary">{{ post.number_of_likes }}</span>
     </div>
 
-    <div class="comments">
+    <div class="comments btn-comment">
         <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
     </div>
     <div class="row">
@@ -78,10 +79,10 @@
             <hr>
         </div>
     </div>
-
+    <!-- NEEDS TO BE CENTERED  -->
     <div class="row comment-row">
         <div class="col-md-8">
-            <h3>Comments:</h3>
+            <h3>comments:</h3>
             <div class="comments-list">
                 {% for comment in comments %}
                 <div class="comment">
@@ -91,29 +92,31 @@
                         <span class="comment-date">{{ comment.created_on }}</span>
 
                         {% if comment.name == user.username %}
-                        <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                        <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
                         {% endif %}
-
-
-
-
                     </p>
+
                     <p class="comment-body">{{ comment.body | linebreaks }}</p>
                 </div>
                 {% endfor %}
             </div>
         </div>
+        <!-- comment here  -->
+
         <div class="col-md-4">
             {% if user.is_authenticated %}
-            <h3>Write something:</h3>
-            <p>Posting as: {{ user.username }}</p>
+            <h3>write something:</h3>
+            <p>{{ user.username }} says:</p>
             <form method="post">
+
                 {{ comment_form | crispy }}
                 {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                <button type="submit" class="btn btn-signup btn-lg">submit</button>
             </form>
+
             {% endif %}
         </div>
+        <!--  -->
 
     </div>
 </div>
