@@ -20,14 +20,21 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    #status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
 
-      # Additional fields for runners app
-    kilometers_ran = models.FloatField(default=0.0)
+    # Remove kilometers_ran and duration fields
+    # kilometers_ran = models.FloatField(default=0.0)
+    # duration = models.DurationField(default=timedelta(minutes=0))
+
+    # Add the price field
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+
     location = models.CharField(max_length=100, default='')
-    duration = models.DurationField(default=timedelta(minutes= 0))  
+
+    def __str__(self):
+        return self.title
+
 
 
     class Meta:

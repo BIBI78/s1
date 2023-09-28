@@ -56,8 +56,45 @@ body {
     font-weight: 600;
 }
 
+/* .image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+} */
+
+
+/* Media query for laptop screens (adjust the screen width as needed) */
+@media (min-width: 1024px) {
+    .image-container {
+        /* Add any specific styles for laptop screens here */
+            width: 100%;
+                height: auto;
+    }
+}
 .image-container {
     position: relative;
+    /* Add other styles for image container */
+
+    /* Center and adjust width for laptop screens */
+    margin: 0 auto;
+    /* Center horizontally */
+    max-width: 80%;
+    /* Take up 80% of screen width */
+}
+
+/* Media query for laptop screens (adjust the screen width as needed) */
+@media (min-width: 1024px) {
+    .image-container {
+        /* Add any specific styles for laptop screens here */
+    }
+}
+
+
+/* Media query for laptop screens (adjust the screen width as needed) */
+@media (min-width: 1024px) {
+    .image-container {
+        /* Add any specific styles for laptop screens here */
+    }
 }
 
 /* .image-flash {
@@ -185,8 +222,8 @@ body {
 
 /* USER PROFILE POSTS IMAGES */
 
-/* default styling for user posts */
-.user-posts {
+
+/* .user-posts {
     max-width: 100%;
     width: auto;
     padding: 0;
@@ -197,24 +234,26 @@ body {
     overflow: hidden;
 }
 
-/* Control the maximum width of images within user posts */
+
 .user-posts img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Media query for screens smaller than 768px (iphones etc) */
+
 @media (max-width: 768px) {
     .user-posts img {
         max-width: 100%;
     }
-}
+} */
 
 /* media query for screens larger than 768px (laptops) */
+
+
 @media (min-width: 769px) {
     .user-posts img {
-        max-width: 50%;
+        max-width: 100%;
         max-height:30%;
 
     }
