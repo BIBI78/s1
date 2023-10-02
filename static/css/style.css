@@ -56,46 +56,6 @@ body {
     font-weight: 600;
 }
 
-/* .image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-} */
-
-
-/* Media query for laptop screens (adjust the screen width as needed) */
-@media (min-width: 1024px) {
-    .image-container {
-        /* Add any specific styles for laptop screens here */
-            width: 100%;
-                height: auto;
-    }
-}
-.image-container {
-    position: relative;
-    /* Add other styles for image container */
-
-    /* Center and adjust width for laptop screens */
-    margin: 0 auto;
-    /* Center horizontally */
-    max-width: 80%;
-    /* Take up 80% of screen width */
-}
-
-/* Media query for laptop screens (adjust the screen width as needed) */
-@media (min-width: 1024px) {
-    .image-container {
-        /* Add any specific styles for laptop screens here */
-    }
-}
-
-
-/* Media query for laptop screens (adjust the screen width as needed) */
-@media (min-width: 1024px) {
-    .image-container {
-        /* Add any specific styles for laptop screens here */
-    }
-}
 
 /* .image-flash {
     position: absolute;
@@ -104,6 +64,7 @@ body {
     left: -2px;
     background-color: #23BBBB;
 } */
+
 
 .author {
     color: black;
@@ -259,20 +220,7 @@ body {
     }
 }
 
-
-
-
 /* _________________ */
-
-
-/* CARD IMAGE */
-
-
-
-
-/*  */
-
-
 
 
 /* gold border css */
@@ -315,8 +263,6 @@ body {
 }
 
 
-
-
 .post_title{
     color: black;
     /* font-family: 'Times New Roman', Times, serif; */
@@ -353,9 +299,7 @@ body {
 
 }
 
- 
-
-   .loading{
+ .loading{
     font-weight: 400;
    }
 
@@ -461,3 +405,29 @@ body {
             opacity: 1;
             /* Make the active image fully visible */
         }
+
+
+
+
+
+
+/* IMAGE CONTAINER  */
+
+
+/* 576px */
+
+/* @media (min-width: 576px) {
+    .image-container {
+        max-width: 300px;
+        margin: 0 auto;
+        
+    }
+}
+ */
+
+.image-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+

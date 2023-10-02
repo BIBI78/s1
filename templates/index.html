@@ -38,25 +38,27 @@
         <!--  -->
         <div id="post-container">
             {% for post in post_list %}
-            <!-- <div class="col-md-4 mx-auto"> -->
-                <!-- <div class="card mb-4 mx-auto"> -->
+        
 
 
 
                 <div class="image-container">
 
                     <img src="{% static 'images/gb.png' %}" class="gold-border">
-                    <img class="card-img-top" src="{{ post.featured_image.url }}">
-                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
-                    <div class="image-flash">
 
+
+                    <img class="card-img-top" src="{{ post.featured_image.url }}">
+
+                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+
+                    <div class="image-flash">
                         <p>
                             <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">
                                 {{post.author }}</a>
-
                         </p>
                     </div>
                 </div>
+                
 
                 <a href="{% url 'post_detail' post.slug  %}" class="post-link">
                     <p class="text-muted"> {{ post.location }}</p>
@@ -77,26 +79,14 @@
 
 
                 <div class="mt-3">
-
-
                     {% if user.is_authenticated and post.author == user %}
                     <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
                     <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
 
                     {% endif %}
-
-
-
                 </div>
 
                 <!-- <hr /> -->
-
-
-
-
-
-                <!-- </div> -->
-            <!-- </div> -->
             {% if forloop.counter|divisibleby:3 %}
         </div>
 
