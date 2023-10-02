@@ -415,16 +415,6 @@ body {
 
 
 /* 576px */
-
-/* @media (min-width: 576px) {
-    .image-container {
-        max-width: 300px;
-        margin: 0 auto;
-        
-    }
-}
- */
-
 .image-container {
     max-width: 900px;
     margin: 0 auto;

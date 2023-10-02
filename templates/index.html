@@ -52,25 +52,27 @@
                     <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
 
                     <div class="image-flash">
-                        <p>
+                        <!-- <p>
                             <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">
                                 {{post.author }}</a>
-                        </p>
+                        </p> -->
                     </div>
                 </div>
-                
+
 
                 <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                    <p class="text-muted"> {{ post.location }}</p>
                     <h2 class="card-title">{{ post.title }}</h2>
-                    <p class="card-text">{{ post.excerpt }}</p>
+                    <!-- <p class="card-text">{{ post.excerpt }}</p> -->
                 </a>
+                <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">
+                    {{post.author }}</a>
+
 
 
                 <!-- post info -->
                 <ul class="list-unstyled info-list text-muted">
-                    <!-- <li>location: {{ post.location }} </li> -->
                     <li class="like-icon"><i class="far fa-heart"></i> {{ post.number_of_likes }}</li>
+                   <li>{{ post.location }}</li>
                     <li>price: €{{ post.price }}</li>
                     <li class=" ">{{ post.created_on }}</li>
                 </ul>
