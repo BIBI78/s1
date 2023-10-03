@@ -421,3 +421,12 @@ body {
 }
 
 
+
+
+/* About page */
+.about-image-small {
+    max-width: 100%;
+    /* Adjust the width as needed */
+    height: auto;
+    /* This maintains the image's aspect ratio */
+}
