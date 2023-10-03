@@ -9,6 +9,7 @@ urlpatterns = [
     path('update_profile/', views.update_profile, name='update_profile'),
     path('delete_profile/', views.delete_profile, name='delete_profile'),
     path('about/', views.about_view, name='about'),
+    path('artists/', views.artists_view, name='artists'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('update/<slug:slug>/', views.PostUpdateView.as_view(), name='update_post'),

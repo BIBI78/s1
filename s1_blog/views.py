@@ -257,8 +257,15 @@ def about_view(request):
 
 
 
+# Artists page
 
+from django.shortcuts import render
+from django.contrib.auth.models import User
 
+def artists_view(request):
+    # Get all users (artists)
+    artists = User.objects.all()
 
-
-
+    return render(
+        request, "artists.html", {"artists": artists}
+    )

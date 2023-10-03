@@ -430,3 +430,67 @@ body {
     height: auto;
     /* This maintains the image's aspect ratio */
 }
+
+
+
+
+/* Artists page */
+
+
+/* .profile-image {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+} */
+
+/* Add this to your CSS file to style the artist profiles */
+.artists-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.artist-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
+.artist-name {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.artist-name a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.artist-name a:hover {
+    color: goldenrod;
+    
+}
+
+.gold-border-profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    /* Ensure the gold border images don't overflow */
+}
+
+

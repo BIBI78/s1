@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="artists-heading">Our Artists</h1>
+    <div class="row">
+        {% for artist in artists %}
+        <div class="col-md-3">
+            <div class="artist-profile">
+                <a href="{% url 'user_profile' artist.username %}">
+                    <div class="image-container">
+                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}"
+                            class="profile-image">
+                    </div>
+                    <p class="artist-name">
+                        <a href="{% url 'user_profile' artist.username %}">
+                            {{ artist.name }} <!-- Display the user's name -->
+                        </a>
+                        <br>
+                        <span class="username">{{ artist.username }}</span> <!-- Display the username -->
+                    </p>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
