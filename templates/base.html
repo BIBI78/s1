@@ -39,6 +39,11 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
+                        <!-- Replace 'about' with the actual URL of your "about" page -->
+                    </li>
 
                     <!-- test -->
                     {% if user.is_authenticated %}

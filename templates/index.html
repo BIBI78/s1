@@ -8,34 +8,7 @@
 
     <!-- Blog Entries Column -->
     <div class="col-12 mt-3 left">
-        <!--  -->
-        <!-- <div class="slideshow">
-
-    <img src="static/images/image1.jpg" alt="Image 1">
-    <img src="static/images/image2.jpg" alt="Image 2">
-    <img src="static/images/image3.jpg" alt="Image 3">
-</div>
-
-<script>
-    var slideshowContainer = document.querySelector('.slideshow');
-    var images = slideshowContainer.querySelectorAll('img');
-    var currentImageIndex = 0;
-
-    function changeImage() {
-        images[currentImageIndex].classList.remove('active');
-        currentImageIndex = (currentImageIndex + 1) % images.length;
-        images[currentImageIndex].classList.add('active');
-    }
-
-    // Initial setup to make the first image active
-    images[currentImageIndex].classList.add('active');
-
-    setInterval(changeImage, 3000); // Change image every 3 seconds (adjust the time as needed)
-</script> -->
-
-
-
-        <!--  -->
+        
         <div id="post-container">
             {% for post in post_list %}
         
@@ -43,19 +16,10 @@
 
 
                 <div class="image-container">
-
                     <img src="{% static 'images/gb.png' %}" class="gold-border">
-
-
                     <img class="card-img-top" src="{{ post.featured_image.url }}">
-
                     <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
-
                     <div class="image-flash">
-                        <!-- <p>
-                            <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">
-                                {{post.author }}</a>
-                        </p> -->
                     </div>
                 </div>
 

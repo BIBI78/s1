@@ -249,6 +249,11 @@ def update_profile(request):
 
     return render(request, "update_profile.html", {"form": form})
 
+# About page
+
+def about_view(request):
+    # Your view logic for the 'about' page
+    return render(request, 'about.html')
 
 
 
