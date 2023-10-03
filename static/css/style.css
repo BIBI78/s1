@@ -496,5 +496,17 @@ body {
 /* Post info */
 .content-wrapper {
     margin-left: 50px;
-    /* Adjust the value as needed */
+    
+}
+
+/* Post details */
+.post-section {
+    margin-left: 50px;
+    
+}
+
+.invisible-hr {
+    border: none;
+    height: 10px;
+    background-color: transparent;
 }

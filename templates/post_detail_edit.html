@@ -10,15 +10,14 @@
         <div class="col-md-6">
             <!-- <div class="col-md-4 mx-auto"> -->
 
-            <h1 class="post_title">{{ post.title }}</h1>
+            <!-- <h1 class="post_title">{{ post.title }}</h1>
 
             <p>
-                <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">{{ post.author
-                    }}</a>
+                <a href="{% url 'user_profile' post.author.username %}" class=" author author-link">{{ post.author}}</a>
 
             </p>
 
-            <p class="post_subtitle"> {{ post.created_on }} </p>
+            <p class="post_subtitle"> {{ post.created_on }} </p> -->
 
 
 
@@ -45,79 +44,86 @@
 
 
 </div>
-<!-- comments likes  -->
-<div class="post-content">
-    {{ post.content | safe }}
+<!-- POST INFO  -->
+<div class="post-section">
+    <h1 class="post_title">{{ post.title }}</h1>
+    <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
+    <p class="post_subtitle text-muted">{{ post.created_on }}</p>
+    <div class="post-content">
+        {{ post.content | safe }}
+    </div>
+
+    <div class="post-interactions">
+        <div class="likes">
+            {% if user.is_authenticated %}
+            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                {% csrf_token %}
+                {% if liked %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                    <i class="fas fa-heart"></i>
+                </button>
+                {% else %}
+                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                    <i class="far fa-heart"></i>
+                </button>
+                {% endif %}
+            </form>
+            {% else %}
+            <span class="text-secondary"><i class="far fa-heart"></i></span>
+            {% endif %}
+            <span class="text-secondary">{{ post.number_of_likes }}</span>
+        </div>
+
+        <div class="comments btn-comment">
+            <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
+        </div>
+    </div>
 </div>
 
-<div class="post-interactions">
-    <div class="likes">
-        {% if user.is_authenticated %}
-        <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-            {% csrf_token %}
-            {% if liked %}
-            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                <i class="fas fa-heart"></i>
-            </button>
-            {% else %}
-            <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                <i class="far fa-heart"></i>
-            </button>
-            {% endif %}
-        </form>
-        {% else %}
-        <span class="text-secondary"><i class="far fa-heart"></i></span>
-        {% endif %}
-        <span class="text-secondary">{{ post.number_of_likes }}</span>
+<div class="row">
+    <div class="col">
+        <hr>
     </div>
+</div>
+<!-- NEEDS TO BE CENTERED  -->
+<div class="row comment-row">
+    <div class="col-md-8">
+        <h3>comments:</h3>
+        <div class="comments-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <p class="commenter">
+                    {{ comment.name }}
 
-    <div class="comments btn-comment">
-        <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
-    </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
-    <!-- NEEDS TO BE CENTERED  -->
-    <div class="row comment-row">
-        <div class="col-md-8">
-            <h3>comments:</h3>
-            <div class="comments-list">
-                {% for comment in comments %}
-                <div class="comment">
-                    <p class="commenter">
-                        {{ comment.name }}
+                    <span class="comment-date">{{ comment.created_on }}</span>
 
-                        <span class="comment-date">{{ comment.created_on }}</span>
+                    {% if comment.name == user.username %}
+                    <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
+                    {% endif %}
+                </p>
 
-                        {% if comment.name == user.username %}
-                        <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
-                        {% endif %}
-                    </p>
-
-                    <p class="comment-body">{{ comment.body | linebreaks }}</p>
-                </div>
-                {% endfor %}
+                <p class="comment-body">{{ comment.body | linebreaks }}</p>
             </div>
+            {% endfor %}
         </div>
-        <!-- comment here  -->
-
-        <div class="col-md-4">
-            {% if user.is_authenticated %}
-            <h3>write something:</h3>
-            <p>{{ user.username }} says:</p>
-            <form method="post">
-
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">submit</button>
-            </form>
-
-            {% endif %}
-        </div>
-        <!--  -->
-
     </div>
+    <!-- comment here  -->
+
+    <div class="col-md-4">
+        {% if user.is_authenticated %}
+        <h3>leave a comment or bid:</h3>
+        <p>{{ user.username }}:</p>
+        <form method="post">
+
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">submit</button>
+        </form>
+
+        {% endif %}
+    </div>
+    <!--  -->
+
+</div>
 </div>
 {% endblock content %}
