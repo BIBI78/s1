@@ -9,21 +9,23 @@
         <div class="col-md-3">
             <div class="artist-profile">
                 <a href="{% url 'user_profile' artist.username %}">
+
+
                     <div class="image-container">
+                        <!-- <img src="{% static 'images/gb.png' %}" class="gold-border-profile"> -->
                         <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}"
                             class="profile-image">
+                        <!-- <img src="{% static 'images/gbbottom.png' %}" class="gold-border-profile"> -->
                     </div>
-                    <p class="artist-name">
-                        <a href="{% url 'user_profile' artist.username %}">
-                            {{ artist.name }} <!-- Display the user's name -->
-                        </a>
-                        <br>
-                        <span class="username">{{ artist.username }}</span> <!-- Display the username -->
-                    </p>
+
+
+                    <!-- </div> -->
                 </a>
+                <p class="artist-name"><a href="{% url 'user_profile' artist.username %}"> @{{ artist.username }}</a>
+                </p>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-{% endblock %}
+{% endblock %},
