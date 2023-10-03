@@ -493,4 +493,8 @@ body {
     /* Ensure the gold border images don't overflow */
 }
 
-
+/* Post info */
+.content-wrapper {
+    margin-left: 50px;
+    /* Adjust the value as needed */
+}
