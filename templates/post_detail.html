@@ -44,7 +44,7 @@
 
     <div class="post-interactions">
         <div class="likes">
-            {% if user.is_authenticated %}
+            {% if request.user.is_authenticated %}
             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                 {% csrf_token %}
                 {% if liked %}
