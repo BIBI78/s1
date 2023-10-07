@@ -36,10 +36,11 @@
 <div class="post-section">
     <h1 class="post_title">{{ post.title }}</h1>
         <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
-    <p class="post_subtitle text-muted">{{ post.created_on }}</p>
+    <!-- <p class="post_subtitle text-muted">{{ post.created_on }}</p> -->
     <div class="post-content">
-        {{ post.content | safe }}
+    {{ post.content | safe }}
     </div>
+    <!-- <hr class="invisible-hr"> -->
 
     <div class="post-interactions">
         <div class="likes">

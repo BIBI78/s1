@@ -7,6 +7,29 @@ from datetime import timedelta
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+# class Post(models.Model):
+#     # Existing fields
+#     title = models.CharField(max_length=200, unique=True)
+#     slug = models.SlugField(max_length=200, unique=True)
+#     author = models.ForeignKey(
+#         User, on_delete=models.CASCADE, related_name="blog_posts"
+#     )
+#     featured_image = CloudinaryField('image', default='placeholder')
+#     excerpt = models.TextField(blank=True)
+#     updated_on = models.DateTimeField(auto_now=True)
+#     content = models.TextField()
+#     created_on = models.DateTimeField(auto_now_add=True)
+#     status = models.IntegerField(choices=STATUS, default=1)
+#     likes = models.ManyToManyField(
+#         User, related_name='blogpost_like', blank=True)
+#     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+#     location = models.CharField(max_length=100, default='')
+
+#     # New field for type of painting
+#     type_of_painting = models.CharField(max_length=100, blank=True, default='')
+
+#     def __str__(self):
+#         return self.title
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -22,10 +45,6 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=1)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
-
-    # Remove kilometers_ran and duration fields
-    # kilometers_ran = models.FloatField(default=0.0)
-    # duration = models.DurationField(default=timedelta(minutes=0))
 
     # Add the price field
     price = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)

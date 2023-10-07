@@ -14,11 +14,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 
-class PostList(generic.ListView):
-    model = Post
-    queryset = Post.objects.filter(status=1).order_by("-created_on")
-    template_name = "index.html"
-    paginate_by = 6
 
 
 class PostDetail(View):
@@ -120,6 +115,8 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
             return HttpResponseForbidden("You don't have permission to delete this post.")
 
 
+
+
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = "update_post.html"
@@ -132,20 +129,9 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         else:
             return HttpResponseForbidden("You don't have permission to edit this post.")
 
-
-@login_required
-def update_profile(request):
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-
-    if request.method == "POST":
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse("user_profile", kwargs={"username": request.user.username}))
-    else:
-        form = UserProfileForm(instance=user_profile)
-
-    return render(request, "update_profile.html", {"form": form})
+    def get_success_url(self):
+        # Redirect to the detail page of the updated post using its slug
+        return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
 
 @login_required
@@ -181,14 +167,6 @@ def user_profile(request, username):
     )
 
 
-# @login_required
-# def delete_comment(request, comment_id):
-#     comment = get_object_or_404(Comment, id=comment_id)
-#     if comment.user == request.user:
-#         comment.delete()
-#         return redirect("comment_list")
-#     else:
-#         return redirect("unauthorized")
 
 @login_required
 def delete_comment(request, comment_id):
@@ -206,3 +184,88 @@ def delete_comment(request, comment_id):
         return redirect("unauthorized")
 
 
+# attempt at infinite scroll
+
+class PostList(generic.ListView):
+    model = Post
+    queryset = Post.objects.filter(status=1).order_by("-created_on")
+    template_name = "index.html"
+    paginate_by = 100
+
+from django.http import JsonResponse
+from .models import Post
+
+def get_paginated_posts(request, page_number):
+    # Calculate the starting and ending index for the posts based on the page number.
+    per_page = 100
+    start_index = (page_number - 1) * per_page
+    end_index = page_number * per_page
+
+    # Retrieve the posts from the database.
+    posts = Post.objects.filter(status=1).order_by("-created_on")[start_index:end_index]
+
+    # Serialize the posts to JSON.
+    serialized_posts = [{'title': post.title, 'content': post.content} for post in posts]
+
+    return JsonResponse({'posts': serialized_posts})
+
+
+# UPDATE USER PROFILE 
+
+
+def user_profile(request, username):
+    user = get_object_or_404(User, username=username)
+    user_posts = Post.objects.filter(author=user)
+
+    return render(
+        request, "user_profile.html", {"user": user, "user_posts": user_posts}
+    )
+
+
+from django.urls import reverse_lazy
+from django.shortcuts import redirect
+
+@login_required
+def update_profile(request):
+    try:
+        user_profile = UserProfile.objects.get(user=request.user)
+    except UserProfile.DoesNotExist:
+        user_profile = None
+
+    if request.method == "POST":
+        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        if form.is_valid():
+            if user_profile is None:
+                # Create a new UserProfile object if it doesn't exist
+                user_profile = form.save(commit=False)
+                user_profile.user = request.user
+                user_profile.save()
+            else:
+                form.save()
+            # Redirect to the user's profile page
+            return redirect('user_profile', username=request.user.username)
+    else:
+        form = UserProfileForm(instance=user_profile)
+
+    return render(request, "update_profile.html", {"form": form})
+
+# About page
+
+def about_view(request):
+    # Your view logic for the 'about' page
+    return render(request, 'about.html')
+
+
+
+# Artists page
+
+from django.shortcuts import render
+from django.contrib.auth.models import User
+
+def artists_view(request):
+    # Get all users (artists)
+    artists = User.objects.all()
+
+    return render(
+        request, "artists.html", {"artists": artists}
+    )
