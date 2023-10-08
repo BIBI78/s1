@@ -65,34 +65,15 @@
                                    
                                 </ul>
                                 <!--  -->
-                            
-                            
-                            
-                            
-                            <!-- <div class="mt-3">
-                                {% if request.user.is_authenticated and post.author == user%}
-                                <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
-                                <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
-                                {% endif %}
-                            </div> -->
-
-                                <!-- debug -->
-                                <!-- BUG HERE -->
-                
-                                <div class="mt-3">
-                                    {% if request.user.is_authenticated %}
-                                    <p>Logged-in User: {{ request.user.username }}</p>
-                                    <p>Post Author: {{ post.author.username }}</p>
-                                    {% if post.author == request.user %}
-                                    <p>This post belongs to the logged-in user.</p>
-                                    <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
-                                    <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
-                                    {% else %}
-                                    <p>This post does not belong to the logged-in user.</p>
-                                    {% endif %}
-                                    {% endif %}
-                                </div>
-                                <!-- debug -->
+                                        <div class="mt-3">
+                                            {% if request.user.is_authenticated %}
+                                            {% if post.author == request.user %}
+                                            <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
+                                            <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+                                            {% else %}
+                                            {% endif %}
+                                            {% endif %}
+                                        </div>
                             
                             
                             
