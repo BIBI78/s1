@@ -510,3 +510,7 @@ body {
     height: 10px;
     background-color: transparent;
 }
+
+.no-marker {
+    list-style-type: none;
+}
