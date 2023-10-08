@@ -22,23 +22,14 @@
                 <p><strong>City:</strong> {{ user.userprofile.city }}</p>
                 <p><strong>Bio:</strong> {{ user.userprofile.bio }}</p>
 
-                <!-- {% if request.user.is_authenticated and request.user == post.author %}
-                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-                 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
-                {% endif %} -->
+             
                 {% if request.user.is_authenticated and request.user == user %}
                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
                 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
                 {% endif %}
 
 
-                <!-- {% if request.user.is_authenticated %}
-                {% if post.author == request.user %}
-                        <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-                        <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
-                {% else %}
-                {% endif %}
-                {% endif %} -->
+              
 
             </div>
            
