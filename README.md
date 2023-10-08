@@ -2,20 +2,17 @@
 
 ![Responsive screenshot](static/images-readme/responsive.png)
 
-# The purpose with this project
+# The main idea
 
-The purpose of this project is to create a simple "instagram-like" daily runenrs blog.
+This project is based on a fictious art gallery in Vienna. It allows artists to sign up then post and sell their artwork.
+Users sign up create a profile and post their work. I noticed on most gallery websites the gallery does really offer more information on the users previous works or backgrounds.They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it into 2023.
 
-All the information that Mentors write is automatically shared with the course administrator.
-
-During the MVP no external registrations of users is allowed so users that want to test need to contact the system administrator in order to receive access.
-
-Required technologies for this project:
+Required technologies:
 
 - HTML, CSS, JavaScript, Python+Django
 - Relational database
 
-A live version of this project can be found at this url: https://ms-dashboard2022.herokuapp.com/
+The live version url: https://SLATT/
 
 # Table of Content
 
@@ -23,22 +20,21 @@ A live version of this project can be found at this url: https://ms-dashboard202
   - [User Demographic](#user-demographic "User Demographic")
   - [User Goals](#user-goals "User goals")
   - [User Stories](#user-stories "User Stories")
-    - [Admin](#admin "Admin")
-    - [Mentor](#mentor "Mentor")
-  - [Project Purpose](#project-purpose "Project Purpose")
-  - [Design diagram](#design-diagram "Design diagram")
+    - [USER](#user "user")
+  - [Project Idea](#project-idea "Project Idea")
   - [Site Navigation](#site-navigation "Site Navigation")
   - [Database schema](#database-schema "Database schema")
 - [Features](#features "Features")
   - [Existing Features](#existing-features "Existing Features")
     - [Sign In](#sign-in "Sign In")
-    - [List of students](#list-of-students "List of students")
-    - [Student details](#student-details "Student details")
-    - [List of sessions](#List-of-sessions "List of sessions")
-    - [Create session](#create-session "Create session")
-    - [Session details](#session-details "Session details")
-    - [Edit session](#edit-session "Edit session")
-    - [Delete session](#delete-session "delete-session")
+    - [Home](#Home "Home")
+    - [About](#about "About")
+    - [Artists](#List-Of-Artists "List Of Artists")
+    - [Register](#register "Register")
+    - [Login](#login "Login")
+    - [Logout](#logout "Logout")
+    - [Profile](#profile-page "Profile Page")
+    - [Create Post](#create-post "Create-Post")
     - [Create note](#create-note "Create Note")
     - [Search student](#search-student "Search Student")
     - [Search results](#search-results "Search Results")

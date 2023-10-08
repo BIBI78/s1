@@ -15,29 +15,38 @@
         </div>
         
 
-        <div class="row">
-            
+        <div class="row"> 
             <div class="col-md-6">
                 <h1>{{ user.username }}</h1>
                 <p><strong>Name:</strong> {{ user.userprofile.name }} </p>
                 <p><strong>City:</strong> {{ user.userprofile.city }}</p>
                 <p><strong>Bio:</strong> {{ user.userprofile.bio }}</p>
 
-               
-                {% if request.user.is_authenticated and request.user == post.author %}
-
-                <a href="{% url 'update_post' post.slug %}" class="update-btn">update</a>
-                <a href="{% url 'delete_post' post.slug %}" class="delete-btn">delete</a>
+                <!-- {% if request.user.is_authenticated and request.user == post.author %}
+                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
+                 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
+                {% endif %} -->
+                {% if request.user.is_authenticated and request.user == user %}
+                <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
+                <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
                 {% endif %}
-            </div>
-        </div>
 
+
+                <!-- {% if request.user.is_authenticated %}
+                {% if post.author == request.user %}
+                        <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
+                        <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
+                {% else %}
+                {% endif %}
+                {% endif %} -->
+
+            </div>
            
-    
-<ul class = "list-unstyled info-list text-muted no-marker" >
-    {% for post in user_posts %}
-    <li>
-    <div class="col-md-4 mx-auto">
+        </div> 
+                    <ul class = "list-unstyled info-list text-muted no-marker" >
+                         {% for post in user_posts %}
+                            <li>
+                            <div class="col-md-4 mx-auto">
         
                             
                             
@@ -74,10 +83,6 @@
                                             {% endif %}
                                             {% endif %}
                                         </div>
-                            
-                            
-                            
-           
         </div>
     </div>
     </li>
