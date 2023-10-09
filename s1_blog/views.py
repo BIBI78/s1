@@ -1,4 +1,9 @@
-from django.http import HttpResponseForbidden, HttpResponseRedirect, JsonResponse
+from django.http import (
+    HttpResponseForbidden,
+    HttpResponseRedirect,
+    JsonResponse,
+)
+
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from django.contrib.auth.decorators import login_required
@@ -12,10 +17,14 @@ from django.urls import reverse_lazy
 from .models import Post, Comment, UserProfile
 from .forms import CommentForm, CreatePostForm, UserProfileForm
 
+
 class PostDetail(View):
     """
-    Display the details of a post, allow users to view and add comments, and handle post liking.
-    """
+Display the details of a post.
+
+This view allows users to view and add comments to the post,
+and handle post liking.
+"""
 
     def get(self, request, slug, *args, **kwargs):
         """
@@ -132,7 +141,9 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
         if post.author == self.request.user:
             return super().get(request, *args, **kwargs)
         else:
-            return HttpResponseForbidden("You don't have permission to delete this post.")
+            return HttpResponseForbidden(
+             "You don't have permission to delete this post."
+            )
 
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
@@ -149,7 +160,9 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         if post.author == self.request.user:
             return super().get(request, *args, **kwargs)
         else:
-            return HttpResponseForbidden("You don't have permission to edit this post.")
+            return HttpResponseForbidden(
+                "You don't have permission to edit this post."
+            )
 
     def get_success_url(self):
         """
@@ -169,7 +182,9 @@ def delete_profile(request):
         user_profile.delete()
         return redirect("home")
 
-    return render(request, "delete_profile.html", {"user_profile": user_profile})
+    return render(
+    request, "delete_profile.html", {"user_profile": user_profile}
+)
 
 
 def register(request):
@@ -234,15 +249,20 @@ def get_paginated_posts(request, page_number):
     """
     Retrieve paginated posts in JSON format.
     """
-    # Calculate the starting and ending index for the posts based on the page number.
+    # Calculate the starting and ending index for the posts
+    # based on the page number.
+
     per_page = 100
     start_index = (page_number - 1) * per_page
     end_index = page_number * per_page
 
     # Retrieve the posts from the database.
-    posts = Post.objects.filter(status=1).order_by("-created_on")[start_index:end_index]
+    posts = Post.objects.filter(status=1).order_by("-created_on")[
+        start_index:end_index
+    ]
 
-    serialized_posts = [{'title': post.title, 'content': post.content} for post in posts]
+    serialized_posts = [{'title': post.title, 'content': post.content}
+                        for post in posts]
 
     return JsonResponse({'posts': serialized_posts})
 
@@ -258,7 +278,10 @@ def update_profile(request):
         user_profile = None
 
     if request.method == "POST":
-        form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
+        form = UserProfileForm(
+            request.POST, request.FILES, instance=user_profile
+        )
+
         if form.is_valid():
             if user_profile is None:
                 # Create a new UserProfile object if it doesn't exist
@@ -293,4 +316,3 @@ def artists_view(request):
     return render(
         request, "artists.html", {"artists": artists}
     )
-
