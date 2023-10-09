@@ -213,7 +213,7 @@ def delete_comment(request, comment_id):
 
         # Redirect back to the previous page or a default page
         referer = request.META.get('HTTP_REFERER')
-        return redirect(referer or 'home')
+        return redirect(referer or 'home')  
 
     else:
         return redirect("unauthorized")
@@ -228,6 +228,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 100
+
 
 
 def get_paginated_posts(request, page_number):
@@ -245,6 +246,9 @@ def get_paginated_posts(request, page_number):
     serialized_posts = [{'title': post.title, 'content': post.content} for post in posts]
 
     return JsonResponse({'posts': serialized_posts})
+
+
+
 
 
 @login_required
@@ -283,6 +287,8 @@ def about_view(request):
     return render(request, 'about.html')
 
 
+
+
 def artists_view(request):
     """
     Display the 'artists' page with a list of all users (artists).
@@ -293,4 +299,3 @@ def artists_view(request):
     return render(
         request, "artists.html", {"artists": artists}
     )
-

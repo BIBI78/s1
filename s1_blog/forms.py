@@ -1,6 +1,7 @@
 from django import forms
 from .models import Comment, Post, UserProfile
 
+
 class CommentForm(forms.ModelForm):
     """
     Form for creating a new comment.
@@ -11,12 +12,14 @@ class CommentForm(forms.ModelForm):
 
     body = forms.CharField(
         label='',  # Set an empty label
-        widget=forms.Textarea(attrs={'rows': 4, 'cols': 40})  # Adjust rows and cols as needed
+        widget=forms.Textarea(attrs={'rows': 4, 'cols': 40})
+        # Adjust rows and cols as needed
     )
 
     class Meta:
         model = Comment
         fields = ['body']
+
 
 class CreatePostForm(forms.ModelForm):
     """
@@ -33,8 +36,14 @@ class CreatePostForm(forms.ModelForm):
         fields = ['title', 'content', 'location', 'price', 'featured_image']
 
     location = forms.CharField(max_length=100, label='Location', required=True)
-    price = forms.DecimalField(max_digits=10, decimal_places=2, label='Price', required=True)
+    price = forms.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        label='Price',
+        required=True)
+
     featured_image = forms.ImageField(label='Featured Image', required=False)
+
 
 class UserProfileForm(forms.ModelForm):
     """

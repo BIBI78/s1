@@ -5,6 +5,7 @@ from datetime import timedelta
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Post(models.Model):
     """
     Represents a blog post.
@@ -15,9 +16,11 @@ class Post(models.Model):
         author (ForeignKey): The author of the blog post.
         featured_image (CloudinaryField): The featured image for the blog post.
         excerpt (TextField): A brief excerpt or summary of the blog post.
-        updated_on (DateTimeField): The date and time when the post was last updated.
+        updated_on (DateTimeField): The date and time when the post was last
+        updated.
         content (TextField): The main content of the blog post.
-        created_on (DateTimeField): The date and time when the post was created.
+        created_on (DateTimeField): The date and time when
+        the post was created.
         status (IntegerField): The status of the post (Draft or Published).
         likes (ManyToManyField): Users who liked the blog post.
         price (DecimalField): The price associated with the post.
@@ -56,6 +59,7 @@ class Post(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
+
 class Comment(models.Model):
     """
     Represents a comment on a blog post.
@@ -65,7 +69,8 @@ class Comment(models.Model):
         name (CharField): The name of the commenter.
         email (EmailField): The email address of the commenter.
         body (TextField): The content of the comment.
-        created_on (DateTimeField): The date and time when the comment was created.
+        created_on (DateTimeField): The date and time when the
+        comment was created.
         approved (BooleanField): Indicates if the comment is approved.
 
     Meta:
@@ -86,6 +91,7 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
 
+
 class UserProfile(models.Model):
     """
     Represents a user profile.
@@ -103,9 +109,13 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
+    profile_picture = models.ImageField(
+        upload_to='profile_pictures/',
+        blank=True,
+        null=True
+    )
     city = models.CharField(max_length=100, blank=True)
     name = models.CharField(max_length=100, blank=True)
-    
+
     def __str__(self):
         return self.user.username
