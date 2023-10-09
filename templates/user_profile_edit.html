@@ -7,9 +7,12 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card">
+                {% if not user.userprofile.profile_picture %}
+                <img src="{% static 'images/default_profile_picture.png' %}" width="100%">
+                {% else %}
                 <img src="{{ user.userprofile.profile_picture.url }}" class="card-img-top" alt="{{ user.username }}">
+                {% endif %}
                 <div class="card-body">
-
                 </div>
             </div>
         </div>
@@ -22,23 +25,14 @@
                 <p><strong>City:</strong> {{ user.userprofile.city }}</p>
                 <p><strong>Bio:</strong> {{ user.userprofile.bio }}</p>
 
-                <!-- {% if request.user.is_authenticated and request.user == post.author %}
-                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-                 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
-                {% endif %} -->
+
                 {% if request.user.is_authenticated and request.user == user %}
                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
                 <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
                 {% endif %}
 
 
-                <!-- {% if request.user.is_authenticated %}
-                {% if post.author == request.user %}
-                        <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-                        <a href="{% url 'delete_profile' %}" class="delete-btn">Delete Profile</a>
-                {% else %}
-                {% endif %}
-                {% endif %} -->
+
 
             </div>
 
@@ -51,9 +45,22 @@
 
 
                     <div class="image-container">
+                        {% if "placeholder" in post.featured_image.url %}
+                        <img src="{% static 'images/gb.png' %}" class="gold-border">
+                        <img src="{% static 'images/default-image.webp' %}" width="100%">
+                        <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                        {% else %}
+
                         <img src="{% static 'images/gb.png' %}" class="gold-border">
                         <img class="card-img-top" src="{{ post.featured_image.url }}">
                         <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                        {% endif %}
+
+
+                        <!-- <img src="{% static 'images/gb.png' %}" class="gold-border">
+                                    <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border"> -->
+
                         <div class="image-flash">
                         </div>
                     </div>

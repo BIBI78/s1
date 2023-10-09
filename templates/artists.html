@@ -9,28 +9,18 @@
         <div class="col-md-3">
             <div class="artist-profile">
                 <a href="{% url 'user_profile' artist.username %}">
-
-
                     <div class="image-container">
-                        <!-- {% if artist.userprofile.profile_picture %}
-                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}" class="profile-image">
-                        {% else %}
-                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}" class="profile-image">
-                        {% endif %}
-                        -->
                         {% if artist.userprofile.profile_picture %}
-                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}" class="profile-image">
+                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}"
+                            class="profile-image">
                         {% else %}
-                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}" class="profile-image">
+                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}"
+                            class="profile-image">
                         {% endif %}
-                       
-                        
                     </div>
-
-
-                    <!-- </div> -->
                 </a>
-                <p class="artist-name"><a href="{% url 'user_profile' artist.username %}"> @{{ artist.username }}</a></p>
+                <p class="artist-name"><a href="{% url 'user_profile' artist.username %}"> @{{ artist.username }}</a>
+                </p>
             </div>
         </div>
         {% endfor %}

@@ -184,7 +184,7 @@ def delete_comment(request, comment_id):
         return redirect("unauthorized")
 
 
-# attempt at infinite scroll
+
 
 class PostList(generic.ListView):
     model = Post
@@ -211,16 +211,6 @@ def get_paginated_posts(request, page_number):
 
 
 # UPDATE USER PROFILE 
-
-
-def user_profile(request, username):
-    user = get_object_or_404(User, username=username)
-    user_posts = Post.objects.filter(author=user)
-
-    return render(
-        request, "user_profile.html", {"user": user, "user_posts": user_posts}
-    )
-
 
 from django.urls import reverse_lazy
 from django.shortcuts import redirect
@@ -269,3 +259,19 @@ def artists_view(request):
     return render(
         request, "artists.html", {"artists": artists}
     )
+
+
+# Artists views 
+
+# def artists_view(request):
+#     artists = User.objects.all()
+
+#     return render(
+#         request, "artists.html", {"artists": artists}
+#     )
+# def artist_detail_view(request, username):
+#     artist = get_object_or_404(User, username=username)
+
+#     return render(
+#         request, "artist_detail.html", {"artist": artist}
+#     )
