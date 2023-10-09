@@ -1,6 +1,10 @@
-from django.http import HttpResponseForbidden, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponseForbidden
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
+from django.http import HttpResponseRedirect
+from .models import Post, Comment, UserProfile
+from .forms import CommentForm, CreatePostForm, UserProfileForm
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -8,9 +12,12 @@ from django.views.generic.edit import DeleteView, UpdateView
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.http import JsonResponse
+from .models import Post
 from django.urls import reverse_lazy
-from .models import Post, Comment, UserProfile
-from .forms import CommentForm, CreatePostForm, UserProfileForm
+from django.shortcuts import redirect
+from django.shortcuts import render
+from django.contrib.auth.models import User
 
 class PostDetail(View):
     """

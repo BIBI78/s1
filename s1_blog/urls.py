@@ -2,7 +2,6 @@ from . import views
 from django.urls import path
 from .views import create_post
 
-
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path('create/', create_post, name='create_post'),
@@ -18,12 +17,8 @@ urlpatterns = [
     path('get_paginated_posts/<int:page_number>/', views.get_paginated_posts, name='get_paginated_posts'),
     path('<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
     path('user_profile/<str:username>/', views.user_profile, name='user_profile'),
-
-    # path('artists/<str:username>/', views.artist_detail_view, name='artist_detail'),
-    # path('artists/', views.artists_view, name='artists'),
-    # path('user_profile/<str:username>/', views.user_profile, name='user_profile'),
-    # path('artist_detail/<str:username>/', views.artist_detail_view, name='artist_detail'),
 ]
+
 
 
 
