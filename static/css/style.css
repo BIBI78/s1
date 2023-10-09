@@ -263,10 +263,10 @@ ul {
 .like-icon {
     color: black;
     transition: color 0.3s;
+}
 
-    &:hover {
-        color: red;
-    }
+.like-icon:hover {
+    color: red;
 }
 
 .delete-comment {
@@ -385,7 +385,3 @@ ul {
     background-color: transparent;
 }
 
-/* this not working  */
-.no-marker {
-    list-style-type: none;
-}
