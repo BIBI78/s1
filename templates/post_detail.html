@@ -4,12 +4,8 @@
 
 {% block content %}
 <div class="container">
-
     <div class="row">
-
         <div class="col-md-6">
-            <!-- <div class="col-md-4 mx-auto"> -->
-            <!-- <div class="post-image"> -->
             <div class="image-container">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="{% static 'images/gb.png' %}" class="gold-border">
@@ -21,26 +17,20 @@
                 <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
                 {% endif %}
             </div>
-
         </div>
     </div>
     <div class="col-md-6">
-
-
-
+        <!-- Post Info -->
     </div>
-
-
 </div>
-<!-- POST INFO  -->
+
+<!-- POST INFO -->
 <div class="post-section">
     <h1 class="post_title">{{ post.title }}</h1>
-        <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
-    <!-- <p class="post_subtitle text-muted">{{ post.created_on }}</p> -->
+    <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
     <div class="post-content">
-    {{ post.content | safe }}
+        {{ post.content | safe }}
     </div>
-    <!-- <hr class="invisible-hr"> -->
 
     <div class="post-interactions">
         <div class="likes">
@@ -69,54 +59,43 @@
     </div>
 </div>
 
-    <div class="row">
-        <div class="col">
-            <!-- <hr> -->
-            <hr class="invisible-hr">
-
-        </div>
+<div class="row">
+    <div class="col">
+        <hr class="invisible-hr">
     </div>
+</div>
 
-    <!-- NEEDS TO BE CENTERED  -->
-    <!-- comments -->
-    <div class="row comment-row">
-        <div class="col-md-8">
-            <h3>comments:</h3>
-            <div class="comments-list">
-                {% for comment in comments %}
-                <div class="comment">
-                    <p class="commenter">
-                        {{ comment.name }}
-
-                        <span class="comment-date">{{ comment.created_on }}</span>
-
-                        {% if comment.name == user.username %}
-                        <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
-                        {% endif %}
-                    </p>
-
-                    <p class="comment-body">{{ comment.body | linebreaks }}</p>
-                </div>
-                {% endfor %}
+<!-- Comments -->
+<div class="row comment-row">
+    <div class="col-md-8">
+        <h3>comments:</h3>
+        <div class="comments-list">
+            {% for comment in comments %}
+            <div class="comment">
+                <p class="commenter">
+                    {{ comment.name }}
+                    <span class="comment-date">{{ comment.created_on }}</span>
+                    {% if comment.name == user.username %}
+                    <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
+                    {% endif %}
+                </p>
+                <p class="comment-body">{{ comment.body | linebreaks }}</p>
             </div>
+            {% endfor %}
         </div>
-        <!-- comment here  -->
-
-        <div class="col-md-4">
-            {% if user.is_authenticated %}
-            <h3>leave a comment or bid:</h3>
-            <p>{{ user.username }}:</p>
-            <form method="post">
-
-                {{ comment_form | crispy }}
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signup btn-lg">submit</button>
-            </form>
-
-            {% endif %}
-        </div>
-        <!--  -->
-
     </div>
+
+    <div class="col-md-4">
+        {% if user.is_authenticated %}
+        <h3>leave a comment or bid:</h3>
+        <p>{{ user.username }}:</p>
+        <form method="post">
+            {{ comment_form | crispy }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
 </div>
 {% endblock content %}

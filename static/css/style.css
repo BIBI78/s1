@@ -8,22 +8,11 @@ body {
     font-weight: 700;
     color: #4A4A4F;
 }
+
 /* MAIN COLORS */
-
-
-.runner-logo{
+.runner-logo {
     font-weight: bolder;
     color: goldenrod;
-}
-
-.tricolor {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    background-image: linear-gradient(#ff14bc, #fff70c, #084eff);
-    -webkit-background-clip: text;
-    background-size: 100%;
-
 }
 
 .thin {
@@ -38,11 +27,7 @@ body {
     background-color: black;
 }
 
-.dark-bg-footer {
-    /* background-color:#daa5207d ; */
-    
-}
-
+.dark-bg-footer {}
 
 .main-bg {
     background-color: #F9FAFC;
@@ -52,19 +37,10 @@ body {
     border: none;
     background-color: transparent;
 }
-.card-title{
+
+.card-title {
     font-weight: 600;
 }
-
-
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-} */
-
 
 .author {
     color: black;
@@ -82,7 +58,6 @@ body {
 }
 
 .masthead-text {
-    /* background-color: #445261; */
     color: black;
     position: relative;
 }
@@ -113,7 +88,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color:blue ;
+    color: blue;
 }
 
 .post-title {
@@ -162,7 +137,7 @@ body {
     border: none;
 }
 
-.delete-btn{
+.delete-btn {
     color: red;
     background: transparent;
     border: none;
@@ -173,6 +148,7 @@ body {
     background: transparent;
     border: none;
 }
+
 .gold-border {
     width: 40%;
     height: 40%;
@@ -180,56 +156,29 @@ body {
     padding: 2%;
 }
 
-
-/* USER PROFILE POSTS IMAGES */
-
-
-/* .user-posts {
-    max-width: 100%;
-    width: auto;
-    padding: 0;
-    margin: 0 auto;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    overflow: hidden;
-}
-
-
 .user-posts img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-
 @media (max-width: 768px) {
     .user-posts img {
         max-width: 100%;
     }
-} */
-
-/* media query for screens larger than 768px (laptops) */
-
+}
 
 @media (min-width: 769px) {
     .user-posts img {
         max-width: 100%;
-        max-height:30%;
-
+        max-height: 30%;
     }
 }
-
-/* _________________ */
-
-
-/* gold border css */
 
 @media (min-width: 769px) {
     .user-posts img {
         max-width: 42%;
         margin-left: 30%;
-        
     }
 
     .gold-border {
@@ -240,81 +189,63 @@ body {
     }
 }
 
-/* Style for the gold border image outside the media query */
 .gold-border {
-    /* default styles for smaller screens */
     width: 40%;
     height: 40%;
     margin-left: 29%;
     padding: 2%;
 }
 
-
-
-
 /* USER POSTS DETAILS */
-.post_detail_image{
-        max-width: 100%;
-        width: auto;
-        padding: 0;
-        margin: 0 auto;
-        background-color: transparent;
-    
+.post_detail_image {
+    max-width: 100%;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+    background-color: transparent;
 }
 
-
-.post_title{
+.post_title {
     color: black;
-    /* font-family: 'Times New Roman', Times, serif; */
 }
 
-.post_subtitle{
+.post_subtitle {
     color: black;
-    
 }
 
-.comment-date{
-   
+.comment-date {
     font-weight: 600;
     color: goldenrod;
-
 }
 
-.commenter{
-   
+.commenter {
     font-weight: 600;
-    color:black;
+    color: black;
 }
 
-
-.footer{
+.footer {
     color: goldenrod;
-    
 }
 
 /* INDEX HMTL */
-
-.info-list{
+.info-list {
     font-weight: 700;
-
 }
 
- .loading{
+.loading {
     font-weight: 400;
-   }
+}
 
-   /* USER PROFILE PAGE */
-   /* user profile remove bullets */
- ul{
+/* USER PROFILE PAGE */
+/* user profile remove bullets */
+ul {
     list-style: none;
     padding: 0;
     margin: 0;
-         }
-
+}
 
 /* FOOTER */
-.footer-text{
-    
+.footer-text {
     color: black;
 }
 
@@ -324,81 +255,60 @@ body {
     border-color: rgba(0, 0, 0, 0);
 }
 
-.author-link{
-    
+.author-link {
     text-decoration: none;
     font-weight: 900;
-    
-
 }
 
 .like-icon {
-    /* Set the initial color */
     color: black;
-    /* You can set your preferred initial color here */
     transition: color 0.3s;
-    /* Add a smooth transition effect */
 
-    /* Change color on hover */
     &:hover {
         color: red;
-        /* Change the color to red on hover */
     }
 }
 
-.delete-comment{
+.delete-comment {
     color: red;
 }
 
-.col{
+.col {
     flex: none;
 }
-.btn-comment:hover{
-    color:blue ;
+
+.btn-comment:hover {
+    color: blue;
 }
 
 .comment-row {
     margin-left: 10px;
     margin-right: 10px;
-    
 }
 
-.post-content{
+.post-content {
     margin-left: 10px;
     margin-right: 10px;
-       
-
 }
 
+.slideshow {
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
 
+.slideshow img {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
+.slideshow img.active {
+    opacity: 1;
+}
 
-        .slideshow {
-            max-width: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-    
-        .slideshow img {
-            width: 100%;
-            position: absolute;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            /* Define the transition */
-        }
-    
-        .slideshow img.active {
-            opacity: 1;
-            /* Make the active image fully visible */
-        }
-
-
-
-
-
-
-/* IMAGE CONTAINER  */
-
+/* IMAGE CONTAINER */
 
 /* 576px */
 .image-container {
@@ -406,20 +316,11 @@ body {
     margin: 0 auto;
 }
 
-
-
-
 /* About page */
 .about-image-small {
     max-width: 100%;
-    /* Adjust the width as needed */
     height: auto;
-    /* This maintains the image's aspect ratio */
 }
-
-
-
-
 
 /* Add this to your CSS file to style the artist profiles */
 .artists-heading {
@@ -456,7 +357,6 @@ body {
 
 .artist-name a:hover {
     color: goldenrod;
-    
 }
 
 .gold-border-profile {
@@ -467,19 +367,16 @@ body {
     bottom: 0;
     margin: auto;
     max-width: 100%;
-    /* Ensure the gold border images don't overflow */
 }
 
 /* Post info */
 .content-wrapper {
     margin-left: 25px;
-    
 }
 
 /* Post details */
 .post-section {
     margin-left: 50px;
-    
 }
 
 .invisible-hr {
@@ -487,8 +384,8 @@ body {
     height: 10px;
     background-color: transparent;
 }
-/* this not working  */
 
+/* this not working  */
 .no-marker {
     list-style-type: none;
 }
