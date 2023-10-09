@@ -12,10 +12,19 @@
 
 
                     <div class="image-container">
-                        <!-- <img src="{% static 'images/gb.png' %}" class="gold-border-profile"> -->
-                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}"
-                            class="profile-image">
-                        <!-- <img src="{% static 'images/gbbottom.png' %}" class="gold-border-profile"> -->
+                        <!-- {% if artist.userprofile.profile_picture %}
+                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}" class="profile-image">
+                        {% else %}
+                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}" class="profile-image">
+                        {% endif %}
+                        -->
+                        {% if artist.userprofile.profile_picture %}
+                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}" class="profile-image">
+                        {% else %}
+                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}" class="profile-image">
+                        {% endif %}
+                       
+                        
                     </div>
 
 
@@ -27,4 +36,4 @@
         {% endfor %}
     </div>
 </div>
-{% endblock %},
+{% endblock %}
