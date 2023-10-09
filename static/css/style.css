@@ -371,21 +371,7 @@ body {
 }
 
 
-/* SLIDESHOW */
-    /* .slideshow {
-       max-width: 400px;
-      
-       overflow: hidden;
-       
-   }
 
-   .slideshow img {
-       width: 100%;
-       display: none;
-       
-   } 
-
-   */
 
         .slideshow {
             max-width: 400px;
@@ -434,15 +420,6 @@ body {
 
 
 
-/* Artists page */
-
-
-/* .profile-image {
-    max-width: 100px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-} */
 
 /* Add this to your CSS file to style the artist profiles */
 .artists-heading {

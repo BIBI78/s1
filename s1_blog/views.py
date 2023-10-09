@@ -261,17 +261,3 @@ def artists_view(request):
     )
 
 
-# Artists views 
-
-# def artists_view(request):
-#     artists = User.objects.all()
-
-#     return render(
-#         request, "artists.html", {"artists": artists}
-#     )
-# def artist_detail_view(request, username):
-#     artist = get_object_or_404(User, username=username)
-
-#     return render(
-#         request, "artist_detail.html", {"artist": artist}
-#     )

@@ -5,10 +5,11 @@
 
 <head>
     <title>Kunstgalerie Wien</title>
-<!-- new font attempt -->
+
 <link href="https://db.onlinewebfonts.com/c/be9a43357e0fe07642191e4b32995385?family=Avenir+Next+LT+W02+Regular"
     rel="stylesheet">
-<!--  -->
+
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -19,7 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="icon" href="data:">
+    <link rel="stylesheet icon" href="{% static 'css/style.css' %}">
+ 
+
 
 </head>
 
@@ -67,10 +71,7 @@
         </li>
 
         
-        <!-- BUG -->
-        <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'user_profile' user.username %}">Profile</a>
-        </li> -->
+       
         <li class="nav-item">
             <a class="nav-link" href="{% url 'user_profile' request.user.username %}">Profile</a>
         </li>
