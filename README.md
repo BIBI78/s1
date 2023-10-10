@@ -23,8 +23,8 @@ The live version url: https://SLATT/
     - [USER](#user "user")
   - [Project Idea](#project-idea "Project Idea")
   - [Site Navigation](#site-navigation "Site Navigation")
-  - [Database schema](#database-schema "Database schema")
-- [Features](#features "Features")
+  - [Design Inception](#design-inception "Design Inception")
+  - [Features](#features "Features")
   - [Existing Features](#existing-features "Existing Features")
     - [Sign In](#sign-in "Sign In")
     - [Home](#Home "Home")
@@ -35,12 +35,11 @@ The live version url: https://SLATT/
     - [Logout](#logout "Logout")
     - [Profile](#profile-page "Profile Page")
     - [Create Post](#create-post "Create-Post")
-    - [Edit Post](#edit-post "edit post")
+    - [Edit Post](#edit-post "Edit Post")
     - [Edit Profile](#edit-profile "Edit Profile")
     - [Comment](#comment "Comment")
-    - [Delete comment](#delete-comment "delete-comment")
-    
-  - [Features I woudl have like to implement](#features-i-would-have-liked-to-implement "Features I would have liked to implement")
+    - [Delete Comment](#delete-comment "delete-comment")
+  - [Features I would have liked to implement](#features-i-would-have-liked-to-implement "Features I would have liked to implement")
 - [Languages used](#languages-used "Languages used")
   - [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
   - [Installed packages](#installed-packages "Installed packages")
@@ -58,20 +57,19 @@ The live version url: https://SLATT/
 
 This application is ment for:
 
-- Artists and Art enthusiastis 
-
+- Artists and Art enthusiastis
 
 ### User Goals
 
-To have all information stored in one place that is related to the interactions between mentor/students and mentors/course administrators. To have a good overview of how many sessions and interactions that has taken place and also a place to store information regarding these interactions in the form of notes.
+The users get to display thier artwork simply and easily among other like minded contemporary artists and potential buyers in and outside of Vienna.
 
 ### User Stories
 
-The following user stories has been implemented in the project. User Stories are based on two types of users, the course manager and the mentor. More user stories will be implemented in future versions.
+The following user stories has been implemented in the project. The user storires are based centred around users want to sign up and post, comment and be apart of the gallery.
 
 #### Admin
 
-As a **course manager/admin** I can **create a mentor profile** so that **the mentor can use the dashboard as a tool**
+As a **admin** I can **create a mentor profile** so that **the mentor can use the dashboard as a tool**
 
 As a **course manager/admin** I can **view a list of mentors** so that **I can select one and connect the mentor to a student**
 
@@ -83,9 +81,9 @@ As a **course manager/admin** I can **view a list of students** so that **I can 
 
 As a **course manager/admin** I can **select a student** so that **I can change the students selected mentor**
 
-#### Mentor
+#### USER
 
-As a **mentor** I can **view a list of students** so that **I can see the ones assigned to me**
+As a **USER** I can **view a list of students** so that **I can see the ones assigned to me**
 
 As a **mentor** I can **select a student from the list of students** so that **I can see the students profile**
 
@@ -105,18 +103,20 @@ As a **Mentor** I can **log the time I spent on a session** so that **I can get 
 
 As a **Mentor** I can **visit my profile page** so that **I can see the total time I spent on sessions**
 
-### Project Purpose
+### Project Goal
 
-From Code Institutes assessment guide:
+Demonstrate CRUD functionailty, database manipulation and an understanding of Django frameworks + HTLM , CSS, JavaScript and Python.
 
-In this project, you'll build a Full-Stack site based on business logic used to control a centrally-owned dataset. You will set up an authentication mechanism and provide role-based access to the site's data or other activities based on the dataset.
+### Design Inception
 
-### Design diagram
+Initially the project was going to be a runner-instragram like app. So I started the main design ideas with that in mind. But to do what I wanted would require more knowledge than I currently possess and the design was simply ugly. So in the end I opted for something eqaully close to my hear , art , more specifially painting and Vienna.
 
-The idea of MDash was to keep it simple. Focusing on the data and the CRUD was the initial intention and using Bootstrap as much as possible. The initial design templates was very simple. Focus was to be able to incoorporate all the user stories in a clean, neat and functional way.
+The idea which at the heart was supposed to be instagram in spirit is actually quite simple and based on modern art gallery sites found in New York city.
+The crud fucntionality came pretty simply after I had settled on an idea.
+![Runner app example](static/images/runner1.png/)
+When I ditched the "Runner app " idea and settled on the art gallery idea everything clicked and I could see the design in my head exactly behinds the scenes.
+![Gallery example 1](static/images/wien1.png/)
 
-![Wireframe1](static/images-readme/wire1.png)
-![Wireframe2](static/images-readme/wire2.png)
 ![Wireframe3](static/images-readme/wire3.png)
 
 ### Site navigation
