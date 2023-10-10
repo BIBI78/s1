@@ -117,11 +117,11 @@ The crud fucntionality came pretty simply after I had settled on an idea.
 When I ditched the "Runner app " idea and settled on the art gallery idea everything clicked and I could see the design in my head exactly behinds the scenes.
 ![Gallery example 1](static/images/wien1.png/)
 
-![Wireframe3](static/images-readme/wire3.png)
-
 ### Site navigation
 
-![Site navigation](static/images-readme/sitenav.png)
+Two version to view to the navigation.
+![Site Navigation 1](static/images/nav1.png/)
+![Site Naviation 2](static/images/nav2.png/)
 
 ### Database Schema
 
