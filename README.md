@@ -5,7 +5,7 @@
 # The main idea
 
 This project is based on a fictious art gallery in Vienna. It allows artists to sign up then post and sell their artwork.
-Users sign up create a profile and post their work. I noticed on most gallery websites the gallery does really offer more information on the users previous works or backgrounds.They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it into 2023.
+Users sign up create a profile and post their work. I noticed on most gallery websites the gallery doesnt really offer more information on the artists/users previous works or backgrounds .They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it slighlty into 2023.
 
 Required technologies:
 
@@ -35,12 +35,12 @@ The live version url: https://SLATT/
     - [Logout](#logout "Logout")
     - [Profile](#profile-page "Profile Page")
     - [Create Post](#create-post "Create-Post")
-    - [Create note](#create-note "Create Note")
-    - [Search student](#search-student "Search Student")
-    - [Search results](#search-results "Search Results")
-    - [Time Report](#time-report "Time Report")
-    - [Course Admin Features](#course-admin-features "Course Admin Features")
-  - [Features Left to Implement](#features-left-to-implement "Features Left to Implement")
+    - [Edit Post](#edit-post "edit post")
+    - [Edit Profile](#edit-profile "Edit Profile")
+    - [Comment](#comment "Comment")
+    - [Delete comment](#delete-comment "delete-comment")
+    
+  - [Features I woudl have like to implement](#features-i-would-have-liked-to-implement "Features I would have liked to implement")
 - [Languages used](#languages-used "Languages used")
   - [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
   - [Installed packages](#installed-packages "Installed packages")
@@ -58,8 +58,8 @@ The live version url: https://SLATT/
 
 This application is ment for:
 
-- All mentors that wants a tool to store information regarding their interactions with students.
-- All Course Administrators that wants to pair mentors and students and have access to the information.
+- Artists and Art enthusiastis 
+
 
 ### User Goals
 
