@@ -39,7 +39,7 @@ The live version url: https://SLATT/
     - [Edit Profile](#edit-profile "Edit Profile")
     - [Comment](#comment "Comment")
     - [Delete Comment](#delete-comment "delete-comment")
-  - [Features I would have liked to implement](#features-i-would-have-liked-to-implement "Features I would have liked to implement")
+  - [Features I would like to implement in the future](#Features-I-would-like-to-implement-in-the-future "Features I would have liked to implement")
 - [Languages used](#languages-used "Languages used")
   - [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
   - [Installed packages](#installed-packages "Installed packages")
@@ -137,16 +137,36 @@ Comment, Update, Delete
 
 ![Sign in](static/images/sign_in.png)
 
+### Home
+
+![Home](static/images/home.png)
+
+### About
+
+![About](static/images/about.png)
+
 #### Artists
 
 ![List of Artists](static/images/artists.png)
 
-#### Artist profile
+#### Profile
 
 ![Artist profile 1](static/images/profile1.png)
 ![Artist profile 2](static/images/profile2.png)
 
-### Create Profile
+### Register
+
+## create profile
+
+![Register](static/images/register.png)
+
+### Login
+
+![login](static/images/login.png)
+
+### Logout
+
+![logout](static/images/logout.png)
 
 #### Create Post
 
@@ -157,15 +177,19 @@ Comment, Update, Delete
 ![Post Details 1](static/images/postdetails.png)
 ![Post Details 2](static/images/postdetails2.png)
 
-#### Edit/Delete post
+#### Edit post
 
-When the user is logged they can update and delete their posts.
+## Edit & delete
+
+When the user is logged in they can update and delete their posts.
 
 ![Edit post ](static/images/crud1.png)
 ![Delete post ](static/images/delete1.png)
 ![Edit post ](static/images/delete1.png)
 
-### Edit/Delete Profile
+### Edit profile
+
+## Edit & Delete Profile
 
 When the user is logged in they can update and delete their profile.
 
@@ -175,18 +199,19 @@ When the user is logged in they can update and delete their profile.
 
 ### Comment
 
-Users can comment (and delete their comment) on other users posts.
+Users can comment on other users posts.
 ![comments ](static/images/comments.png)
 
-## Features Left to Implement
+### Delete comment 
+![delete comment  ](static/images/delete_comment.png)
 
-Following features are planned\_
+## Features I would like to implement in the future
 
-- Password reset function using email
-- Export of time report as csv
-- Registration function for students
-- Front end for Course administrators
-- File repository for upload on student profiles
+- Buy and mail artwork functionality
+- Artists recent exhibitons
+- A bidding system
+- Artist commission portal
+- More Javascript to the site
 
 [Back to top](#ms-dashboard)
 
@@ -228,12 +253,19 @@ Following features are planned\_
 
 ## Testing
 
-All testing in this project has been done manually during the development process, the project has not followed the principles of test driven development. Testing has for the most part followed the track of the user stories. Everytime a user story is concluded testing has occured. Each version has been tested before commited and the testing has been conducted in these steps:
+All testin has been done manually.
+Testing as much as possible is reflected in the user stories. 
+Testing has been done constantly throughout the manifestations of this project.
 
-- Code validation
-- Functionality (That it actually does what it is supposed to)
-- Bug elimination
-- CRUD (On those sections when this occur)
+This is more or less how testing was done
+
+- Does the code do what I want it to do?
+- Are there any bugs ?
+- Remove bugs
+- Test for CRUD functionality
+- Make code "pretty" 
+- Run through validator 
+
 
 During the development process a lot of bugs has been discovered. A portion of them are presented in the Bugs during development section.
 
