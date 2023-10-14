@@ -202,7 +202,8 @@ When the user is logged in they can update and delete their profile.
 Users can comment on other users posts.
 ![comments ](static/images/comments.png)
 
-### Delete comment 
+### Delete comment
+
 ![delete comment  ](static/images/delete_comment.png)
 
 ## Features I would like to implement in the future
@@ -254,7 +255,7 @@ Users can comment on other users posts.
 ## Testing
 
 All testin has been done manually.
-Testing as much as possible is reflected in the user stories. 
+Testing as much as possible is reflected in the user stories.
 Testing has been done constantly throughout the manifestations of this project.
 
 This is more or less how testing was done
@@ -263,15 +264,14 @@ This is more or less how testing was done
 - Are there any bugs ?
 - Remove bugs
 - Test for CRUD functionality
-- Make code "pretty" 
-- Run through validator 
+- Make code "pretty"
+- Run through validator
 
-
-During the development process a lot of bugs has been discovered. A portion of them are presented in the Bugs during development section.
-
-Functionality testing has been conducted by the author of the project together with selected class mates and selected resources that are aknowledged in the Credit section.
+There were not so many bugs but the bugs I did have were mostly sytanctial.
 
 ### Bugs during development
+
+## THE UPDATE EDIT USER THIING
 
 There have been several small bugs during development. Most of them has been resolved by fixing faulty syntax but also a lot of them has been caused by logical errors. More sever bugs have been:
 
@@ -302,9 +302,12 @@ All python code in this project is not perfect. Some are showing errors of lines
 
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
-![Validator testing](static/images-readme/cssvalidator.png)
+![Validator testing](static/images/w3c.css.png)
 
 ### Unfixed Bugs
+
+- I could not figure out how to rewrite this in way that passes.
+  ![Validator testing](static/images/linter_bug.png)
 
 - Responsiveness is bad on smaller screens. Been trying to fix it but for some reason it is problematic.
 - Notes can't be created withouth choosing student, auto fill is not working correctly
