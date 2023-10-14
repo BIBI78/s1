@@ -123,43 +123,32 @@ Two version to view to the navigation.
 ![Site Navigation 1](static/images/nav1.png/)
 ![Site Naviation 2](static/images/nav2.png/)
 
-
 ## Features
 
-Mdash consists of two main features for Mentors:
+Kunstgalerie Wien main features:
 
-Add information regarding a student
-Add information regarding a session with a student
-
-Course administrators main features are:
-
-Add a mentor
-Add a student
-Pair a mentor and a student
-Take part of information from mentors
+Login/Register
+Create post
+Comment, Update, Delete
 
 ### Existing Features
 
 #### Sign In
 
-![Sign in](static/images-readme/signin.png)
+![Sign in](static/images/signin.png)
 
-#### List of students
+#### Artists
 
-![List of students](static/images-readme/listofstudents.png)
+![List of Artists](static/images/artists.png)
 
-#### Student details
+#### Artist profile
 
-![Student details](static/images-readme/detailsstudent.png)
-![Student details 2](static/images-readme/detailsstudent2.png)
+![Artist profile1](static/images/profile1.png)
+![Artist profile 2](static/images/profile2.png)
 
-#### List of sessions
+#### Create Post
 
-![List of sessions](static/images-readme/listofsessions.png)
-
-#### Create session
-
-![Create Session](static/images-readme/createsession.png)
+![Create Post](static/images/create%20post.png)
 
 #### Session details
 
