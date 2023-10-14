@@ -135,7 +135,7 @@ Comment, Update, Delete
 
 #### Sign In
 
-![Sign in](static/images/signin.png)
+![Sign in](static/images/sign_in.png)
 
 #### Artists
 
@@ -143,45 +143,40 @@ Comment, Update, Delete
 
 #### Artist profile
 
-![Artist profile1](static/images/profile1.png)
+![Artist profile 1](static/images/profile1.png)
 ![Artist profile 2](static/images/profile2.png)
+
+### Create Profile
 
 #### Create Post
 
 ![Create Post](static/images/create%20post.png)
 
-#### Session details
+#### Post details
 
-![Session Details](static/images-readme/detailsession.png)
-![Session Details2](static/images-readme/summarysession.png)
+![Post Details 1](static/images/postdetails.png)
+![Post Details 2](static/images/postdetails2.png)
 
-#### Edit session
+#### Edit/Delete post
 
-![Edit session](static/images-readme/editsession.png)
+When the user is logged they can update and delete their posts.
 
-#### Delete session
+![Edit post ](static/images/crud1.png)
+![Delete post ](static/images/delete1.png)
+![Edit post ](static/images/delete1.png)
 
-![Delete session](static/images-readme/deletesession.png)
+### Edit/Delete Profile
 
-#### Create note
+When the user is logged in they can update and delete their profile.
 
-![Create note](static/images-readme/createnote.png)
+![Edit profile ](static/images/update_delete.png)
+![Delete profile ](static/images/delete_profile.png)
+![Update profile ](static/images/update_profile.png)
 
-#### Search student
+### Comment
 
-![Search student](static/images-readme/searchstudent.png)
-
-#### Search results
-
-![Search results](static/images-readme/searchresults.png)
-
-#### Time report
-
-![Time Report](static/images-readme/timereport.png)
-
-#### Course Admin Features
-
-Course administrators can do all the features as mentors in front-end. The course administrators use the django admin pane in this mvp for student and mentor creation. They also use the admin pane for pairing of students and mentors by creating a student-mentor-card.
+Users can comment (and delete their comment) on other users posts.
+![comments ](static/images/comments.png)
 
 ## Features Left to Implement
 
