@@ -61,7 +61,7 @@ This application is ment for:
 
 ### User Goals
 
-The users get to display thier artwork simply and easily among other like minded contemporary artists and potential buyers in and outside of Vienna.
+The users gets to display thier artwork simply and easily among other like minded contemporary artists and potential buyers in and outside of Vienna.
 
 ### User Stories
 
@@ -123,11 +123,6 @@ Two version to view to the navigation.
 ![Site Navigation 1](static/images/nav1.png/)
 ![Site Naviation 2](static/images/nav2.png/)
 
-### Database Schema
-
-![Schema](static/images-readme/schema.png)
-
-[Back to top](#ms-dashboard)
 
 ## Features
 
