@@ -1,8 +1,8 @@
-# MDash
+# Kunstgalerie Wien
 
 ![Responsive screenshot](static/images-readme/responsive.png)
 
-# The main idea
+# The Idea
 
 This project is based on a fictious art gallery in Vienna. It allows artists to sign up then post and sell their artwork.
 Users sign up create a profile and post their work. I noticed on most gallery websites the gallery doesnt really offer more information on the artists/users previous works or backgrounds .They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it slighlty into 2023.
@@ -73,35 +73,11 @@ As a **admin** I can **create a mentor profile** so that **the mentor can use th
 
 As a **course manager/admin** I can **view a list of mentors** so that **I can select one and connect the mentor to a student**
 
-As a **course manager/admin** I can **view a list of mentors** so that **I can select one to read details, edit or delete the mentor if needed.**
-
-As a **course manager/admin** I can **create a student profile** so that **I can add the student to a mentor**
-
-As a **course manager/admin** I can **view a list of students** so that **I can select one to read details, edit or delete the student if needed.**
-
-As a **course manager/admin** I can **select a student** so that **I can change the students selected mentor**
-
 #### USER
 
 As a **USER** I can **view a list of students** so that **I can see the ones assigned to me**
 
 As a **mentor** I can **select a student from the list of students** so that **I can see the students profile**
-
-As a **mentor** I can **read a student profile** so that **I can see the students name, email and course start date and end date**
-
-As a **mentor** I can **see a list of sessions in the student profile** so that **I can see the ones that have been conducted**
-
-As a **mentor** I can **create a session for a student** so that **I can write and save the date for the session, the duration of the session and add notes about the session**
-
-As a **mentor** I can **select session notes** so that **I can share them with the course manager**
-
-As a **mentor** I can **select a session** so that **I can edit the session details and delete it if necessary**
-
-As a **Mentor** I can **search for my students** so that **I can get quick and easy access to their profiles**
-
-As a **Mentor** I can **log the time I spent on a session** so that **I can get total time spent on students**
-
-As a **Mentor** I can **visit my profile page** so that **I can see the total time I spent on sessions**
 
 ### Project Goal
 
@@ -350,5 +326,4 @@ The outline for the README doc came from:
 
 ### Acknowledgment
 
-- My Advisor:[Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/)
-  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
+- My Advisor: [Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/)
