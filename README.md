@@ -75,9 +75,21 @@ As a **course manager/admin** I can **view a list of mentors** so that **I can s
 
 #### USER
 
-As a **USER** I can **view a list of students** so that **I can see the ones assigned to me**
+As a **USER** I can **create a profile** so that **I can log in**
 
-As a **mentor** I can **select a student from the list of students** so that **I can see the students profile**
+As a **USER** I can **upload a profile picture** so that **personalize it**
+
+As a **USER** I can **change or delete my profile picture**
+
+As a **USER** I can **write a short bio** so that **so that other users can know about me**
+
+As a **USER** I can **upoload artwork** so that **my art can be viewed**
+
+As a **USER** I can **can comment on other users posts** so that **so that i can express myself**
+
+As a **USER** I can **delte my comment** so that **if i dont like it later i can remove it**
+
+As a **USER** I can **like other users posts** so that **I ecourage others**
 
 ### Project Goal
 

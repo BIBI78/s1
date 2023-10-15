@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 #PROBLEM WITH ALLOWED HOSTS , WHAT SHOULD I USE WHEN ITS DEPLOYED ????
 
-ALLOWED_HOSTS = ['8000-bibi78-s1-wwsf80pzbrr.ws-eu105.gitpod.io'] 
+ALLOWED_HOSTS = ['8000-bibi78-s1-2m4xjj2pjco.ws-eu105.gitpod.io'] 
 #ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com']
 #ALLOWED_HOSTS = ["s1-blog.herokuapp.com", "localhost"]
 
