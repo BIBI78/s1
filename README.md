@@ -271,7 +271,7 @@ There were not so many bugs but the bugs I did have were mostly sytanctial.
 
 ### Bugs during development
 
-- The biggest bug happend to be syntactical. I had used the inccorect boostrap wording and it made viewing another users profile diffiuclt when already logged in. The already logged in user would upon viewing another users profile be logged in as that user but none of the actual functions came along with it. 
+- The biggest bug happend to be syntactical. I had used the inccorect boostrap wording and it made viewing another users profile diffiuclt when already logged in. The already logged in user would upon viewing another users profile be logged in as that user but none of the actual functions came along with it.
 
 ## THE UPDATE EDIT USER THIING
 
@@ -311,8 +311,6 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 - I could not figure out how to rewrite this in way that passes.
   ![Validator testing](static/images/linter_bug.png)
 
-
-
 [Back to top](#ms-dashboard)
 
 ## Deployment
@@ -340,19 +338,26 @@ After those steps were taken the application was deployed at the following link:
 
 ## Content
 
-All creative work on this project belongs to the author of this project. 
+All creative work on this project belongs to the author of this project.
 
 ## Credits
+The idea for the site layout came from art gelleries in Berlin and New York:
+- [Art Galllery New York](https://www.davidzwirner.com/)
+- [Art Galllery Berlin ](https://www.kindl-berlin.de/)
 
-### For code inspiration, design inputs, help and advice.
+The artwork used to populate the site came from the following webistes:
+- [Bacon ](https://www.francis-bacon.com/artworks/paintings/1950s)
+- [Black Artists 1](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
+- [ Black Artists 2](https://www.darkyellowdot.com/black-contemporary-artists/)
+- [ Black Artists 3](https://www.artandobject.com/slideshows/10-contemporary-black-artists-you-should-know-more-about)
+- [Black Artists 4](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
 
-I have consulted numerous websites, individuals and slack channels to get support for the code. No code block is directly copied (a part from the ones stated in the comments in the code) but some generates from information I gathered from other developers and sites:
+The random comments and back stories are a mix of Wikipedia[wik](https://www.wikipedia.org/) and ChatGPT [ChatGPT](https://chat.openai.com)
 
-- [W3 Schools](https://www.w3schools.com) for helping me understand Django.
-- [Code Institute](https://codeinstitute.net/) for all course material leading up to this project.
-- [Stack Overflow](https://stackoverflow.com/) for hours of searching and troubleshooting.
+The skeleton of the project come from Code Institue project 4 [CI](https://codeinstitute.net/)
 
-And all the "hundreds of sites" I partially visited during my trouble shooting. All code that I have borrowed have been commented in the code.
+The outline for the README doc came from:
+- [Readme doc ](https://github.com/Pelikantapeten/p4-ms-dashboard)
 
 ### Acknowledgment
 
