@@ -145,11 +145,11 @@ Comment, Update, Delete
 
 ![About](static/images/about.png)
 
-#### Artists
+### Artists
 
-![List of Artists](static/images/artists.png)
+![Artists](static/images/artists.png)
 
-#### Profile
+### Profile
 
 ![Artist profile 1](static/images/profile1.png)
 ![Artist profile 2](static/images/profile2.png)
@@ -168,16 +168,16 @@ Comment, Update, Delete
 
 ![logout](static/images/logout.png)
 
-#### Create Post
+### Create Post
 
 ![Create Post](static/images/create%20post.png)
 
-#### Post details
+### Post details
 
 ![Post Details 1](static/images/postdetails.png)
 ![Post Details 2](static/images/postdetails2.png)
 
-#### Edit post
+### Edit post
 
 ## Edit & delete
 
@@ -185,7 +185,7 @@ When the user is logged in they can update and delete their posts.
 
 ![Edit post ](static/images/crud1.png)
 ![Delete post ](static/images/delete1.png)
-![Edit post ](static/images/delete1.png)
+![Edit post ](static/images/edit_post.png)
 
 ### Edit profile
 
@@ -254,11 +254,11 @@ Users can comment on other users posts.
 
 ## Testing
 
-All testin has been done manually.
+All testing has been done manually.
 Testing as much as possible is reflected in the user stories.
-Testing has been done constantly throughout the manifestations of this project.
+Testing has been done constantly throughout all the manifestations of this project.
 
-This is more or less how testing was done
+This is more or less how testing was done:
 
 - Does the code do what I want it to do?
 - Are there any bugs ?
@@ -270,6 +270,8 @@ This is more or less how testing was done
 There were not so many bugs but the bugs I did have were mostly sytanctial.
 
 ### Bugs during development
+
+- The biggest bug happend to be syntactical. I had used the inccorect boostrap wording and it made viewing another users profile diffiuclt when already logged in. The already logged in user would upon viewing another users profile be logged in as that user but none of the actual functions came along with it. 
 
 ## THE UPDATE EDIT USER THIING
 
@@ -309,9 +311,7 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 - I could not figure out how to rewrite this in way that passes.
   ![Validator testing](static/images/linter_bug.png)
 
-- Responsiveness is bad on smaller screens. Been trying to fix it but for some reason it is problematic.
-- Notes can't be created withouth choosing student, auto fill is not working correctly
-- Help modal sometimes shows up at bottom at screen, can't figure out why.
+
 
 [Back to top](#ms-dashboard)
 
@@ -340,7 +340,7 @@ After those steps were taken the application was deployed at the following link:
 
 ## Content
 
-All content in the app and on the site has been produced by the author of the project.
+All creative work on this project belongs to the author of this project. 
 
 ## Credits
 
@@ -356,8 +356,6 @@ And all the "hundreds of sites" I partially visited during my trouble shooting. 
 
 ### Acknowledgment
 
-- [Martina Terlevic](https://www.linkedin.com/in/martinaterlevic/) My fantastic mentor at Code Institute, thank you for your support, feedback, bug testing and great sense of humor.
-- [Angelica Guimarães Amorim](https://www.linkedin.com/in/angelica-amorim/) Thank you for everything, and I mean everything, best work-mate and idea generator!
 - [Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/) Thank you for testing dealing with my stress over this project, you are a life saver!
 
 [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
