@@ -67,12 +67,6 @@ The users gets to display thier artwork simply and easily among other like minde
 
 The following user stories has been implemented in the project. The user storires are based centred around users want to sign up and post, comment and be apart of the gallery.
 
-#### Admin
-
-As a **admin** I can **create a mentor profile** so that **the mentor can use the dashboard as a tool**
-
-As a **course manager/admin** I can **view a list of mentors** so that **I can select one and connect the mentor to a student**
-
 #### USER
 
 As a **USER** I can **create a profile** so that **I can log in**
@@ -87,9 +81,11 @@ As a **USER** I can **upoload artwork** so that **my art can be viewed**
 
 As a **USER** I can **can comment on other users posts** so that **so that i can express myself**
 
-As a **USER** I can **delte my comment** so that **if i dont like it later i can remove it**
+As a **USER** I can **delete my comment** so that **if i dont like it later i can remove it**
 
-As a **USER** I can **like other users posts** so that **I ecourage others**
+As a **USER** I can **like other users posts** so that **I encourage others**
+
+As a **USER** I can **edit posts** so that **update them and change them if I feel like it**
 
 ### Project Goal
 
@@ -290,24 +286,7 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
 The site was deployed to Heroku. The steps to deploy are as follows:
 
-The project was developed using Gitpod with regular commits to Github. In order to deploy to Heroku a requirements.txt file needs to be created
-and it is important that the database is created in Heroku so that the database can be migrated before actual deployment.
 
-Before migrating the database I used the following cofigvars:
-
-- key: SECRET_KEY | value
-- key: PORT | value
-- key: DATABASE_URL | value
-
-All values was provided by Heroku and I used env.py to store the values for my project and used the variables for the values in settings.py for the Database url and secret key. Heroku also needs to be set as an allowed host in settings.py (please see settings.py in this repository for details).
-
-Migration of database can be done prior of deployment. If set up correctly your environment will use Herokus database and not local sqlite.
-
-Before the push to GitHub a procfile needs to be created with the content: web: gunicorn msdashboard2022.wsgi
-
-After deployment push to Github the project was deployed from Heroku using the "Deploy" tab.
-
-After those steps were taken the application was deployed at the following link: https://ms-dashboard2022.herokuapp.com/
 
 ## Content
 
