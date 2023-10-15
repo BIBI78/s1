@@ -223,7 +223,6 @@ Users can comment on other users posts.
 - Javascript
 - Python
 - Django
-- SQL - Postgres
 
 ### Frameworks and libraries and tools
 
@@ -231,7 +230,6 @@ Users can comment on other users posts.
 - GitHub
 - Django
 - Bootstrap
-- DrawSQL
 - Jquery
 
 ### Installed packages
@@ -271,22 +269,11 @@ There were not so many bugs but the bugs I did have were mostly sytanctial.
 
 ### Bugs during development
 
+- There were not so many bugs but the bugs I did have were mostly sytanctial.
+
 - The biggest bug happend to be syntactical. I had used the inccorect boostrap wording and it made viewing another users profile diffiuclt when already logged in. The already logged in user would upon viewing another users profile be logged in as that user but none of the actual functions came along with it.
 
-## THE UPDATE EDIT USER THIING
-
-There have been several small bugs during development. Most of them has been resolved by fixing faulty syntax but also a lot of them has been caused by logical errors. More sever bugs have been:
-
-- All users had admin rights
-  - Solution: Creating function that closes admin for non-staff users (Mentors)
-- Problems in getting a proper datestamp using date-selector in create session
-  - Solution: Creating a date-picker in widget.py and use widget in forms
-- Problem: Not allowing users to log in with only e-mail
-  - Solution: Scrapping auth user model and creating new custom user models based on BaseUserManager.
-- Problem: Custom CSS not "active" on heroku
-  - Solution: Set Collect Static to 0 and not use debug mode in settings.py
-
-Andy many more smaller ones that caused different types of errors but mostly were connected to bad syntax.
+### Unfixed Bugs
 
 ### Validator Testing
 
@@ -299,8 +286,6 @@ Testing with lighthouse gives the following results:
 ![Validator testing](static/images-readme/lighthouse.png)
 
 Testing and validating using pep8 validations tools:
-
-All python code in this project is not perfect. Some are showing errors of lines that are to long, especially in settings.py and in other files that are installed as part of django. The majority of the problems are not causing errors and are not from code that I actually wrote. Therefore it's not possible to produce a clean slate of a perfect record since some of the code is not perfect but still functional.
 
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
@@ -341,26 +326,29 @@ After those steps were taken the application was deployed at the following link:
 All creative work on this project belongs to the author of this project.
 
 ## Credits
+
 The idea for the site layout came from art gelleries in Berlin and New York:
+
 - [Art Galllery New York](https://www.davidzwirner.com/)
 - [Art Galllery Berlin ](https://www.kindl-berlin.de/)
 
 The artwork used to populate the site came from the following webistes:
-- [Bacon ](https://www.francis-bacon.com/artworks/paintings/1950s)
-- [Black Artists 1](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
-- [ Black Artists 2](https://www.darkyellowdot.com/black-contemporary-artists/)
-- [ Black Artists 3](https://www.artandobject.com/slideshows/10-contemporary-black-artists-you-should-know-more-about)
-- [Black Artists 4](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
 
-The random comments and back stories are a mix of Wikipedia[wik](https://www.wikipedia.org/) and ChatGPT [ChatGPT](https://chat.openai.com)
+- [Site 1](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
+- [Site 2](https://www.darkyellowdot.com/black-contemporary-artists/)
+- [Site 3](https://www.artandobject.com/slideshows/10-contemporary-black-artists-you-should-know-more-about)
+- [Site 4](https://www.thecollector.com/5-rising-black-artists-shaking-the-art-market/)
+- [ Francis Bacon ](https://www.francis-bacon.com/artworks/paintings/1950s)
+
+The random comments and back stories are a mix of [Wikipedia](https://www.wikipedia.org/) and [ChatGPT](https://chat.openai.com)
 
 The skeleton of the project come from Code Institue project 4 [CI](https://codeinstitute.net/)
 
 The outline for the README doc came from:
-- [Readme doc ](https://github.com/Pelikantapeten/p4-ms-dashboard)
+
+- [Readme Doc ](https://github.com/Pelikantapeten/p4-ms-dashboard)
 
 ### Acknowledgment
 
-- [Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/) Thank you for testing dealing with my stress over this project, you are a life saver!
-
-[Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
+- My Advisor:[Lauren-Nicole Popich](https://www.linkedin.com/in/lauren-nicole-popich-1ab87539/)
+  [Am I Responsive](http://ami.responsivedesign.is/) was used to create the image on top of this ReadMe
