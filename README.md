@@ -38,16 +38,15 @@ The live version url: https://SLATT/
     - [Create Post](#create-post "Create post")
     - [Edit Post/ Delete Post](#edit-post "Edit Post")
     - [Edit Profile / Delete Profile](#edit-profile "Edit Profile")
-    - [Comment](#comment "Comment")
-    - [Delete Comment](#delete-comment "delete-comment")
+    - [Comment / Delete Comment](#comment "Comment")
   - [Features I would like to implement in the future](#Features-I-would-like-to-implement-in-the-future "Features I would have liked to implement")
 - [Languages used](#languages-used "Languages used")
   - [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
   - [Installed packages](#installed-packages "Installed packages")
 - [Testing](#testing "Testing")
   - [Bugs during development](#bugs-during-development "Bugs during development")
-  - [Validator Testing](#validator-testing "Validator Testing")
   - [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
+  - [Validator Testing](#validator-testing "Validator Testing")
 - [Deployment](#deployment "deployment")
 - [Content](#content "Content")
 - [Credits](#credits "Credits")
@@ -76,17 +75,17 @@ As a **USER** I can **upload a profile picture** so that **personalize it**
 
 As a **USER** I can **change or delete my profile picture**
 
-As a **USER** I can **write a short bio** so that **so that other users can know about me**
+As a **USER** I can **write a short bio** so that **so that other users can  read about me**
 
 As a **USER** I can **upoload artwork** so that **my art can be viewed**
 
-As a **USER** I can **can comment on other users posts** so that **so that i can express myself**
+As a **USER** I can **can comment on other user posts** so that **so that I can express myself**
 
-As a **USER** I can **delete my comment** so that **if i dont like it later i can remove it**
+As a **USER** I can **delete my comment** so that **if I dont like it later I can remove it**
 
 As a **USER** I can **like other users posts** so that **I encourage others**
 
-As a **USER** I can **edit posts** so that **update them and change them if I feel like it**
+As a **USER** I can **edit posts** so that **I can update them and change them if I feel like it**
 
 ### Project Goal
 
@@ -94,7 +93,7 @@ Demonstrate CRUD functionailty, database manipulation and an understanding of Dj
 
 ### Design Inception
 
-Initially the project was going to be a runner-instragram like app. So I started the main design ideas with that in mind. But to do what I wanted would require more knowledge than I currently possess and the design was simply ugly. So in the end I opted for something eqaully close to my hear , art , more specifially painting and Vienna.
+Initially the project was going to be a runner-instragram like app. So I started the main design ideas with that in mind. The main intresest in a running ap would be to track your speed and distance and performance and so to do what I wanted would require more knowledge than I currently possess and the design was simply ugly. So in the end I opted for something eqaully close to my hear , art , more specifially painting and Vienna.
 
 The idea which at the heart was supposed to be instagram in spirit is actually quite simple and based on modern art gallery sites found in New York city.
 The crud fucntionality came pretty simply after I had settled on an idea.
