@@ -75,7 +75,7 @@ As a **USER** I can **upload a profile picture** so that **personalize it**
 
 As a **USER** I can **change or delete my profile picture**
 
-As a **USER** I can **write a short bio** so that **so that other users can  read about me**
+As a **USER** I can **write a short bio** so that **so that other users can read about me**
 
 As a **USER** I can **upoload artwork** so that **my art can be viewed**
 
@@ -273,7 +273,7 @@ This is more or less how testing was done:
 
 Testing with https://validator.w3.org/ shows no errors on html:
 
-![Validator testing](static/images-readme/htmlvalidator.png)
+![Validator testing](static/images/home_html.png)
 
 Testing with lighthouse gives the following results:
 
