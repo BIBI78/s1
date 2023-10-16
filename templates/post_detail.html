@@ -18,84 +18,83 @@
                 {% endif %}
             </div>
         </div>
-    </div>
-    <div class="col-md-6">
-        <!-- Post Info -->
-    </div>
-</div>
-
-<!-- POST INFO -->
-<div class="post-section">
-    <h1 class="post_title">{{ post.title }}</h1>
-    <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
-    <div class="post-content">
-        {{ post.content | safe }}
-    </div>
-
-    <div class="post-interactions">
-        <div class="likes">
-            {% if request.user.is_authenticated %}
-            <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
-                {% csrf_token %}
-                {% if liked %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                    <i class="fas fa-heart"></i>
-                </button>
-                {% else %}
-                <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
-                    <i class="far fa-heart"></i>
-                </button>
-                {% endif %}
-            </form>
-            {% else %}
-            <span class="text-secondary"><i class="far fa-heart"></i></span>
-            {% endif %}
-            <span class="text-secondary">{{ post.number_of_likes }}</span>
-        </div>
-
-        <div class="comments btn-comment">
-            <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
+        <div class="col-md-6">
+            <!-- Post Info -->
         </div>
     </div>
-</div>
 
-<div class="row">
-    <div class="col">
-        <hr class="invisible-hr">
-    </div>
-</div>
+    <!-- POST INFO -->
+    <div class="post-section">
+        <h1 class="post_title">{{ post.title }}</h1>
+        <a href="{% url 'user_profile' post.author.username %}" class="author author-link">{{ post.author }}</a>
+        <div class="post-content">
+            {{ post.content | safe }}
+        </div>
 
-<!-- Comments -->
-<div class="row comment-row">
-    <div class="col-md-8">
-        <h3>comments:</h3>
-        <div class="comments-list">
-            {% for comment in comments %}
-            <div class="comment">
-                <p class="commenter">
-                    {{ comment.name }}
-                    <span class="comment-date">{{ comment.created_on }}</span>
-                    {% if comment.name == user.username %}
-                    <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
+        <div class="post-interactions">
+            <div class="likes">
+                {% if request.user.is_authenticated %}
+                <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
+                    {% csrf_token %}
+                    {% if liked %}
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    {% else %}
+                    <button type="submit" name="blogpost_id" value="{{post.slug}}" class="btn-like">
+                        <i class="far fa-heart"></i>
+                    </button>
                     {% endif %}
-                </p>
-                <p class="comment-body">{{ comment.body | linebreaks }}</p>
+                </form>
+                {% else %}
+                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                {% endif %}
+                <span class="text-secondary">{{ post.number_of_likes }}</span>
             </div>
-            {% endfor %}
+
+            <div class="comments btn-comment">
+                <strong><i class="far fa-comments"></i> {{ comments.count }}</strong>
+            </div>
         </div>
     </div>
 
-    <div class="col-md-4">
-        {% if user.is_authenticated %}
-        <h3>leave a comment or bid:</h3>
-        <p>{{ user.username }}:</p>
-        <form method="post">
-            {{ comment_form | crispy }}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-        </form>
-        {% endif %}
+    <div class="row">
+        <div class="col">
+            <hr class="invisible-hr">
+        </div>
     </div>
-</div>
+
+    <!-- Comments -->
+    <div class="row comment-row">
+        <div class="col-md-8">
+            <h3>comments:</h3>
+            <div class="comments-list">
+                {% for comment in comments %}
+        <div class="comment">
+            <div class="commenter">
+                {{ comment.name }}
+                <span class="comment-date">{{ comment.created_on }}</span>
+                {% if comment.name == user.username %}
+                <a href="{% url 'delete_comment' comment.id %}" class="delete-comment">Delete</a>
+                {% endif %}
+            </div>
+            <p class="comment-body">{{ comment.body | linebreaks }} 
+        </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            {% if user.is_authenticated %}
+            <h3>leave a comment or bid:</h3>
+            <p>{{ user.username }}:</p>
+            <form method="post">
+                {{ comment_form | crispy }}
+                {% csrf_token %}
+                <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock content %}
