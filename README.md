@@ -280,13 +280,13 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 - I could not figure out how to rewrite this in way that passes.
   ![Validator testing](static/images/linter_bug.png)
 
+  - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
+
 [Back to top](#ms-dashboard)
 
 ## Deployment
 
 The site was deployed to Heroku. The steps to deploy are as follows:
-
-
 
 ## Content
 
