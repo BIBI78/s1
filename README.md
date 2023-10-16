@@ -36,8 +36,8 @@ The live version url: https://SLATT/
     - [Profile](#profile-page "Profile Page")
     - [Default](#default-images "Default Images")
     - [Create Post](#create-post "Create post")
-    - [Edit Post](#edit-post "Edit Post")
-    - [Edit Profile](#edit-profile "Edit Profile")
+    - [Edit Post/ Delete Post](#edit-post "Edit Post")
+    - [Edit Profile / Delete Profile](#edit-profile "Edit Profile")
     - [Comment](#comment "Comment")
     - [Delete Comment](#delete-comment "delete-comment")
   - [Features I would like to implement in the future](#Features-I-would-like-to-implement-in-the-future "Features I would have liked to implement")
@@ -155,12 +155,13 @@ Comment, Update, Delete
 
 ### Default images
 
-- Ofcourse when if the user chooses not to upload a profile image or does not have the image of the artwork they wish to sell default images are provided.
+- Of course if the user chooses not to upload a profile image or does not have the image of the artwork they wish to sell default images are provided.
   ![Default image 1](static/images/default1.png)
   ![Default image 2](static/images/default2.png)
 
 ### Create Post
 
+-Users can inuitively create posts.
 ![Create Post](static/images/create%20post.png)
 
 ### Post details
@@ -168,7 +169,7 @@ Comment, Update, Delete
 ![Post Details 1](static/images/postdetails.png)
 ![Post Details 2](static/images/postdetails2.png)
 
-### Edit post
+### Edit post / Delete post 
 
 ## Edit & delete
 
