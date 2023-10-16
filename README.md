@@ -169,7 +169,7 @@ Comment, Update, Delete
 ![Post Details 1](static/images/postdetails.png)
 ![Post Details 2](static/images/postdetails2.png)
 
-### Edit post / Delete post 
+### Edit post / Delete post
 
 ## Edit & delete
 
@@ -189,19 +189,16 @@ When the user is logged in they can update and delete their profile.
 ![Delete profile ](static/images/delete_profile.png)
 ![Update profile ](static/images/update_profile.png)
 
-### Comment
+### Edit & Comment Profile
 
 Users can comment on other users posts.
 ![comments ](static/images/comments.png)
-
-### Delete comment
-
 ![delete comment  ](static/images/delete_comment.png)
 
 ## Features I would like to implement in the future
 
-- Buy and mail artwork functionality
-- Artists recent exhibitons
+- Buy and mail artwork functionality, more e-commerce overall
+- Artists recent exhibitons, a way to update.
 - A bidding system
 - Artist commission portal
 - More Javascript to the site
@@ -265,6 +262,13 @@ This is more or less how testing was done:
 
 ### Unfixed Bugs
 
+- I could not figure out how to rewrite this in way that passes.
+  ![Validator testing](static/images/linter_bug.png)
+
+  - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
+
+[Back to top](#ms-dashboard)
+
 ### Validator Testing
 
 Testing with https://validator.w3.org/ shows no errors on html:
@@ -280,15 +284,6 @@ Testing and validating using pep8 validations tools:
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
 ![Validator testing](static/images/w3c.css.png)
-
-### Unfixed Bugs
-
-- I could not figure out how to rewrite this in way that passes.
-  ![Validator testing](static/images/linter_bug.png)
-
-  - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
-
-[Back to top](#ms-dashboard)
 
 ## Deployment
 
