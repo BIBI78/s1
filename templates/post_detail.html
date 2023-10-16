@@ -8,13 +8,13 @@
         <div class="col-md-6">
             <div class="image-container">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{% static 'images/gb.png' %}" class="gold-border">
-                <img src="{% static 'images/default-image.webp' %}" width="100%">
-                <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                <img src="{% static 'images/gb.png' %}" alt="Gold Border" class="gold-border">
+                <img src="{% static 'images/default-image.webp' %}" alt="Default Image" style="width: 100%;">
+                <img src="{% static 'images/gbbottom.png' %}" alt="Gold Border" class="gold-border">
                 {% else %}
-                <img src="{% static 'images/gb.png' %}" class="gold-border">
-                <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" width="100%">
-                <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                <img src="{% static 'images/gb.png' %}" alt="Gold Border" class="gold-border">
+                <img src="{{ post.featured_image.url }}" alt="{{ post.title }} Image" style="width: 100%;">
+                <img src="{% static 'images/gbbottom.png' %}" alt="Gold Border" class="gold-border">
                 {% endif %}
             </div>
         </div>
