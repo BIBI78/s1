@@ -96,6 +96,7 @@ Demonstrate CRUD functionailty, database manipulation and an understanding of Dj
 Initially the project was going to be a runner-instragram like app. So I started the main design ideas with that in mind. The main intresest in a running ap would be to track your speed and distance and performance and so to do what I wanted would require more knowledge than I currently possess and the design was simply ugly. So in the end I opted for something eqaully close to my hear , art , more specifially painting and Vienna.
 
 The idea which at the heart was supposed to be instagram in spirit is actually quite simple and based on modern art gallery sites found in New York city.
+
 The crud fucntionality came pretty simply after I had settled on an idea.
 ![Runner app example](static/images/runner1.png/)
 When I ditched the "Runner app " idea and settled on the art gallery idea everything clicked and I could see the design in my head exactly behinds the scenes.

@@ -8,7 +8,7 @@
         <div class="col-md-4">
             <div class="card">
                 {% if not user.userprofile.profile_picture %}
-                <img src="{% static 'images/default_profile_picture.png' %}" width="100%">
+                <img src="{% static 'images/default_profile_picture.png' %}" width="100%;">
                 {% else %}
                 <img src="{{ user.userprofile.profile_picture.url }}" class="card-img-top" alt="{{ user.username }}">
                 {% endif %}
@@ -46,14 +46,14 @@
                             
                                 <div class="image-container">
                                     {% if "placeholder" in post.featured_image.url %}
-                                    <img src="{% static 'images/gb.png' %}" class="gold-border">
-                                    <img src="{% static 'images/default-image.webp' %}" width="100%">
-                                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                                    <img src="{% static 'images/gb.png' %}" alt="Gold Border" class= "gold-border">
+                                    <img src="{% static 'images/default-image.webp' %}" width="100%;">
+                                    <img src="{% static 'images/gbbottom.png' %}" alt="Gold Border" class="gold-border">
                                     {% else %}
                                     
-                                    <img src="{% static 'images/gb.png' %}" class="gold-border">
-                                    <img class="card-img-top" src="{{ post.featured_image.url }}">
-                                    <img src="{% static 'images/gbbottom.png' %}" class="gold-border">
+                                    <img src="{% static 'images/gb.png' %}" alt="Gold Border" class="gold-border">
+                                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }} Image">
+                                    <img src="{% static 'images/gbbottom.png' %}" alt="Gold Border" class="gold-border">
                                     {% endif %}
 
 
@@ -87,14 +87,14 @@
                                             {% endif %}
                                             {% endif %}
                                         </div>
-        </div>
+      
     </div>
-    </li>
+  
     {% endfor %}
 </ul>
 
      
 
     </div>
-</div>
+
 {% endblock %}
