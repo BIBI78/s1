@@ -153,7 +153,7 @@ Comment, Update, Delete
 
 ![logout](static/images/logout.png)
 
-### Default
+### Default images
 
 - Ofcourse when if the user chooses not to upload a profile image or does not have the image of the artwork they wish to sell default images are provided.
   ![Default image 1](static/images/default1.png)
