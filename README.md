@@ -14,7 +14,7 @@ Required technologies:
 
 The live version url: https://SLATT/
 
-# Table of Content
+# Table of Contents
 
 - [UX](#ux "UX")
   - [User Demographic](#user-demographic "User Demographic")
@@ -34,7 +34,8 @@ The live version url: https://SLATT/
     - [Login](#login "Login")
     - [Logout](#logout "Logout")
     - [Profile](#profile-page "Profile Page")
-    - [Create Post](#create-post "Create-Post")
+    - [Default](#default-images "Default Images")
+    - [Create Post](#create-post "Create post")
     - [Edit Post](#edit-post "Edit Post")
     - [Edit Profile](#edit-profile "Edit Profile")
     - [Comment](#comment "Comment")
@@ -152,6 +153,12 @@ Comment, Update, Delete
 
 ![logout](static/images/logout.png)
 
+### Default
+
+- Ofcourse when if the user chooses not to upload a profile image or does not have the image of the artwork they wish to sell default images are provided.
+  ![Default image 1](static/images/default1.png)
+  ![Default image 2](static/images/default2.png)
+
 ### Create Post
 
 ![Create Post](static/images/create%20post.png)
@@ -248,8 +255,6 @@ This is more or less how testing was done:
 - Test for CRUD functionality
 - Make code "pretty"
 - Run through validator
-
-There were not so many bugs but the bugs I did have were mostly sytanctial.
 
 ### Bugs during development
 
