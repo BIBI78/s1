@@ -6,7 +6,7 @@
 
 This project is based on a fictious art gallery in Vienna. It allows artists to sign up then post and sell their artwork.
 Users sign up create a profile and post their work. I noticed on most gallery websites the gallery doesnt really offer more information on the artists/users previous works or backgrounds .They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it slighlty into 2023.
-
+()
 Required technologies:
 
 - HTML, CSS, JavaScript, Python+Django
@@ -16,7 +16,7 @@ The live version url: https://SLATT/
 
 # Table of Contents
 
-- [UX](#ux "UX")
+- [UX / User Experience](#ux "UX")
   - [User Demographic](#user-demographic "User Demographic")
   - [User Goals](#user-goals "User goals")
   - [User Stories](#user-stories "User Stories")
@@ -36,10 +36,10 @@ The live version url: https://SLATT/
     - [Profile](#profile-page "Profile Page")
     - [Default](#default-images "Default Images")
     - [Create Post](#create-post "Create post")
-    - [Edit Post/ Delete Post](#edit-post "Edit Post")
+    - [Edit Post / Delete Post](#edit-post "Edit Post")
     - [Edit Profile / Delete Profile](#edit-profile "Edit Profile")
     - [Comment / Delete Comment](#comment "Comment")
-  - [Features I would like to implement in the future](#Features-I-would-like-to-implement-in-the-future "Features I would have liked to implement")
+  - [Future Features](#future-features "Future Features")
 - [Languages used](#languages-used "Languages used")
   - [Frameworks and libraries and tools](#frameworks-and-libraries-and-tools "Frameworks and libraries and tools")
   - [Installed packages](#installed-packages "Installed packages")
@@ -102,21 +102,21 @@ The crud fucntionality came pretty simply after I had settled on an idea.
 When I ditched the "Runner app " idea and settled on the art gallery idea everything clicked and I could see the design in my head exactly behinds the scenes.
 ![Gallery example 1](static/images/wien1.png/)
 
+## Main Features
+
+Kunstgalerie Wien main features:
+
+### - [Login / Register ](#login)
+
+### - [Create Post](#create-post)
+
+### - [Comment, Update, Delete](#edit-post)
+
 ### Site navigation
 
 Two version to view to the navigation.
 ![Site Navigation 1](static/images/nav1.png/)
 ![Site Naviation 2](static/images/nav2.png/)
-
-## Features
-
-Kunstgalerie Wien main features:
-
-Login/Register
-Create post
-Comment, Update, Delete
-
-### Existing Features
 
 #### Sign In
 
@@ -169,9 +169,9 @@ Comment, Update, Delete
 ![Post Details 1](static/images/postdetails.png)
 ![Post Details 2](static/images/postdetails2.png)
 
-### Edit post / Delete post
+### Edit post
 
-## Edit & delete
+### Edit & delete post
 
 When the user is logged in they can update and delete their posts.
 
@@ -181,7 +181,7 @@ When the user is logged in they can update and delete their posts.
 
 ### Edit profile
 
-## Edit & Delete Profile
+### Edit & Delete Profile
 
 When the user is logged in they can update and delete their profile.
 
@@ -189,13 +189,17 @@ When the user is logged in they can update and delete their profile.
 ![Delete profile ](static/images/delete_profile.png)
 ![Update profile ](static/images/update_profile.png)
 
-### Edit & Comment Profile
+### Comment
+
+### Comment & Delete Comment
 
 Users can comment on other users posts.
 ![comments ](static/images/comments.png)
 ![delete comment  ](static/images/delete_comment.png)
 
-## Features I would like to implement in the future
+### Future Features
+
+These are the features I would like to add in the future.
 
 - Buy and mail artwork functionality, more e-commerce overall
 - Artists recent exhibitons, a way to update.
@@ -238,6 +242,9 @@ Users can comment on other users posts.
 - pytz==2022.1
 - requests-oauthlib==1.3.1
 - sqlparse==0.4.2
+- core.Microsoft
+- core.mongo
+- core.python
 
 ## Testing
 
@@ -250,8 +257,9 @@ This is more or less how testing was done:
 - Does the code do what I want it to do?
 - Are there any bugs ?
 - Remove bugs
+- Check user stories
 - Test for CRUD functionality
-- Make code "pretty"
+- Make code "Pretty"
 - Run through validator
 
 ### Bugs during development
@@ -267,7 +275,7 @@ This is more or less how testing was done:
 
   - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
 
-[Back to top](#ms-dashboard)
+[Back to top](#table-of-contents)
 
 ### Validator Testing
 
