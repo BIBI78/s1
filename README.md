@@ -12,7 +12,7 @@ Required technologies:
 - HTML, CSS, JavaScript, Python+Django
 - Relational database
 
-The live version url: https://SLATT/
+The live version url: https://s1-blog-4367ccd1d3ac.herokuapp.com/
 
 # Table of Contents
 
