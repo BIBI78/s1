@@ -2,7 +2,7 @@
 
 ![Responsive screenshot](static/images-readme/responsive.png)
 
-# The Idea
+# The Main Idea
 
 This project is based on a fictious art gallery in Vienna. It allows artists to sign up then post and sell their artwork.
 Users sign up create a profile and post their work. I noticed on most gallery websites the gallery doesnt really offer more information on the artists/users previous works or backgrounds .They kind of act like a buffer between artists and art buyer, maybe that is done on prupose, but I wanted to update that model and bring it slighlty into 2023.

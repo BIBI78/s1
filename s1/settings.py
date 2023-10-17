@@ -17,10 +17,10 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False 
 #PROBLEM WITH ALLOWED HOSTS , WHAT SHOULD I USE WHEN ITS DEPLOYED ????
 
-ALLOWED_HOSTS = ['8000-bibi78-s1-76mvtsbjuiu.ws-eu105.gitpod.io', 's1-blog-4367ccd1d3ac.herokuapp.com'] 
+ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com', 's1-blog-4367ccd1d3ac.herokuapp.com'] 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
