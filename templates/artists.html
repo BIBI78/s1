@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="artists-heading">Our Artists</h1>
+    <div class="row">
+        {% for artist in artists %}
+        <div class="col-md-3">
+            <div class="artist-profile">
+                <a href="{% url 'user_profile' artist.username %}">
+                    <div class="image-container">
+                        {% if artist.userprofile.profile_picture %}
+                        <img src="{{ artist.userprofile.profile_picture.url }}" alt="{{ artist.username }}"
+                            class="profile-image">
+                        {% else %}
+                        <img src="{% static 'images/default_profile_picture.png' %}" alt="{{ artist.username }}"
+                            class="profile-image">
+                        {% endif %}
+                    </div>
+                </a>
+                <p class="artist-name"><a href="{% url 'user_profile' artist.username %}"> @{{ artist.username }}</a>
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

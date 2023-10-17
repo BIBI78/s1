@@ -1,27 +1,18 @@
 body {
-    background-color: #F9FAFC;
+    background-color: white;
+    font-family: "Avenir Next LT W02 Regular";
 }
 
 .brand {
-    font-family: 'Times New Roman', Times, serif , sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #4A4A4F;
 }
 
-/* .runner-logo{
-    color: #06ff1b;
-} */
-
-
-.tricolor {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    background-image: linear-gradient(#ff14bc, #fff70c, #084eff);
-    -webkit-background-clip: text;
-    background-size: 100%;
-
+/* MAIN COLORS */
+.runner-logo {
+    font-weight: bolder;
+    color: goldenrod;
 }
 
 .thin {
@@ -33,8 +24,10 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: black;
 }
+
+.dark-bg-footer {}
 
 .main-bg {
     background-color: #F9FAFC;
@@ -45,17 +38,9 @@ body {
     background-color: transparent;
 }
 
-.image-container {
-    position: relative;
+.card-title {
+    font-weight: 600;
 }
-
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-} */
 
 .author {
     color: black;
@@ -73,8 +58,7 @@ body {
 }
 
 .masthead-text {
-    /* background-color: #445261; */
-    color: white;
+    color: black;
     position: relative;
 }
 
@@ -104,7 +88,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color:greenyellow ;
+    color: blue;
 }
 
 .post-title {
@@ -114,18 +98,19 @@ body {
 
 .post-subtitle {
     margin-left: 5%;
-    color: lightgray;
+    color: black;
 }
 
 .btn-signup {
-    background-color: #23BBBB;
+    background-color: wheat;
     color: #fff;
+    margin-top: 20px;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: wheat;
 }
 
 .link {
@@ -140,19 +125,19 @@ body {
 }
 
 .btn-like {
-    color: red;
+    color: black;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: gold;
+    color: red;
     background: transparent;
     border: none;
 }
 
-.delete-btn{
+.delete-btn {
     color: red;
     background: transparent;
     border: none;
@@ -163,11 +148,244 @@ body {
     background: transparent;
     border: none;
 }
+
 .gold-border {
     width: 40%;
     height: 40%;
     margin-left: 29%;
     padding: 2%;
-
-
 }
+
+.user-posts img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .user-posts img {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .user-posts img {
+        max-width: 100%;
+        max-height: 30%;
+    }
+}
+
+@media (min-width: 769px) {
+    .user-posts img {
+        max-width: 42%;
+        margin-left: 30%;
+    }
+
+    .gold-border {
+        width: 40%;
+        height: 40%;
+        margin-left: 30%;
+        padding: 2%;
+    }
+}
+
+.gold-border {
+    width: 40%;
+    height: 40%;
+    margin-left: 29%;
+    padding: 2%;
+}
+
+/* USER POSTS DETAILS */
+.post_detail_image {
+    max-width: 100%;
+    width: auto;
+    padding: 0;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.post_title {
+    color: black;
+}
+
+.post_subtitle {
+    color: black;
+}
+
+.comment-date {
+    font-weight: 600;
+    color: goldenrod;
+}
+
+.commenter {
+    font-weight: 600;
+    color: black;
+}
+
+.footer {
+    color: goldenrod;
+}
+
+/* INDEX HMTL */
+.info-list {
+    font-weight: 700;
+}
+
+.loading {
+    font-weight: 400;
+}
+
+/* USER PROFILE PAGE */
+/* user profile remove bullets */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* FOOTER */
+.footer-text {
+    color: black;
+}
+
+/* HEADER */
+.navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, .55);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.author-link {
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.like-icon {
+    color: black;
+    transition: color 0.3s;
+}
+
+.like-icon:hover {
+    color: red;
+}
+
+.delete-comment {
+    color: red;
+}
+
+.col {
+    flex: none;
+}
+
+.btn-comment:hover {
+    color: blue;
+}
+
+.comment-row {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.post-content {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.slideshow {
+    max-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slideshow img {
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+/* IMAGE CONTAINER */
+
+/* 576px */
+.image-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* About page */
+.about-image-small {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add this to your CSS file to style the artist profiles */
+.artists-heading {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.artist-profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.profile-image:hover {
+    transform: scale(1.1);
+}
+
+.artist-name {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.artist-name a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.artist-name a:hover {
+    color: goldenrod;
+}
+
+.gold-border-profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+}
+
+/* Post info */
+.content-wrapper {
+    margin-left: 25px;
+}
+
+/* Post details */
+.post-section {
+    margin-left: 50px;
+}
+
+.invisible-hr {
+    border: none;
+    height: 10px;
+    background-color: transparent;
+}
+.social-icon {
+    font-size: 1.6rem;
+    
+}
+
