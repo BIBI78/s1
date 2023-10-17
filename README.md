@@ -1,6 +1,6 @@
 # Kunstgalerie Wien
 
-![Responsive screenshot](static/images-readme/responsive.png)
+![Responsive screenshot](static/images/respon.png)
 
 # The Main Idea
 
