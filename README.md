@@ -47,7 +47,7 @@ The live version url: https://s1-blog-4367ccd1d3ac.herokuapp.com/
   - [Bugs during development](#bugs-during-development "Bugs during development")
   - [Unfixed Bugs](#unfixed-bugs "Unfixed Bugs")
   - [Validator Testing](#validator-testing "Validator Testing")
-- [Deployment](#deployment "deployment")
+- [Deployment](#deployment "deployment") -[Security notes](#security-notes "security notes")
 - [Content](#content "Content")
 - [Credits](#credits "Credits")
 
@@ -55,9 +55,21 @@ The live version url: https://s1-blog-4367ccd1d3ac.herokuapp.com/
 
 ### User Demographic
 
-This application is ment for:
+Kunstgalerie Wien
 
-- Artists and Art enthusiastis
+The "Kunstgalerie Wien" is tailored for artists with a connection to Vienna who are seeking a platform to sell, display, and promote their artwork to a global audience while remaining true to Vienna's artistic heritage and culture.
+
+1. Artists:
+
+The local artists we cater to are all from Vienna one way or the other, and want to exhibit their artwork on an international stage while maintaining their roots to the imperial city.
+
+2.  Art Enthusiasts:
+
+Art Buyers and Enthusiasts:
+
+We have two target audiences. Firstly individuals residing in Vienna who are avid art supporters and are enthusiastic about discovering and acquiring artwork created by local artists.
+
+& secondly , Global Art Enthusiasts, people from across the globe who admire Vienna's artistic legacy and would like to add to their art collections contemporary art from Vienna's evolving scene.
 
 ### User Goals
 
@@ -228,23 +240,52 @@ These are the features I would like to add in the future.
 ### Installed packages
 
 - asgiref==3.5.2
+  ASGI (Asynchronous Server Gateway Interface) framework for building asynchronous web applications. It's a part of Django.
+
 - cloudinary==1.29.0
+  A Python wrapper for the Cloudinary cloud-based image and video management service, allowing you to store, manage, and deliver media assets easily.
+
 - dj-database-url==0.5.0
+  A simple utility for using database URLs in Django. Useful for configuring database connections with environment variables.
+
 - dj3-cloudinary-storage==0.0.6
+  A Django storage backend for Cloudinary, allows you to integrate Cloudinary with a Django project for media storage.
+
 - Django==3.2.13
+  Python web framework for building web applications.
+
 - django-allauth==0.51.0
+  An authentication, registration, and account management app for Django. It provides easy user authentication and account management solutions.
+
 - django-crispy-forms==1.14.0
+  A Django app that helps manage forms.
+
 - gunicorn==20.1.0
+  A popular Python WSGI HTTP server for running web applications.
+
 - oauthlib==3.2.0
+  A framework-independent library for implementing OAuth1 and OAuth2 providers.
+
 - psycopg2==2.9.3
-- PyJWT==2.4.0
-- python3-openid==3.2.0
+  A PostgreSQL adapter for Python. It enables Python applications to connect to PostgreSQL databases.
+
 - pytz==2022.1
+  A library for working with time zones in Python. It's particularly useful when dealing with datetime calculations and conversions.
+
 - requests-oauthlib==1.3.1
+  A package for providing OAuthlib support to the popular Python requests library. It's used for making OAuth-authenticated requests.
+
 - sqlparse==0.4.2
+  A non-validating SQL parser module for Python. It's useful for formatting and parsing SQL statements.
+
 - core.Microsoft
+  Custom package related to Microsoft services.
+
 - core.mongo
+  Custom package related to MongoDB.
+
 - core.python
+  Custom package related to Python.
 
 ## Testing
 
@@ -275,11 +316,32 @@ This is more or less how testing was done:
 
   - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
 
+- With the google WAVE tool there are errors about my color choices, but have chosen to keep my choices for asestetic reasons.
+
 [Back to top](#table-of-contents)
 
 ### Validator Testing
 
-Testing with https://validator.w3.org/ shows no errors on html:
+## Testing
+
+## TESTING AS A TABLE :
+
+| **TEST**                  | **ACTION**                                         | **EXPECTATION**                               | **RESULT**        |
+| ------------------------- | -------------------------------------------------- | --------------------------------------------- | ----------------- |
+| Home page                 | Images load , scroll enabled                       | Everything wroks                              | Works as expected |
+| Home page                 | Links clickable (including nav bar) and make sense | Links to work                                 | Works as expected |
+| Artist page               | page loads propwerly and displays all artists      | page loads propwerly and displays all artists | Works as expected |
+| Artist page               | Click artitst @ links                              | Images load and links lead to profile page    | Works as expected |
+| Aboout page               | click to open up                                   | Displays text, images ad loads properly       | Works as expected |
+| Footer                    | Test for responsiveness                            | Is responsive                                 | Works as expected |
+| Create post -any page     | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
+| Create Profile - any page | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
+| Comment                   | Test for comment functionality                     | allows user to comment and delete comment     | Works as expected |
+| Resgister page            | Attempt to register                                | Allows user to sign up                        | Works as expected |
+
+- To achieve the above table, this is what the formatting your README will look like :
+
+Testing with https://validator.w3.org/ shows no errors on ALL html pages:
 
 ![Validator testing](static/images/home_html.png)
 
@@ -287,7 +349,7 @@ Testing with lighthouse gives the following results:
 
 ![Validator testing](static/images-readme/lighthouse.png)
 
-Testing and validating using pep8 validations tools:
+Testing and validating using pep8 validations tools passes for ALL python files used in this project.:
 
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
@@ -296,6 +358,10 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 ## Deployment
 
 The site was deployed to Heroku. The steps to deploy are as follows:
+
+## Security notes
+
+- In the commits there is a secret key displayed but I have changed the actual secret key in my proper env file.
 
 ## Content
 
