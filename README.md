@@ -324,22 +324,21 @@ This is more or less how testing was done:
 
 ## Testing
 
-## TESTING AS A TABLE :
-
+## TESTING ESSENTIAL FUNCTIONS AS A TABLE :
+This table does not include every feature , just the essential features.
 | **TEST**                  | **ACTION**                                         | **EXPECTATION**                               | **RESULT**        |
 | ------------------------- | -------------------------------------------------- | --------------------------------------------- | ----------------- |
 | Home page                 | Images load , scroll enabled                       | Everything wroks                              | Works as expected |
 | Home page                 | Links clickable (including nav bar) and make sense | Links to work                                 | Works as expected |
 | Artist page               | page loads propwerly and displays all artists      | page loads propwerly and displays all artists | Works as expected |
 | Artist page               | Click artitst @ links                              | Images load and links lead to profile page    | Works as expected |
-| Aboout page               | click to open up                                   | Displays text, images ad loads properly       | Works as expected |
+| About page                | click to open up                                   | Displays text, images ad loads properly       | Works as expected |
 | Footer                    | Test for responsiveness                            | Is responsive                                 | Works as expected |
-| Create post -any page     | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
+| Create Post -any page     | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
 | Create Profile - any page | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
 | Comment                   | Test for comment functionality                     | allows user to comment and delete comment     | Works as expected |
 | Resgister page            | Attempt to register                                | Allows user to sign up                        | Works as expected |
-
-- To achieve the above table, this is what the formatting your README will look like :
+| Login / Logout            | User can login or logout                           | Allows user to login and logut                | Works as expected |
 
 Testing with https://validator.w3.org/ shows no errors on ALL html pages:
 

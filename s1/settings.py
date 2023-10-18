@@ -18,16 +18,12 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-#PROBLEM WITH ALLOWED HOSTS , WHAT SHOULD I USE WHEN ITS DEPLOYED ????
 
 #LIVE SITE
 ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com', 's1-blog-4367ccd1d3ac.herokuapp.com'] 
 
 # GITPOD DEV SITE
 #ALLOWED_HOSTS = ['8000-bibi78-s1-76mvtsbjuiu.ws-eu105.gitpod.io']
-
-
-
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -87,17 +83,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 's1.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
@@ -155,14 +140,11 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# EMAIL BS SMTP CONFIGURATION
-
 # settings.py // temporary fix
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-# bs 
+
 
 
 
