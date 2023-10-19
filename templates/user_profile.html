@@ -28,12 +28,7 @@
 
                 {% if request.user.is_authenticated and request.user == user %}
                 <a href="{% url 'update_profile' %}" class="update-btn">Update Profile</a>
-                <a href="{% url 'delete_user' %}" class="btn btn-danger">Delete Account</a>
-                <form method="post" action="{% url 'delete_user' %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger">Delete Account</button>
-                </form>
-
+                <a href="{% url 'delete_user' %}" class="delete-btn">Delete Account</a>
                 {% endif %}
 
 
