@@ -93,20 +93,6 @@ class Comment(models.Model):
 
 
 class UserProfile(models.Model):
-    """
-    Represents a user profile.
-
-    Attributes:
-        user (OneToOneField): The user associated with the profile.
-        bio (TextField): A biography or description of the user.
-        profile_picture (ImageField): The user's profile picture.
-        city (CharField): The city where the user is located.
-        name (CharField): The name of the user.
-
-    Methods:
-        __str__: Returns the username of the associated user.
-    """
-
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
     profile_picture = models.ImageField(
@@ -119,3 +105,6 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+    def delete_user(self):
+        self.user.delete()

@@ -171,20 +171,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
 
-@login_required
-def delete_profile(request):
-    """
-    Allow users to delete their own profiles.
-    """
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-
-    if request.method == "POST":
-        user_profile.delete()
-        return redirect("home")
-
-    return render(
-    request, "delete_profile.html", {"user_profile": user_profile}
-)
 
 
 def register(request):
@@ -213,25 +199,6 @@ def user_profile(request, username):
     return render(
         request, "user_profile.html", {"user": user, "user_posts": user_posts}
     )
-
-
-@login_required
-def delete_comment(request, comment_id):
-    """
-    Allow users to delete their own comments.
-    """
-    comment = get_object_or_404(Comment, id=comment_id)
-
-    # Check if the user who is currently logged in is the author of the comment
-    if comment.name == request.user.username:
-        comment.delete()
-
-        # Redirect back to the previous page or a default page
-        referer = request.META.get('HTTP_REFERER')
-        return redirect(referer or 'home')
-
-    else:
-        return redirect("unauthorized")
 
 
 class PostList(generic.ListView):
@@ -316,3 +283,83 @@ def artists_view(request):
     return render(
         request, "artists.html", {"artists": artists}
     )
+
+
+# DELETE BLAH BLAH BLAH
+
+@login_required
+def delete_comment(request, comment_id):
+    """
+    Allow users to delete their own comments.
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    # Check if the user who is currently logged in is the author of the comment
+    if comment.name == request.user.username:
+        comment.delete()
+
+        # Redirect back to the previous page or a default page
+        referer = request.META.get('HTTP_REFERER')
+        return redirect(referer or 'home')
+
+    else:
+        return redirect("unauthorized")
+
+
+
+
+@login_required
+def delete_profile(request, profile_id):
+    """
+    Allow users to delete their own profiles.
+    """
+    user_profile = get_object_or_404(UserProfile, id=profile_id)
+
+    if user_profile.name == request.user.username:
+        user_profile.delete()
+
+        referer = request.META.get('HTTP_REFERER')
+        return redirect(referer or 'home')
+    else:
+        return redirect("delete_user")
+#
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.shortcuts import render, redirect
+
+@login_required
+def delete_user(request):
+    if request.method == "POST":
+        # Perform the logic for deleting the user's account here
+        user = request.user
+        user.delete()
+        
+        # After deleting the user, log them out
+        logout(request)
+
+        return redirect('home')  # Redirect to the home page or a thank you page
+
+    return render(request, "delete_user.html")  # Create a template for confirmation
+
+
+# ######
+from django.http import HttpResponseForbidden
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth import get_user_model
+from django.views.generic.edit import DeleteView
+
+class UserDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    Allow users to delete their own accounts.
+    """
+    model = get_user_model()  # Get the User model
+    template_name = "delete_user.html"  # Create a template for user deletion
+    success_url = reverse_lazy("home")  # Define the URL to redirect after deletion
+
+    def get(self, request, *args, **kwargs):
+        user = self.get_object()
+        if user == self.request.user:
+            return super().get(request, *args, **kwargs)
+        else:
+            return HttpResponseForbidden("You don't have permission to delete this account.")
