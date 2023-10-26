@@ -311,6 +311,13 @@ This is more or less how testing was done:
 
 ### Unfixed Bugs
 
+### Lighthouse score
+
+- The image sizes are bringing down my scores dramatically but since images are uploaded by users, this is beyond my control for now but in a future implementation, I plan on restricting file sizes to 24mb.
+  ![Lighthouse score 1](static/images/lighthouse_score_1.png)
+  ![Lighthouse score 2](static/images/lighthouse_score_2.png)
+  ![Lighthouse score 3](static/images/lighthouse_score_3.png)
+
 - I could not figure out how to rewrite this in way that passes.
   ![Validator testing](static/images/linter_bug.png)
 
@@ -325,20 +332,21 @@ This is more or less how testing was done:
 ## Testing
 
 ## TESTING ESSENTIAL FUNCTIONS AS A TABLE :
+
 This table does not include every feature , just the essential features.
-| **TEST**                  | **ACTION**                                         | **EXPECTATION**                               | **RESULT**        |
+| **TEST** | **ACTION** | **EXPECTATION** | **RESULT** |
 | ------------------------- | -------------------------------------------------- | --------------------------------------------- | ----------------- |
-| Home page                 | Images load , scroll enabled                       | Everything wroks                              | Works as expected |
-| Home page                 | Links clickable (including nav bar) and make sense | Links to work                                 | Works as expected |
-| Artist page               | page loads propwerly and displays all artists      | page loads propwerly and displays all artists | Works as expected |
-| Artist page               | Click artitst @ links                              | Images load and links lead to profile page    | Works as expected |
-| About page                | click to open up                                   | Displays text, images ad loads properly       | Works as expected |
-| Footer                    | Test for responsiveness                            | Is responsive                                 | Works as expected |
-| Create Post -any page     | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
-| Create Profile - any page | Test for CRUD functionality                        | CRUD functionality works                      | Works as expected |
-| Comment                   | Test for comment functionality                     | allows user to comment and delete comment     | Works as expected |
-| Resgister page            | Attempt to register                                | Allows user to sign up                        | Works as expected |
-| Login / Logout            | User can login or logout                           | Allows user to login and logut                | Works as expected |
+| Home page | Images load , scroll enabled | Everything wroks | Works as expected |
+| Home page | Links clickable (including nav bar) and make sense | Links to work | Works as expected |
+| Artist page | page loads propwerly and displays all artists | page loads propwerly and displays all artists | Works as expected |
+| Artist page | Click artitst @ links | Images load and links lead to profile page | Works as expected |
+| About page | click to open up | Displays text, images ad loads properly | Works as expected |
+| Footer | Test for responsiveness | Is responsive | Works as expected |
+| Create Post -any page | Test for CRUD functionality | CRUD functionality works | Works as expected |
+| Create Profile - any page | Test for CRUD functionality | CRUD functionality works | Works as expected |
+| Comment | Test for comment functionality | allows user to comment and delete comment | Works as expected |
+| Resgister page | Attempt to register | Allows user to sign up | Works as expected |
+| Login / Logout | User can login or logout | Allows user to login and logut | Works as expected |
 
 Testing with https://validator.w3.org/ shows no errors on ALL html pages:
 
