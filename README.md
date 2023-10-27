@@ -321,7 +321,7 @@ This is more or less how testing was done:
 - I could not figure out how to rewrite this in way that passes.
   ![Validator testing](static/images/linter_bug.png)
 
-  - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
+- In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
 
 - With the google WAVE tool there are errors about my color choices, but have chosen to keep my choices for asestetic reasons.
 
