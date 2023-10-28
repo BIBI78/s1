@@ -311,7 +311,7 @@ This is more or less how testing was done:
 
 ### Unfixed Bugs
 
-#### Lighthouse score
+#### Lighthouse score / testing
 
 - The image sizes are bringing down my scores dramatically but since images are uploaded by users, this is beyond my control for now but in a future implementation, I plan on restricting file sizes to 24mb.
   ![Lighthouse score 1](static/images/lighthouse_score_1.png)
@@ -326,7 +326,8 @@ This is more or less how testing was done:
 - With the google WAVE tool there are errors about my color choices, but have chosen to keep my choices for asestetic reasons.
 
 #### WAVE
--  WAVE contrast errors - I am aware WAVE is highlighting my font colour choice as problematic, but I have made an aesthetic decision to keep it this palette.
+
+- WAVE contrast errors - I am aware WAVE is highlighting my font colour choice as problematic, but I have made an aesthetic decision to keep it this palette.
 
 [Back to top](#table-of-contents)
 
@@ -355,10 +356,6 @@ Testing with https://validator.w3.org/ shows no errors on ALL html pages:
 
 ![Validator testing](static/images/home_html.png)
 
-Testing with lighthouse gives the following results:
-
-![Validator testing](static/images-readme/lighthouse.png)
-
 Testing and validating using pep8 validations tools passes for ALL python files used in this project.:
 
 Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
@@ -367,7 +364,13 @@ Testing with https://jigsaw.w3.org/css-validator/ shown no errors on CSS:
 
 ## Deployment
 
-The site was deployed to Heroku. The steps to deploy are as follows:
+The site was deployed to Heroku using these steps:
+
+- First a requirements.txt file is needed to migrate the database before deployment
+- I used the usual config vars, Secret key value ,Port value, DATABASE_URL value, these values were stored env.py file
+- Set Heroku as an allowed host.
+- Create GitHub procfile
+- Then after final push , on the Heroku site youu just deploy
 
 ## Security notes
 
