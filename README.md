@@ -311,7 +311,7 @@ This is more or less how testing was done:
 
 ### Unfixed Bugs
 
-### Lighthouse score
+#### Lighthouse score
 
 - The image sizes are bringing down my scores dramatically but since images are uploaded by users, this is beyond my control for now but in a future implementation, I plan on restricting file sizes to 24mb.
   ![Lighthouse score 1](static/images/lighthouse_score_1.png)
@@ -324,6 +324,9 @@ This is more or less how testing was done:
 - In an earlier manifestation of the app I tried to include and infinite scroll but I got some strange "glitch" effect where there was anything more to load.
 
 - With the google WAVE tool there are errors about my color choices, but have chosen to keep my choices for asestetic reasons.
+
+#### WAVE
+-  WAVE contrast errors - I am aware WAVE is highlighting my font colour choice as problematic, but I have made an aesthetic decision to keep it this palette.
 
 [Back to top](#table-of-contents)
 

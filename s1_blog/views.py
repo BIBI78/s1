@@ -19,8 +19,6 @@ from .forms import CommentForm, CreatePostForm, UserProfileForm
 from django.contrib.auth import logout
 
 
-
-
 class PostDetail(View):
     """
 Display the details of a post.
@@ -174,8 +172,6 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         return reverse_lazy('post_detail', kwargs={'slug': self.object.slug})
 
 
-
-
 def register(request):
     """
     Handle user registration.
@@ -288,7 +284,7 @@ def artists_view(request):
     )
 
 
-# Deletion handling 
+# Deletion handling
 
 @login_required
 def delete_comment(request, comment_id):
@@ -315,15 +311,13 @@ def delete_user(request):
         # Perform the logic for deleting the user's account here
         user = request.user
         user.delete()
-        
+
         # After deleting the user, log them out
         logout(request)
 
         return redirect('home')  # Redirect to the home page
 
     return render(request, "delete_user.html")
-
-
 
 
 
