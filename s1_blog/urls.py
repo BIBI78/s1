@@ -6,7 +6,7 @@ urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
     path('create/', create_post, name='create_post'),
     path('update_profile/', views.update_profile, name='update_profile'),
-    path('delete_user/', views.delete_user, name='delete_user'), 
+    path('delete_user/', views.delete_user, name='delete_user'),
     path('about/', views.about_view, name='about'),
     path('artists/', views.artists_view, name='artists'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
@@ -41,5 +41,6 @@ urlpatterns = [
         name='user_profile'
     ),
 ]
+
 
     
