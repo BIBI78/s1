@@ -20,11 +20,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 #LIVE SITE
-ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com', 's1-blog-4367ccd1d3ac.herokuapp.com'] 
+#ALLOWED_HOSTS = ['s1-blog-4367ccd1d3ac.herokuapp.com', 's1-blog-4367ccd1d3ac.herokuapp.com'] 
 
 
 # GITPOD DEV SITE
-#ALLOWED_HOSTS = ['8000-bibi78-s1-76mvtsbjuiu.ws-eu105.gitpod.io']
+ALLOWED_HOSTS = ['8000-bibi78-s1-stuo0g98qu0.ws-eu114.gitpod.io']
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
